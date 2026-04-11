@@ -2,6 +2,12 @@
 
 A distinctive, adaptive terminal-style portfolio website with interactive AI assistant. Built as a single HTML file for easy deployment.
 
+# Portfolio Website
+[Live](https://bevinkatti-portfolio.vercel.app/) : 
+```https://bevinkatti-portfolio.vercel.app/ ```
+
+
+
 ## 🎯 Features
 
 - **Pure Terminal Aesthetic** - Authentic command-line interface with keyboard shortcuts, command history, and tab autocomplete
