@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek-Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- Vercel Web Analytics -->
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
-    
+
     <style>
         :root {
             --bg: #0a0e27;
@@ -65,7 +68,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(var(--border) 1px, transparent 1px),
                 linear-gradient(90deg, var(--border) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -75,8 +78,13 @@
         }
 
         @keyframes gridScroll {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
         }
 
         /* Loading screen */
@@ -96,7 +104,10 @@
         }
 
         @keyframes fadeOut {
-            to { opacity: 0; pointer-events: none; }
+            to {
+                opacity: 0;
+                pointer-events: none;
+            }
         }
 
         .loader {
@@ -120,9 +131,17 @@
         }
 
         @keyframes progress {
-            0% { width: 0%; }
-            50% { width: 60%; }
-            100% { width: 100%; }
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 60%;
+            }
+
+            100% {
+                width: 100%;
+            }
         }
 
         .detected {
@@ -133,7 +152,9 @@
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
 
         /* Terminal container */
@@ -192,9 +213,17 @@
             cursor: pointer;
         }
 
-        .control-btn.close { background: var(--error); }
-        .control-btn.minimize { background: var(--warning); }
-        .control-btn.maximize { background: var(--success); }
+        .control-btn.close {
+            background: var(--error);
+        }
+
+        .control-btn.minimize {
+            background: var(--warning);
+        }
+
+        .control-btn.maximize {
+            background: var(--success);
+        }
 
         #terminal {
             flex: 1;
@@ -214,8 +243,15 @@
         }
 
         @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-10px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .prompt {
@@ -250,8 +286,16 @@
         }
 
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
         }
 
         .command-suggestion {
@@ -400,6 +444,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div id="loading">
@@ -425,7 +470,7 @@
                 <div class="control-btn maximize"></div>
             </div>
         </div>
-        
+
         <div id="terminal">
             <div id="output"></div>
             <div class="input-line">
@@ -440,14 +485,14 @@
         // Knowledge base
         const portfolio = {
             name: "Abhishek Bevinkatti",
-            summary:"AI/ML undergraduate with hands-on experience building applications using modern AI/ML stacks and frameworks. focused on RAG systems, multi-agent workflows, and practical AI tools and solutions that are fast, reliable, and deployable. Interested in LLM orchestration, retrieval pipelines, and open-source model serving. learning by building with intrest & curiosity .",
+            summary: "AI/ML undergraduate with hands-on experience building applications using modern AI/ML stacks and frameworks. focused on RAG systems, multi-agent workflows, and practical AI tools and solutions that are fast, reliable, and deployable. Interested in LLM orchestration, retrieval pipelines, and open-source model serving. learning by building with intrest & curiosity .",
             github: "bevinkatti",
-            status: "final year B.E. CS (AI & ML), Jain College of Engineering",
+            status: "Pre-final year B.E. CS (AI & ML), Jain College of Engineering",
             graduation: "2027",
-            looking_for: "AI/ML internships, SWE roles, and research opportunities",
+            looking_for: "AI/ML internships/roles",
             location: "Belagavi, India",
-            
-            projects: [
+
+            projects: [ //projects
                 {
                     name: "research-assistant",
                     title: "Multi-Agent AI Research Assistant",
@@ -500,7 +545,7 @@
                     github: "https://github.com/bevinkatti/fake-job-detector"
                 }
             ],
-            
+
             skills: {
                 languages: ["Python", "Java", "JavaScript", "C/C++"],
                 ml: ["PyTorch", "TensorFlow", "LangGraph", "LangChain", "RAGAS", "FAISS", "Hugging Face", "Scikit-learn", "Pandas", "NumPy"],
@@ -528,11 +573,11 @@
 
         // Theme toggle
         let isDayMode = localStorage.getItem('theme') === 'day';
-        
+
         // Current project context
         let currentProject = null;
-        
-        
+
+
         function toggleTheme() {
             isDayMode = !isDayMode;
             localStorage.setItem('theme', isDayMode ? 'day' : 'night');
@@ -579,13 +624,13 @@
             print('');
             print(`Type <span class="link">help</span> for available commands or try suggestions below:`);
             print('');
-            
+
             const suggestions = ['whoami', 'ls projects', 'ask assistant', 'github'];
-            
-            const btns = suggestions.map(cmd => 
+
+            const btns = suggestions.map(cmd =>
                 `<span class="command-suggestion" onclick="runCommand('${cmd}')">${cmd}</span>`
             ).join('');
-            
+
             print(btns);
             print('');
         }
@@ -596,15 +641,15 @@
         function runCommand(cmd) {
             cmd = cmd.trim();
             if (!cmd) return;
-            
+
             print(`<span class="prompt">$</span> ${cmd}`);
             commandHistory.push(cmd);
             historyIndex = commandHistory.length;
-            
+
             const parts = cmd.split(' ');
             const command = parts[0];
             const args = parts.slice(1);
-            
+
             // Handle numeric project selection
             if (command.match(/^\d+$/)) {
                 const index = parseInt(command) - 1;
@@ -614,7 +659,7 @@
                     print(`<span class="error-text">Invalid project number: ${command}</span>`);
                 }
             } else {
-                switch(command) {
+                switch (command) {
                     case 'help':
                         showHelp();
                         break;
@@ -696,7 +741,7 @@
                         print(`Type 'help' for available commands`);
                 }
             }
-            
+
             print('');
         }
 
@@ -714,10 +759,10 @@
                 ['theme', 'Toggle day/night mode'],
                 ['clear', 'Clear terminal']
             ];
-            
+
             print('<span class="success-text">Available Commands:</span>');
             print('');
-            
+
             commands.forEach(([cmd, desc]) => {
                 print(`  <span class="link">${cmd.padEnd(30)}</span> ${desc}`);
             });
@@ -744,8 +789,8 @@
             print('<span class="success-text">Available Projects:</span>');
             print('');
             portfolio.projects.forEach((p, index) => {
-                const status = p.status.includes('Production') ? '✓' : 
-                             p.status.includes('Development') ? '⚡' : '●';
+                const status = p.status.includes('Production') ? '✓' :
+                    p.status.includes('Development') ? '⚡' : '●';
                 print(`${index + 1}) <span class="link">${p.name}</span> <span style="color: var(--warning)">— ${p.title} (${status})</span>`);
             });
             print('');
@@ -757,21 +802,21 @@
                 print('<span class="error-text">Usage: cat <file></span>');
                 return;
             }
-            
+
             const projectName = filename.split('/')[0];
             const project = portfolio.projects.find(p => p.name === projectName);
-            
+
             if (!project) {
                 print(`<span class="error-text">File not found: ${filename}</span>`);
                 return;
             }
-            
+
             print(`<span class="success-text">${project.title}</span>`);
             print('');
             print(project.description);
             print('');
             print(`<span class="metric">Tech Stack:</span> ${project.tech.join(', ')}`);
-            
+
             if (project.metrics) {
                 print('');
                 print('<span class="metric">Metrics:</span>');
@@ -779,7 +824,7 @@
                     print(`  ${key}: <span class="success-text">${value}</span>`);
                 });
             }
-            
+
             if (project.github) {
                 print('');
                 print(`<span class="metric">GitHub:</span> <a href="${project.github}" class="link" target="_blank">${project.github}</a>`);
@@ -792,20 +837,20 @@
                 print(`<span class="error-text">Project not found: ${name}</span>`);
                 return;
             }
-            
+
             catFile(name);
         }
 
         function showBenchmarks(args) {
             const projectName = args[0] === '--all' ? null : args[0];
-            
+
             if (args[0] === '--all' || !projectName) {
                 portfolio.projects.forEach((p, index) => {
                     if (p.metrics) {
                         print(`<span class="success-text">▸ ${p.title}</span>`);
                         print('');
                         renderBenchmarks(p.metrics);
-                        
+
                         // Add spacing between projects
                         if (index < portfolio.projects.length - 1) {
                             print('');
@@ -852,19 +897,19 @@
                 print('Or type your question directly after entering assistant mode');
                 return;
             }
-            
+
             print(`<span class="thinking">→ Processing query...</span>`);
             print(`<span class="thinking">→ Searching knowledge base...</span>`);
-            
+
             setTimeout(() => {
                 const lowerQ = question.toLowerCase();
                 let answer = null;
-                
+
                 // Enhanced Q&A with more patterns and smarter matching
                 const patterns = {
                     // Internship related
                     internship: /\b(internship|intern|job|position|role|opportunity)\b/i,
-                    
+
                     // Projects
                     projects: /\b(projects?|work|portfolio|what.*build|what.*create)\b/i,
                     recent: /\b(recent|latest|new|current|now)\b/i,
@@ -872,93 +917,93 @@
                     stylesync: /\b(stylesync|style.*sync|fashion|image.*gen|stable.*diffusion)\b/i,
                     rag_eval: /\b(rag.*eval|rag.*harness|evaluation|benchmark|ragas)\b/i,
                     fake_job: /\b(fake.*job|job.*detector|fraud|authentic|posting)\b/i,
-                    
+
                     // Skills & Tech
                     skills: /\b(skills?|expertise|strength|good.*at|proficient)\b/i,
                     ml: /\b(machine.*learn|ml|ai|artificial.*intell|deep.*learn|neural)\b/i,
                     python: /\b(python|programming|code|language|script)\b/i,
                     web: /\b(web|frontend|backend|full.*stack|react|streamlit|fastapi)\b/i,
-                    
+
                     // Experience
                     experience: /\b(experience|background|career|professional|work.*exp)\b/i,
-                    
+
                     // Strengths & Achievements
                     strength: /\b(strengths?|advantage|edge|unique|differentiate)\b/i,
                     achievement: /\b(achievements?|accomplish|success|milestone|result)\b/i,
-                    
+
                     // Education & Background
                     education: /\b(education|degree|university|college|study|major)\b/i,
                     location: /\b(location|where|live|based|city|country)\b/i,
-                    
+
                     // Contact & Communication
                     contact: /\b(contact|email|reach|connect|get.*touch|linkedin)\b/i,
-                    
+
                     // Work style & Personality
                     workstyle: /\b(work.*style|how.*work|approach|methodology|process)\b/i,
-                    
+
                     // Future & Goals
                     future: /\b(future|goal|plan|next|aspire|want.*do)\b/i,
-                    
+
                     // Challenges
                     challenges: /\b(challenges?|problem|difficulty|struggle|obstacle|issue)\b/i,
-                    
+
                     // Specific questions
                     why_ml: /\b(why.*ml|why.*ai|choose.*ml|interest.*ai|why.*field)\b/i,
                     how_built: /\b(how.*build|how.*create|approach.*project|method.*develop)\b/i,
                     metrics: /\b(metric|evaluation|performance|benchmark|measure|quantitative)\b/i,
                 };
-                
+
                 const responses = {
-                    internship: "Abhishek is actively applying for AI/ML internships. He has prior experience at Edunet Foundation/IBM SkillsBuild (Dec 2025-Jan 2026) and brings strong production-grade projects: Multi-Agent Research Assistant (0.927 RAGAS score, live on HuggingFace Spaces), StyleSync Elite (SDXL-based, 5-7s inference), and ongoing work on rag-eval-harness CLI tool. His tech stack includes LangGraph, FastAPI, FAISS, and modern ML frameworks.",
-                    
+                    internship: "Abhishek is actively applying for AI/ML, SWE internships. He has prior experience at Edunet Foundation/IBM SkillsBuild (Dec 2025-Jan 2026) and brings strong production-grade projects: Multi-Agent Research Assistant (0.927 RAGAS score, live on HuggingFace Spaces), StyleSync Elite (SDXL-based, 5-7s inference), and ongoing work on rag-eval-harness CLI tool. His tech stack includes LangGraph, FastAPI, FAISS, and modern ML frameworks.",
+
                     projects: "Top projects: (1) <span class='success-text'>Multi-Agent AI Research Assistant</span> - Production RAG system with 0.927 RAGAS score, LangGraph orchestration, deployed live. (2) <span class='success-text'>StyleSync Elite</span> - SDXL fashion generator, strong CV showcase. (3) <span class='success-text'>rag-eval-harness</span> - Framework-agnostic RAG evaluation CLI (in dev). Type 'ls projects' to see all.",
-                    
+
                     recent: "Currently working on: (1) <span class='success-text'>AMD Developer Hackathon</span> - Building 'Agentic Code Intelligence System on AMD MI300X GPUs' for Track 1: AI Agents. (2) <span class='success-text'>rag-eval-harness</span> - CLI tool for RAG evaluation, targeting PyPI publication. (3) Optimizing Multi-Agent Research Assistant after hitting Groq rate limits, exploring alternatives like self-hosted Gemma 4 31B.",
-                    
+
                     research: "The Multi-Agent AI Research Assistant is Abhishek's flagship project. <span class='success-text'>Architecture:</span> LangGraph orchestration + Groq API (Llama 3.3 70B) + FAISS vector store + FastAPI streaming + Streamlit UI. <span class='success-text'>Metrics:</span> 0.927 RAGAS score (0.984 faithfulness, 0.923 answer relevancy), <15ms P99 retrieval, 38% latency reduction via asyncio optimization. <span class='success-text'>Deployed:</span> HuggingFace Spaces with live demo. Type 'benchmark research-assistant' for full metrics.",
-                    
+
                     skills: "Primary stack: Python, LangGraph, LangChain, FastAPI, FAISS, Streamlit. <span class='success-text'>ML/AI:</span> PyTorch, TensorFlow, RAGAS, sentence-transformers, SDXL, Scikit-learn, multi-agent systems. <span class='success-text'>Backend:</span> REST APIs, async workflows, SSE streaming. <span class='success-text'>Tools:</span> Docker, Git, GitHub, SQL, Postman, Ollama, vLLM. <span class='success-text'>Models:</span> Llama 3.3, Gemma 4. <span class='success-text'>Exploring:</span> React, self-hosting open models, scalable inference, caching strategies.",
 
                     ml: "Abhishek specializes in production ML systems: RAG pipelines with rigorous evaluation (RAGAS framework), multi-agent orchestration (LangGraph), computer vision (Stable Diffusion XL), and performance optimization. Recent focus: building agentic systems, framework-agnostic evaluation tools, and optimizing for resource constraints.",
-                    
+
                     //experience: "Currently pre-final year at Jain College of Engineering (graduating 2027). Prior internship at <span class='success-text'>Edunet Foundation | IBM SkillsBuild</span> (Dec 2025-Jan 2026). Practical experience through significant projects: production-grade Multi-Agent system, SDXL-based CV pipeline, and framework development. Strong emphasis on metrics, optimization, and real deployments.",
                     experience: "Currently in pre-final year (graduating 2027), Prior internship : AI & ML Intern at Edunet Foundation | IBM SkillsBuild (Dec 2025 - Jan 2026) — Worked on end-to-end AI/ML projects spanning computer vision, recommendation systems, and generative AI, including PyTorch model training, TF-IDF pipelines on 44k+ product data, and Stable Diffusion XL optimization for real-time deployment. gained hands-on experience across real-world AI solutions and the end-to-end machine learning lifecycle.",
 
                     strength: "Key differentiators: (1) <span class='success-text'>Production-grade execution</span> - Multi-Agent system with 0.927 RAGAS score, live deployment, not just POC. (2) <span class='success-text'>Rigorous evaluation mindset</span> - RAGAS metrics, benchmarking, 38% latency improvements. (3) <span class='success-text'>Resource optimization</span> - Works effectively within free-tier constraints, practical problem-solving. (4) <span class='success-text'>Full-stack ML</span> - From model to deployment to evaluation.",
-                    
+
                     location: "Based in Belagavi, Karnataka India. Currently studying at Jain College of Engineering, Belagavi.",
-                    
+
                     contact: "Best ways to connect: GitHub (github.com/bevinkatti) or LinkedIn (linkedin.com/in/abhishek-bevinkatti). Type 'contact' for full details.",
-                    
+
                     education: "Pre-final year B.E. Computer Science (AI & ML) at Jain College of Engineering, Belagavi. Expected graduation: 2027. Focus on practical ML systems, multi-agent architectures, and production deployments.",
-                    
+
                     workstyle: "Abhishek is known for: Concise, surgical communication over lengthy explanations. Emphasis on metrics and honest assessments. Working resourcefully within constraints (free-tier APIs, rate limits). Iterative development with clear benchmarks. Human/curiosity-driven framing in professional contexts.",
-                    
+
                     future: "Future goals: (1) <span class='success-text'>Secure AI/ML internship</span> at MAANG/startup. (2) <span class='success-text'>Open-source contributions</span> to ML frameworks. (3) <span class='success-text'>Research in multi-agent systems</span> and evaluation. (4) <span class='success-text'>Build production AI products</span>. (5) <span class='success-text'>Contribute to AMD's AI initiatives</span>.",
-                    
+
                     challenges: "Current challenges: (1) <span class='warning-text'>Groq free-tier rate limits</span> (~5-10 queries/day) requiring alternative APIs. (2) <span class='warning-text'>Balancing academics and projects</span> during internship hunt. (3) <span class='warning-text'>Resource constraints</span> for large model deployment. (4) <span class='warning-text'>Keeping up with rapidly evolving AI landscape</span>.",
-                    
+
                     why_ml: "Chose ML/AI because it combines problem-solving, creativity, and real-world impact. Fascinated by how AI can augment human capabilities and solve complex problems. The field offers endless opportunities for innovation and the chance to work on cutting-edge technology that shapes the future.",
-                    
+
                     how_built: "Projects are built with a focus on production-readiness: (1) <span class='success-text'>Modular architecture</span> for maintainability. (2) <span class='success-text'>Rigorous evaluation</span> with metrics. (3) <span class='success-text'>Performance optimization</span>. (4) <span class='success-text'>Proper deployment</span> and documentation. (5) <span class='success-text'>Iterative improvement</span> based on benchmarks.",
-                    
+
                     metrics: "Strong emphasis on quantitative evaluation: (1) <span class='success-text'>RAGAS scores</span> (0.927 overall). (2) <span class='success-text'>Latency measurements</span> (<15ms P99). (3) <span class='success-text'>Accuracy metrics</span> (~90%+). (4) <span class='success-text'>Performance improvements</span> (38% reduction). Uses industry-standard evaluation frameworks.",
-                    
+
                     stylesync: "StyleSync Elite is an AI-powered fashion image generator using Stable Diffusion XL. <span class='success-text'>Key features:</span> Fast inference (5-7 seconds), optimized for 8GB GPUs, generates high-quality fashion images from text prompts. <span class='success-text'>Tech stack:</span> PyTorch, SDXL model, custom optimization pipeline. Perfect showcase for computer vision and generative AI skills. Type 'demo stylesync-elite' for live demo.",
-                    
+
                     rag_eval: "rag-eval-harness is a command-line tool for evaluating RAG (Retrieval-Augmented Generation) systems. <span class='success-text'>Features:</span> Framework-agnostic evaluation, RAGAS integration, automated benchmarking, PyPI-ready. <span class='success-text'>Goal:</span> Help developers evaluate and improve their RAG pipelines with standardized metrics. Currently in development, targeting open-source release. Type 'about rag-eval-harness' for details.",
-                    
+
                     fake_job: "Fake Job Detector is an ML-powered platform that classifies job postings for authenticity. <span class='success-text'>Performance:</span> ~90%+ accuracy, 32% reduction in false positives. <span class='success-text'>Tech:</span> Scikit-learn, NLP preprocessing, classification algorithms. Addresses real-world problem of fraudulent job listings. Type 'benchmark fake-job-detector' for metrics.",
-                    
+
                     python: "Python is Abhishek's primary programming language. He uses it for ML/AI development, backend APIs (FastAPI), data processing, and automation. <span class='success-text'>Key libraries:</span> LangChain, LangGraph, scikit-learn, PyTorch, pandas, numpy. Strong in async programming and performance optimization.",
-                    
+
                     web: "Full-stack capabilities with focus on AI-integrated web apps. <span class='success-text'>Backend:</span> FastAPI, Python async. <span class='success-text'>Frontend:</span> Streamlit for rapid prototyping, learning React. <span class='success-text'>Integration:</span> REST APIs, real-time streaming, deployment on cloud platforms.",
-                    
+
                     achievement: "Key achievements: (1) <span class='success-text'>0.927 RAGAS score</span> on production RAG system. (2) <span class='success-text'>38% latency reduction</span> via optimization. (3) <span class='success-text'>Live deployment</span> on HuggingFace Spaces. (4) <span class='success-text'>Framework development</span> for RAG evaluation. (5) <span class='success-text'>AMD Hackathon participation</span> with agentic systems.",
 
                     sport: "he does like to play lot of sports indoor/outdoor and especially loves football",
                 };
-                
+
                 // Match question to response
                 for (const [key, pattern] of Object.entries(patterns)) {
                     if (pattern.test(question)) {
@@ -966,19 +1011,19 @@
                         break;
                     }
                 }
-                
+
                 // Fallback for irrelevant questions
                 if (!answer) {
                     const irrelevantKeywords = ['weather', 'recipe', 'joke', 'news', 'music', 'movie', 'game', 'politics', 'celebrity'];
                     const isIrrelevant = irrelevantKeywords.some(keyword => lowerQ.includes(keyword));
-                    
+
                     if (isIrrelevant) {
                         answer = `<span class="error-text">Please ask questions relevant to Abhishek's portfolio, projects, skills, or experience.</span><br><br>Try: "what internships", "his skills", "recent project", "experience", or "strengths".`;
                     } else {
                         answer = `I don't have specific information about that in Abhishek's database. Try asking: "what internships is he looking for?", "tell me about his skills", "what is his most recent project?", "what's his experience?", or "what are his strengths?".`;
                     }
                 }
-                
+
                 print(`<div class="ai-response">${answer}</div>`);
                 print('');
             }, 800);
@@ -1012,7 +1057,7 @@
                 print(`<span class="error-text">Project not found: ${projectName}</span>`);
                 return;
             }
-            
+
             if (project.demo) {
                 window.open(project.demo, '_blank');
                 print(`Opening demo for ${project.title}...`);
@@ -1030,7 +1075,7 @@
                 print(`<span class="error-text">Project not found: ${projectName}</span>`);
                 return;
             }
-            
+
             if (type === '--github' && project.github) {
                 window.open(project.github, '_blank');
                 print(`Opening GitHub repo for ${project.title}...`);
@@ -1057,26 +1102,26 @@
                 print(`<span class="error-text">Project not found: ${projectName}</span>`);
                 return;
             }
-            
+
             // Set current project context
             currentProject = projectName;
-            
+
             print(`<div class="project-card">`);
             print(`<div class="project-title">${project.title}</div>`);
             print(`<div>${project.description}</div>`);
             print(`<div class="project-meta">Tech: ${project.tech.join(', ')}</div>`);
             print(`<div class="project-meta">Status: ${project.status}</div>`);
-            
+
             if (project.metrics) {
                 print('<div class="project-meta">Key Metrics:</div>');
                 Object.entries(project.metrics).forEach(([k, v]) => {
                     print(`<div style="margin-left: 20px;">• ${k.replace(/_/g, ' ')}: <span class="metric">${v}</span></div>`);
                 });
             }
-            
+
             print(`</div>`);
             print('');
-            
+
             // Show command suggestions as text
             print('<span style="color: var(--warning)">Available commands:</span>');
             if (project.demo) {
@@ -1127,10 +1172,10 @@
                 print(`<span class="error-text">Invalid mode. Valid options: ${validModes.join(', ')}</span>`);
                 return;
             }
-            
+
             localStorage.setItem('portfolio-mode', newMode);
             print(`<span class="success-text">Switching to ${newMode} mode...</span>`);
-            
+
             setTimeout(() => {
                 location.reload();
             }, 500);
@@ -1141,7 +1186,7 @@
             if (e.key === 'Enter') {
                 const cmd = input.value;
                 input.value = '';
-                
+
                 // Handle assistant mode
                 if (assistantMode) {
                     if (cmd.toLowerCase() === 'exit') {
@@ -1185,4 +1230,5 @@
         document.addEventListener('click', () => input.focus());
     </script>
 </body>
+
 </html>
