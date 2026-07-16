@@ -1,11 +1,9 @@
-# Portfolio
+# Terminal Portfolio
 
 Built as a single HTML file for easy deployment.
 
-# Website
+# Portfolio Website
 [Live](https://bevinkatti-portfolio.vercel.app/) : 
 ```https://bevinkatti-portfolio.vercel.app/ ```
 
 
----
-MIT
