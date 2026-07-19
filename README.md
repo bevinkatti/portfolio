@@ -1,4 +1,4 @@
-# Terminal Portfolio
+# Portfolio
 
 Built as a single HTML file for easy deployment.
 
