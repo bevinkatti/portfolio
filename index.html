@@ -208,7 +208,7 @@
   }
   .nav__mark span{ color:var(--signal); }
   .nav__links{
-    display:flex; align-items:center; gap:36px;
+    display:flex; align-items:center; gap:30px;
   }
   .nav__links a{
     font-size:14px; color:var(--slate);
@@ -538,6 +538,13 @@
     .project-card--featured .stat-panel{ grid-template-columns:repeat(2,1fr); }
   }
 
+  /* ============ OPEN SOURCE ============ */
+.opensource{
+    padding:40px 0 120px;
+    position:relative;
+    z-index:2;
+}
+
   /* ============ SYSTEM / STACK ============ */
   .stack{ padding:70px 0 130px; position:relative; z-index:2; }
   .stack__layers{ margin-top:56px; border-top:1px solid var(--hairline); }
@@ -691,7 +698,8 @@
     <div class="nav__links">
       <a href="#about">About</a>
       <a href="#work">Work</a>
-      <a href="#system">System</a>
+      <a href="#opensource">Open Source</a>
+      <a href="#system">Stack</a>
       <a href="#timeline">Timeline</a>
       <a href="#contact">Contact</a>
     </div>
@@ -707,7 +715,8 @@
   <div class="nav__mobile" id="nav-mobile">
     <a href="#about">About</a>
     <a href="#work">Work</a>
-    <a href="#system">System</a>
+    <a href="#opensource">Open Source</a>
+    <a href="#system">Stack</a>
     <a href="#timeline">Timeline</a>
     <a href="#contact">Contact</a>
   </div>
@@ -733,7 +742,7 @@
     <div class="hero__eyebrow"><br>FINAL-YEAR B.E. CS (AI &amp; ML) · JAIN COLLEGE OF ENGINEERING, BELAGAVI  </div>
 
     
-    <h1 class="hero__headline">Building/shipping Systems that are usefull & measurable. </h1>
+    <h1 class="hero__headline">Building systems that are useful & measurable. </h1>
 
     <p class="hero__sub">Retrieval pipelines, multi-agent orchestration, and the evaluation harnesses that keep them honest. A few of the systems I've shipped — from a 0.927&nbsp;RAGAS research assistant to a browser-native PDF editor that never touches a server.</p>
 
@@ -778,19 +787,19 @@
 
     <div class="about__grid reveal">
       <div class="about__body">
-        <p>I'm a final-year CS (AI/ML) student who somehow ended up running a handful of real, deployed systems off of free-tier infrastructure and pure stubbornness. It started as "something concrete to Ace the Resume" and turned into an actual habit — I'd rather spend a weekend building something as open source project then prepare for the <em> exam on tuesday</em>.  which can be done on  monday evening.</p>
+        <p>I'm a final-year CS (AI/ML) student who somehow ended up running a handful of real, deployed systems off of free-tier infrastructure and pure stubbornness. It started as "something concrete to Ace the Resume" and turned into an actual habit — More likely to spend a weekend building an <em>open-source project</em> than studying for an <em></em>exam.</em></p>
         <p>Most of what I build starts from half cooked ideas of new project ending with taking my weekdays an ends evolving into solid projects. hence I also lean hard on measuring things — RAGAS scores, latency numbers, false-positive rates and quality in them. </p>
-        <p>Outside of that: way too many side projects ideas lying in notes, and a genuine soft spot for Dogs (ik this was outta nowhere)</p>
+        <p>Outside of that: way too many side projects ideas lying in notes.</p>
       </div>
 
       <div class="about__facts">
         <div class="about__facts-label">Off the clock</div>
         <ul>
           <li>Based in Belagavi, Karnataka</li>
-          <li>finding a jugaad to make something work within my constraints that breaks some budget constraints</li>
+          <li>finding ways to make something work within my constraints that breaks some budget constraints</li>
           <li>Strong, unsolicited opinions about font embedding</li>
           <li>Will not ship a number I haven't measured myself</li>
-          <li>also Prefers songs in the background while building/coding etc</li>
+          <li>also, Prefers songs in the background while building/coding etc</li>
         </ul>
       </div>
     </div>
@@ -950,8 +959,98 @@
 
       <div class="dev-note">
         <div class="dev-note__label">Next up</div>
-        <p>Publishing to PyPI, then a public benchmark comparing three open-source RAG stacks head to head.</p>
+        <p>Rich CLI visualisation and readables.</p>
       </div>
+    </article>
+
+  </div>
+</section>
+
+ <!-- Achievements and Open Source Contributions -->
+<section class="opensource" id="opensource">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">Open Source</div>
+        <h2 class="section-title">
+          Shipping libraries people actually install.
+        </h2>
+      </div>
+
+      <p class="section-note">
+        Beyond personal projects — contributing upstream,<br>
+        publishing packages, and building in public.
+      </p>
+    </div>
+
+    <article class="project-card reveal">
+      <div>
+
+        <div class="project-card__head">
+          <span class="status status--oss">
+            <span class="status__dot"></span>
+            Community
+          </span>
+        </div>
+
+        <h3 class="project-card__title">
+          Open Source & Community
+        </h3>
+
+        <p class="project-card__hook">
+          Building tools developers actually use.
+        </p>
+
+        <p class="project-card__desc">
+          <strong>rag-harness</strong> is a framework-agnostic RAG evaluation
+          toolkit published on PyPI with <strong>1.8K+ downloads</strong>,
+          built around deterministic evaluation and reproducible benchmarking.
+          Alongside it, I've published multiple Python packages reaching
+          <strong>4K+ cumulative PyPI downloads</strong>, focused on developer
+          tooling and practical AI infrastructure.
+        </p>
+
+        <p class="project-card__desc">
+          I actively contribute to open-source AI tooling through merged pull
+          requests, publish libraries, and enjoy improving existing developer
+          tools just as much as building new ones.
+        </p>
+
+    </div>
+
+    <div class="stat-panel">
+
+      <div class="stat">
+        <div class="stat__value mono">4K+</div>
+        <div class="stat__label">
+          Total PyPI Downloads
+        </div>
+      </div>
+
+      <div class="stat">
+        <div class="stat__value mono">1.8K+</div>
+        <div class="stat__label">
+          rag-harness Downloads
+        </div>
+      </div>
+
+      <div class="stat">
+        <div class="stat__value mono">Multiple</div>
+        <div class="stat__label">
+          Published Python Packages
+        </div>
+      </div>
+
+      <div class="stat">
+        <div class="stat__value mono">Merged</div>
+        <div class="stat__label">
+          Open Source Contributions
+        </div>
+      </div>
+
+    </div>
+
     </article>
 
   </div>
@@ -962,7 +1061,7 @@
     <div class="section-head reveal">
       <div>
         <div class="eyebrow">The System</div>
-        <h2 class="section-title">Not a skills list — the layers things actually run on.</h2>
+        <h2 class="section-title">STACK — the layers things actually run on.</h2>
       </div>
       <p class="section-note">Grouped by what each layer does,<br>the way the architecture diagrams look.</p>
     </div>
@@ -982,7 +1081,7 @@
       </div>
       <div class="stack__layer">
         <div class="stack__layer-label">Models Run</div>
-        <div class="stack__layer-items"><span class="stack__item">Llama 3.3</span><span class="stack__item">SDXL</span><span class="stack__item">Gemma</span><span class="stack__item">Groq</span><span class="stack__item">Gemini</span></div>
+        <div class="stack__layer-items"><span class="stack__item">Llama 3.3</span><span class="stack__item">SDXL</span><span class="stack__item">Gemma</span><span class="stack__item">Groq</span><span class="stack__item">Gemini</span><span class="stack__item">OpenAI</span></div>
       </div>
       <div class="stack__layer">
         <div class="stack__layer-label">Ops &amp; Observability</div>
