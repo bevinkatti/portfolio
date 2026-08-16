@@ -688,9 +688,118 @@
     .reveal{ opacity:1; transform:none; transition:none; }
     *, *::before, *::after{ transition-duration:.01ms !important; }
   }
+/* ============ BOOT ANIMATION ============ */
+#boot-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--graphite);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  overflow: hidden;
+  transition: opacity 0.6s var(--ease);
+}
+#boot-overlay.boot-done {
+  opacity: 0;
+  pointer-events: none;
+}
+.boot-dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, var(--dot-pattern) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+.boot-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: min(480px, 88vw);
+}
+.boot-mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 8vw, 4.2rem);
+  letter-spacing: -0.02em;
+  color: var(--bone);
+  line-height: 1;
+  margin-bottom: 32px;
+  opacity: 0;
+}
+.boot-dot { color: var(--amber); }
+.boot-mark.boot-visible {
+  animation: bootFadeUp 0.5s var(--ease) forwards;
+}
+@keyframes bootFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.boot-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 28px;
+  min-height: 82px;
+}
+.boot-line {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.boot-line.boot-show { opacity: 1; transform: translateX(0); }
+.boot-line .boot-prefix { color: var(--amber); }
+.boot-line.boot-ok .boot-prefix { color: var(--status-c-dot); }
+.boot-bar-track {
+  width: 100%;
+  height: 1px;
+  background: var(--hairline);
+  position: relative;
+  overflow: hidden;
+}
+.boot-bar-fill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--amber);
+  width: 0%;
+  transition: width 0.4s var(--ease);
+}
+.boot-percent {
+  font-size: 11px;
+  color: var(--slate);
+  margin-top: 10px;
+  letter-spacing: 0.06em;
+}
+.boot-percent span { color: var(--amber); }
+
+@media (prefers-reduced-motion: reduce) {
+  #boot-overlay { display: none !important; }
+}
+
 </style>
 </head>
 <body>
+<!-- ============ BOOT OVERLAY ============ -->
+<div id="boot-overlay" aria-hidden="true">
+  <div class="boot-dot-grid"></div>
+  <div class="boot-inner">
+    <div class="boot-mark" id="boot-mark">AB<span class="boot-dot">.</span></div>
+    <div class="boot-lines" id="boot-lines"></div>
+    <div class="boot-bar-track">
+      <div class="boot-bar-fill" id="boot-bar"></div>
+    </div>
+    <div class="boot-percent" id="boot-pct"><span>0</span>%</div>
+  </div>
+</div>
 
 <nav class="nav" id="nav">
   <div class="container nav__inner">
@@ -1278,6 +1387,55 @@ If something here caught your attention, I'd love to hear from you.<span class="
   } else {
     counters.forEach(animateCount);
   }
+
+// ============ BOOT ANIMATION ============
+(function () {
+  const STEPS = [
+    { text: 'Initialising...', delay: 0 },
+    { text: 'Spinning...',         delay: 380 },
+    { text: 'Mounting....',       delay: 700 },
+    { text: 'Connecting..', delay: 1050 },
+    { text: 'Loading....',  delay: 1380 },
+    { text: 'All systems nominal',         delay: 1680, ok: true },
+  ];
+  const PERCENTS = [0, 18, 35, 55, 72, 88, 100];
+  const overlay  = document.getElementById('boot-overlay');
+  const mark     = document.getElementById('boot-mark');
+  const linesEl  = document.getElementById('boot-lines');
+  const bar      = document.getElementById('boot-bar');
+  const pct      = document.getElementById('boot-pct');
+
+  function setBar(v) {
+    bar.style.width = v + '%';
+    pct.innerHTML = '<span>' + v + '</span>%';
+  }
+
+  setTimeout(() => { mark.classList.add('boot-visible'); setBar(0); }, 200);
+
+  STEPS.forEach((step, i) => {
+    setTimeout(() => {
+      const line = document.createElement('div');
+      line.className = 'boot-line' + (step.ok ? ' boot-ok' : '');
+      line.innerHTML =
+        '<span class="boot-prefix">' + (step.ok ? '✓' : '›') + '</span>' +
+        '<span>' + step.text + (step.ok ? '' : '...') + '</span>';
+      linesEl.appendChild(line);
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => line.classList.add('boot-show'))
+      );
+      setBar(PERCENTS[i + 1]);
+    }, step.delay + 600);
+  });
+
+  const total = STEPS[STEPS.length - 1].delay + 1120;
+  setTimeout(() => {
+    overlay.classList.add('boot-done');
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 650);
+  }, total);
+})();
+
 })();
 </script>
 
