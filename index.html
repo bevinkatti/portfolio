@@ -953,30 +953,6 @@
       </div>
     </article>
 
-    <!-- LOOP WATCHDOG -->
-    <article class="project-card reveal">
-      <div>
-        <div class="project-card__head">
-          <span class="status status--oss"><span class="status__dot"></span>Open Source</span>
-        </div>
-        <h3 class="project-card__title">Loop Watchdog</h3>
-        <p class="project-card__hook">A kill switch for AI agents that won't stop retrying.</p>
-        <p class="project-card__desc">A local-first FastAPI proxy sitting in front of OpenAI-compatible coding agents, scoring traffic across five signals — retries, file churn, error signatures, edit-oscillation, request growth — and blocking runaway loops before tokens burn. A Cloudflare Worker control plane pushes HMAC-signed alerts to Slack and email.</p>
-        <div class="tech-row">
-          <span class="tech-chip">Python</span><span class="tech-chip">FastAPI</span><span class="tech-chip">TypeScript</span><span class="tech-chip">Cloudflare Workers</span><span class="tech-chip">D1</span><span class="tech-chip">pytest</span>
-        </div>
-        <div class="project-card__links">
-          <a href="https://github.com/bevinkatti/loop-watchdog" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
-        </div>
-      </div>
-
-      <div class="stat-panel">
-        <div class="stat"><div class="stat__value mono"><span class="count" data-count data-target="5" data-decimals="0">0</span></div><div class="stat__label">Detection Signals</div></div>
-        <div class="stat"><div class="stat__value mono"><span class="count" data-count data-target="9" data-decimals="0">0</span><span class="unit">+</span></div><div class="stat__label">REST Endpoints</div></div>
-        <div class="stat__note">Blocks on <strong style="color:var(--bone)">HTTP 409</strong> before the next retry fires.</div>
-      </div>
-    </article>
-
     <!-- PDFZERO -->
     <article class="project-card reveal">
       <div>
@@ -1003,49 +979,27 @@
       </div>
     </article>
 
-    <!-- FAKE JOB DETECTOR -->
+    <!-- LOOP WATCHDOG -->
     <article class="project-card reveal">
       <div>
         <div class="project-card__head">
-          <span class="status status--complete"><span class="status__dot"></span>Complete</span>
+          <span class="status status--oss"><span class="status__dot"></span>Open Source</span>
         </div>
-        <h3 class="project-card__title">Fake Job Postings Detector</h3>
-        <p class="project-card__hook">Flags a scam listing before you waste an application on it.</p>
-        <p class="project-card__desc">TF-IDF feature extraction and ML classification identify suspicious postings with explainable, confidence-scored risk insights — wrapped in a Streamlit interface built for fast, real-time checks.</p>
+        <h3 class="project-card__title">Loop Watchdog</h3>
+        <p class="project-card__hook">A kill switch for AI agents that won't stop retrying.</p>
+        <p class="project-card__desc">A local-first FastAPI proxy sitting in front of OpenAI-compatible coding agents, scoring traffic across five signals — retries, file churn, error signatures, edit-oscillation, request growth — and blocking runaway loops before tokens burn. A Cloudflare Worker control plane pushes HMAC-signed alerts to Slack and email.</p>
         <div class="tech-row">
-          <span class="tech-chip">Scikit-learn</span><span class="tech-chip">NLP</span><span class="tech-chip">Streamlit</span>
+          <span class="tech-chip">Python</span><span class="tech-chip">FastAPI</span><span class="tech-chip">TypeScript</span><span class="tech-chip">Cloudflare Workers</span><span class="tech-chip">D1</span><span class="tech-chip">pytest</span>
         </div>
         <div class="project-card__links">
-          <a href="https://github.com/bevinkatti/fake-job-detector" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
+          <a href="https://github.com/bevinkatti/loop-watchdog" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
         </div>
       </div>
 
       <div class="stat-panel">
-        <div class="stat"><div class="stat__value mono"><span class="unit">~</span><span class="count" data-count data-target="90" data-decimals="0">0</span><span class="unit">%+</span></div><div class="stat__label">Detection Accuracy</div></div>
-        <div class="stat"><div class="stat__value mono"><span class="count" data-count data-target="32" data-decimals="0">0</span><span class="unit">% ↓</span></div><div class="stat__label">False Positives</div></div>
-      </div>
-    </article>
-
-    <!-- STYLESYNC ELITE -->
-    <article class="project-card reveal">
-      <div>
-        <div class="project-card__head">
-          <span class="status status--complete"><span class="status__dot"></span>Complete</span>
-        </div>
-        <h3 class="project-card__title">StyleSync Elite</h3>
-        <p class="project-card__hook">Fashion generation tuned to run on a GPU you can actually afford.</p>
-        <p class="project-card__desc">Stable Diffusion XL Turbo optimized for low-latency inference on consumer-grade hardware, with a FastAPI backend and a prompt-controlled generation pipeline for real-time fashion outputs.</p>
-        <div class="tech-row">
-          <span class="tech-chip">Stable Diffusion XL</span><span class="tech-chip">PyTorch</span><span class="tech-chip">FastAPI</span>
-        </div>
-        <div class="project-card__links">
-          <a href="https://github.com/bevinkatti/stylesync" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
-        </div>
-      </div>
-
-      <div class="stat-panel">
-        <div class="stat"><div class="stat__value mono">5–7s</div><div class="stat__label">Inference Time</div></div>
-        <div class="stat"><div class="stat__value mono"><span class="count" data-count data-target="8" data-decimals="0">0</span><span class="unit">GB</span></div><div class="stat__label">VRAM Required</div></div>
+        <div class="stat"><div class="stat__value mono"><span class="count" data-count data-target="5" data-decimals="0">0</span></div><div class="stat__label">Detection Signals</div></div>
+        <div class="stat"><div class="stat__value mono"><span class="count" data-count data-target="9" data-decimals="0">0</span><span class="unit">+</span></div><div class="stat__label">REST Endpoints</div></div>
+        <div class="stat__note">Blocks on <strong style="color:var(--bone)">HTTP 409</strong> before the next retry fires.</div>
       </div>
     </article>
 
@@ -1053,7 +1007,7 @@
     <article class="project-card reveal">
       <div>
         <div class="project-card__head">
-          <span class="status status--dev"><span class="status__dot"></span>In Development</span>
+          <span class="status status--oss"><span class="status__dot"></span>Open Source</span>
         </div>
         <h3 class="project-card__title">RAG Evaluation CLI</h3>
         <p class="project-card__hook">Benchmark any RAG system without hitting an external API.</p>
@@ -1080,6 +1034,52 @@
           </div>
           <div class="stat__label">Evaluation Metrics</div>
         </div>
+      </div>
+    </article>
+
+    <!-- STYLESYNC ELITE -->
+    <article class="project-card reveal">
+      <div>
+        <div class="project-card__head">
+          <span class="status status--complete"><span class="status__dot"></span>Complete</span>
+        </div>
+        <h3 class="project-card__title">StyleSync Elite</h3>
+        <p class="project-card__hook">Fashion generation tuned to run on a GPU you can actually afford.</p>
+        <p class="project-card__desc">Stable Diffusion XL Turbo optimized for low-latency inference on consumer-grade hardware, with a FastAPI backend and a prompt-controlled generation pipeline for real-time fashion outputs.</p>
+        <div class="tech-row">
+          <span class="tech-chip">Stable Diffusion XL</span><span class="tech-chip">PyTorch</span><span class="tech-chip">FastAPI</span>
+        </div>
+        <div class="project-card__links">
+          <a href="https://github.com/bevinkatti/stylesync" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="stat-panel">
+        <div class="stat"><div class="stat__value mono">5–7s</div><div class="stat__label">Inference Time</div></div>
+        <div class="stat"><div class="stat__value mono"><span class="count" data-count data-target="8" data-decimals="0">0</span><span class="unit">GB</span></div><div class="stat__label">VRAM Required</div></div>
+      </div>
+    </article>
+
+    <!-- FAKE JOB DETECTOR -->
+    <article class="project-card reveal">
+      <div>
+        <div class="project-card__head">
+          <span class="status status--complete"><span class="status__dot"></span>Complete</span>
+        </div>
+        <h3 class="project-card__title">Fake Job Postings Detector</h3>
+        <p class="project-card__hook">Flags a scam listing before you waste an application on it.</p>
+        <p class="project-card__desc">TF-IDF feature extraction and ML classification identify suspicious postings with explainable, confidence-scored risk insights — wrapped in a Streamlit interface built for fast, real-time checks.</p>
+        <div class="tech-row">
+          <span class="tech-chip">Scikit-learn</span><span class="tech-chip">NLP</span><span class="tech-chip">Streamlit</span>
+        </div>
+        <div class="project-card__links">
+          <a href="https://github.com/bevinkatti/fake-job-detector" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="stat-panel">
+        <div class="stat"><div class="stat__value mono"><span class="unit">~</span><span class="count" data-count data-target="90" data-decimals="0">0</span><span class="unit">%+</span></div><div class="stat__label">Detection Accuracy</div></div>
+        <div class="stat"><div class="stat__value mono"><span class="count" data-count data-target="32" data-decimals="0">0</span><span class="unit">% ↓</span></div><div class="stat__label">False Positives</div></div>
       </div>
     </article>
 
