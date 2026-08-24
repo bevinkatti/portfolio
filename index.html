@@ -1166,7 +1166,7 @@
     <div class="projects-toggle-wrap">
       <button class="projects-toggle" id="projects-toggle" type="button"
               aria-expanded="false" aria-controls="projects-more">
-        <span class="projects-toggle__label">+ Few More</span>
+        <span class="projects-toggle__label">+ View More</span>
         <span class="projects-toggle__arrow">↓</span>
       </button>
     </div>
@@ -1502,28 +1502,43 @@ if (projectsMore && projectsToggle){
       projectsMore.classList.add('is-open');
       projectsToggle.classList.add('is-open');
       projectsToggle.setAttribute('aria-expanded', 'true');
-      projectsLabel.textContent = 'Show fewer projects';
+      projectsLabel.textContent = 'View Less';
       return;
     }
 
-    // CLOSE
-    var oldScrollHeight = document.documentElement.scrollHeight;
-    var oldScrollY = window.scrollY;
+    // CLOSE — iOS/Safari stable collapse
+    var buttonTopBefore = projectsToggle.getBoundingClientRect().top;
 
+    // Start from the wrapper's current natural height.
+    // This makes the transition predictable.
+    projectsMore.style.maxHeight = projectsMore.scrollHeight + 'px';
+
+    // Force Safari to register the numeric height.
+    void projectsMore.offsetHeight;
+
+    // Start collapse.
     projectsMore.classList.remove('is-open');
+
     projectsToggle.classList.remove('is-open');
     projectsToggle.setAttribute('aria-expanded', 'false');
-    projectsLabel.textContent = '+ 4 more projects';
+    projectsLabel.textContent = 'View More';
 
-    // Preserve the viewport while the page height shrinks.
-    requestAnimationFrame(function(){
-      var newScrollHeight = document.documentElement.scrollHeight;
-      var heightDelta = oldScrollHeight - newScrollHeight;
+    // After the collapse finishes, measure Safari's drift.
+    setTimeout(function(){
+      var buttonTopAfter = projectsToggle.getBoundingClientRect().top;
+      var drift = buttonTopAfter - buttonTopBefore;
 
-      if (heightDelta > 0){
-        window.scrollTo(0, Math.max(0, oldScrollY - heightDelta));
+      if (Math.abs(drift) > 1){
+        window.scrollBy({
+          top: drift,
+          left: 0,
+          behavior: 'instant'
+        });
       }
-    });
+
+      // Return control to CSS.
+      projectsMore.style.maxHeight = '';
+    }, 850);
   });
 }
 // ============ BOOT ANIMATION ============
