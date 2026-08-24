@@ -507,6 +507,11 @@
   opacity:1;
 }
 
+/* iOS-safe instant collapse state */
+.projects-more.is-collapsing{
+  transition:none !important;
+}
+
 .projects-toggle-wrap{
   display:flex;
   justify-content:center;
@@ -1492,55 +1497,108 @@ var projectsMore = document.getElementById('projects-more');
 var projectsToggle = document.getElementById('projects-toggle');
 
 if (projectsMore && projectsToggle){
-  var projectsLabel = projectsToggle.querySelector('.projects-toggle__label');
+  var projectsLabel =
+    projectsToggle.querySelector('.projects-toggle__label');
+
+  var isMobile =
+    window.matchMedia('(max-width: 700px)');
 
   projectsToggle.addEventListener('click', function(){
+
     var isOpen = projectsMore.classList.contains('is-open');
 
+    // =========================
+    // OPEN
+    // =========================
     if (!isOpen){
-      // OPEN
       projectsMore.classList.add('is-open');
       projectsToggle.classList.add('is-open');
       projectsToggle.setAttribute('aria-expanded', 'true');
-      projectsLabel.textContent = 'View Less';
+
+      if (projectsLabel){
+        projectsLabel.textContent = 'View Less';
+      }
+
       return;
     }
 
-    // CLOSE — iOS/Safari stable collapse
-    var buttonTopBefore = projectsToggle.getBoundingClientRect().top;
+    // =========================
+    // CLOSE — DESKTOP
+    // =========================
+    if (!isMobile.matches){
+      projectsMore.classList.remove('is-open');
+      projectsToggle.classList.remove('is-open');
+      projectsToggle.setAttribute('aria-expanded', 'false');
 
-    // Start from the wrapper's current natural height.
-    // This makes the transition predictable.
-    projectsMore.style.maxHeight = projectsMore.scrollHeight + 'px';
+      if (projectsLabel){
+        projectsLabel.textContent = 'View More';
+      }
 
-    // Force Safari to register the numeric height.
+      return;
+    }
+
+    // =========================
+    // CLOSE — MOBILE / iOS
+    // =========================
+
+    // Remember exactly where the toggle is on screen.
+    var beforeTop =
+      projectsToggle.getBoundingClientRect().top;
+
+    // Remember current scroll position.
+    var beforeScrollY = window.scrollY;
+
+    // Disable smooth scrolling temporarily.
+    var html = document.documentElement;
+    var previousScrollBehavior =
+      html.style.scrollBehavior;
+
+    html.style.scrollBehavior = 'auto';
+
+    // Disable the max-height animation.
+    projectsMore.classList.add('is-collapsing');
+
+    // Collapse immediately.
+    projectsMore.classList.remove('is-open');
+
+    // Force Safari to apply the new layout NOW.
     void projectsMore.offsetHeight;
 
-    // Start collapse.
-    projectsMore.classList.remove('is-open');
+    // Measure where the button moved after the collapse.
+    var afterTop =
+      projectsToggle.getBoundingClientRect().top;
+
+    // If the button moved upward because the projects
+    // disappeared, move the viewport by exactly the
+    // same amount in the opposite direction.
+    var correction =
+      afterTop - beforeTop;
+
+    if (Math.abs(correction) > 0.5){
+      window.scrollTo(
+        0,
+        beforeScrollY + correction
+      );
+    }
 
     projectsToggle.classList.remove('is-open');
     projectsToggle.setAttribute('aria-expanded', 'false');
-    projectsLabel.textContent = 'View More';
 
-    // After the collapse finishes, measure Safari's drift.
-    setTimeout(function(){
-      var buttonTopAfter = projectsToggle.getBoundingClientRect().top;
-      var drift = buttonTopAfter - buttonTopBefore;
+    if (projectsLabel){
+      projectsLabel.textContent = 'View More';
+    }
 
-      if (Math.abs(drift) > 1){
-        window.scrollBy({
-          top: drift,
-          left: 0,
-          behavior: 'instant'
-        });
-      }
+    // Restore normal behavior after Safari has
+    // finished processing the synchronous layout change.
+    requestAnimationFrame(function(){
+      projectsMore.classList.remove('is-collapsing');
+      html.style.scrollBehavior =
+        previousScrollBehavior;
+    });
 
-      // Return control to CSS.
-      projectsMore.style.maxHeight = '';
-    }, 850);
   });
 }
+
 // ============ BOOT ANIMATION ============
 (function () {
   const STEPS = [
