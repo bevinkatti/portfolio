@@ -490,6 +490,81 @@
   .project-card__links a .arrow{ transition:transform .25s var(--ease); }
   .project-card__links a:hover .arrow{ transform:translateX(3px); }
 
+/* ============ MORE PROJECTS TOGGLE ============ */
+
+.projects-more{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  overflow-anchor:none;
+  transition:
+    max-height .8s var(--ease),
+    opacity .45s var(--ease);
+}
+
+.projects-more.is-open{
+  max-height:5000px;
+  opacity:1;
+}
+
+.projects-toggle-wrap{
+  display:flex;
+  justify-content:center;
+  padding:34px 0 10px;
+}
+
+.projects-toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:.05em;
+  color:var(--slate);
+  padding:12px 18px;
+  border:1px solid var(--hairline-strong);
+  border-radius:var(--radius-pill);
+  transition:
+    color .25s var(--ease),
+    border-color .25s var(--ease),
+    background .25s var(--ease);
+}
+
+.projects-toggle:hover{
+  color:var(--bone);
+  border-color:var(--bone);
+  background:var(--graphite-2);
+}
+
+.projects-toggle__arrow{
+  transition:transform .35s var(--ease);
+}
+
+.projects-toggle.is-open .projects-toggle__arrow{
+  transform:rotate(180deg);
+}
+
+@media (max-width:700px){
+  .projects-toggle-wrap{
+    padding-top:28px;
+  }
+
+  .projects-toggle{
+    min-height:44px;
+    padding:12px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .projects-more{
+    transition:none;
+  }
+
+  .projects-toggle__arrow{
+    transition:none;
+  }
+}
+
   .stat-panel{
     background:var(--graphite-2);
     border:1px solid var(--hairline);
@@ -979,6 +1054,9 @@
       </div>
     </article>
 
+    <!-- Project Wrapper -->
+    <div class="projects-more" id="projects-more">
+
     <!-- LOOP WATCHDOG -->
     <article class="project-card reveal">
       <div>
@@ -1082,6 +1160,16 @@
         <div class="stat"><div class="stat__value mono"><span class="count" data-count data-target="32" data-decimals="0">0</span><span class="unit">% ↓</span></div><div class="stat__label">False Positives</div></div>
       </div>
     </article>
+
+    </div>
+
+    <div class="projects-toggle-wrap">
+      <button class="projects-toggle" id="projects-toggle" type="button"
+              aria-expanded="false" aria-controls="projects-more">
+        <span class="projects-toggle__label">+ Few More</span>
+        <span class="projects-toggle__arrow">↓</span>
+      </button>
+    </div>
 
   </div>
 </section>
@@ -1399,6 +1487,24 @@ If something here caught your attention, I'd love to hear from you.<span class="
     counters.forEach(animateCount);
   }
 
+// --- More projects toggle ---
+var projectsMore = document.getElementById('projects-more');
+var projectsToggle = document.getElementById('projects-toggle');
+
+if (projectsMore && projectsToggle){
+  var projectsLabel = projectsToggle.querySelector('.projects-toggle__label');
+
+  projectsToggle.addEventListener('click', function(){
+    var isOpen = projectsMore.classList.toggle('is-open');
+
+    projectsToggle.classList.toggle('is-open', isOpen);
+    projectsToggle.setAttribute('aria-expanded', String(isOpen));
+
+    projectsLabel.textContent = isOpen
+      ? 'Show fewer projects'
+      : '+ 4 more projects';
+  });
+}
 // ============ BOOT ANIMATION ============
 (function () {
   const STEPS = [
