@@ -1600,9 +1600,9 @@
         BELAGAVI
       </div>
 
-      <h1 class="hero__headline">
-        Building systems that are useful & measurable.
-      </h1>
+      <h2 class="hero__headline">
+        Building systems that are useful &amp; measurable.
+      </h2>
 
       <p class="hero__sub">
         Retrieval pipelines, multi-agent orchestration, and the evaluation
@@ -1654,38 +1654,40 @@
           <div class="about__body">
             <p>
               I'm a final-year CS (AI/ML) student who somehow ended up running
-              a handful of real, deployed systems off of free-tier
+              a handful of real, deployed systems off free-tier
               infrastructure and pure stubbornness. It started as "something
-              concrete to Ace the Resume" and turned into an actual habit —
-              More likely to spend a weekend building an
+              concrete for the resume" and turned into an actual habit —
+              I'm more likely to spend a weekend building an
               <em>open-source project</em> than studying for an exam.
             </p>
             <p>
-              Most of what I build starts from half cooked ideas of new
-              project ending with taking my weekdays an ends evolving into
-              solid projects. hence I also lean hard on measuring things —
-              RAGAS scores, latency numbers, false-positive rates and quality
-              in them.
+              Most of what I build starts as a half-baked idea that eats my
+              weekdays and evolves into a solid project. I lean hard on
+              measuring things — RAGAS scores, latency numbers,
+              false-positive rates — because quality should be something you
+              can show, not just claim.
             </p>
             <p>
-              Outside of that: way too many side projects ideas lying in
-              notes.
+              Outside of that: way too many side-project ideas lying around in
+              my notes.
             </p>
           </div>
 
           <div class="about__facts">
             <div class="about__facts-label">Off the clock</div>
             <ul>
-              <li>Based in Belagavi, Karnataka</li>
+              <li>Based in Belagavi, Karnataka, India</li>
               <li>
-                finding ways to make something work within my constraints that
-                breaks some budget constraints
+                Finding ways to make things work within tight constraints,
+                especially budget ones
               </li>
               <li>Strong, unsolicited opinions about font embedding</li>
               <li>Will not ship a number I haven't measured myself</li>
               <li>
-                also, Prefers songs in the background while building/coding
-                etc
+                Prefers music in the background while building and coding
+              </li>
+              <li>
+                Stuck choosing which to start next: <strong>Elden Ring or The Last of Us.</strong>
               </li>
             </ul>
           </div>
@@ -1830,6 +1832,66 @@
           </div>
         </article>
 
+        <!-- DEVPULSE -->
+        <article class="project-card reveal">
+          <div>
+            <div class="project-card__head">
+              <span class="status status--complete"><span class="status__dot"></span>Core Complete</span>
+            </div>
+            <h3 class="project-card__title">DevPulse</h3>
+            <p class="project-card__hook">
+              Webhook delivery that survives crashes, 5xx errors, and duplicate sends.
+            </p>
+            <p class="project-card__desc">
+              A self-hosted reliable webhook delivery system. Events are committed to
+              PostgreSQL with a transactional outbox, published through Redpanda,
+              and delivered by a worker as HMAC-signed requests, with durable retries,
+              idempotent ingestion, tenant isolation, and SSRF-safe destination
+              validation. Verified locally with a deterministic receiver that
+              fails once, then recovers.
+            </p>
+            <div class="tech-row">
+              <span class="tech-chip">NestJS</span><span class="tech-chip">PostgreSQL</span><span
+                class="tech-chip">Redpanda</span><span class="tech-chip">Next.js</span><span
+                class="tech-chip">GraphQL</span><span class="tech-chip">TypeScript</span><span
+                class="tech-chip">Docker</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/bevinkatti/devpulse" target="_blank" rel="noopener">GitHub <span
+                  class="arrow">→</span></a>
+              <a href="https://github.com/bevinkatti/devpulse/blob/main/docs/ARCHITECTURE.md" target="_blank"
+                rel="noopener">Architecture <span class="arrow">→</span></a>
+            </div>
+          </div>
+
+          <div class="stat-panel">
+            <div class="stat">
+              <div class="stat__value mono">
+                <span class="count" data-count data-target="22" data-decimals="0">0</span>
+              </div>
+              <div class="stat__label">Tests Passing</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value mono">503→204</div>
+              <div class="stat__label">Retry Path Verified E2E</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value mono">HMAC</div>
+              <div class="stat__label">SHA-256 Signed Deliveries</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value mono">
+                <span class="count" data-count data-target="1" data-decimals="0">0</span><span class="unit">txn</span>
+              </div>
+              <div class="stat__label">Event + Outbox Write</div>
+            </div>
+            <div class="stat__note">
+              <strong style="color: var(--bone)">At-least-once</strong> delivery.
+              Receivers dedupe via Idempotency-Key.
+            </div>
+          </div>
+        </article>
+
         <!-- Project Wrapper -->
         <div class="projects-more" id="projects-more">
           <!-- LOOP WATCHDOG -->
@@ -1910,7 +1972,7 @@
             <div class="stat-panel">
               <div class="stat">
                 <div class="stat__value mono">
-                  <span class="count" data-count data-target="2.5" data-decimals="1"></span><span class="unit">k+</span>
+                  <span class="count" data-count data-target="2.5" data-decimals="1">0</span><span class="unit">k+</span>
                 </div>
                 <div class="stat__label">PyPI Downloads</div>
               </div>
@@ -2058,7 +2120,7 @@
               <strong>2.5k+ downloads</strong>, built around deterministic
               evaluation and reproducible benchmarking. Alongside it, I've
               published multiple Python packages reaching
-              <strong>7.2k+ cumulative PyPI downloads</strong>, focused on
+              <strong>7.5k+ cumulative PyPI downloads</strong>, focused on
               developer tooling and practical AI infrastructure.
             </p>
 
@@ -2071,7 +2133,7 @@
 
           <div class="stat-panel">
             <div class="stat">
-              <div class="stat__value mono">7.2K+</div>
+              <div class="stat__value mono">7.5K+</div>
               <div class="stat__label">Total PyPI Downloads</div>
             </div>
             <div class="stat">
@@ -2103,64 +2165,56 @@
         </div>
         <div class="stack__layers reveal">
           <div class="stack__layer">
-            <div class="stack__layer-label">
-              Orchestration, Agents &amp; Reasoning
-            </div>
+            <div class="stack__layer-label">Agents &amp; Retrieval</div>
             <div class="stack__layer-items">
               <span class="stack__item">LangGraph</span>
               <span class="stack__item">LangChain</span>
-              <span class="stack__item">Agentic AI</span>
-              <span class="stack__item">Multi-agent workflows</span>
-            </div>
-          </div>
-          <div class="stack__layer">
-            <div class="stack__layer-label">Retrieval &amp; Evaluation</div>
-            <div class="stack__layer-items">
+              <span class="stack__item">Multi-agent systems</span>
               <span class="stack__item">FAISS</span>
               <span class="stack__item">RAGAS</span>
               <span class="stack__item">Sentence-Transformers</span>
             </div>
           </div>
           <div class="stack__layer">
-            <div class="stack__layer-label">Serving &amp; APIs</div>
+            <div class="stack__layer-label">Backend &amp; Infra</div>
             <div class="stack__layer-items">
               <span class="stack__item">FastAPI</span>
+              <span class="stack__item">NestJS</span>
               <span class="stack__item">REST APIs</span>
-              <span class="stack__item">Async / SSE streaming</span>
+              <span class="stack__item">GraphQL</span>
+              <span class="stack__item">SSE streaming</span>
+              <span class="stack__item">Docker</span>
+            </div>
+          </div>
+          <div class="stack__layer">
+            <div class="stack__layer-label">Data &amp; Messaging</div>
+            <div class="stack__layer-items">
+              <span class="stack__item">PostgreSQL</span>
+              <span class="stack__item">Kafka / Redpanda</span>
             </div>
           </div>
           <div class="stack__layer">
             <div class="stack__layer-label">Frontend</div>
             <div class="stack__layer-items">
               <span class="stack__item">React</span>
+              <span class="stack__item">Next.js</span>
               <span class="stack__item">Vite</span>
-              <span class="stack__item">HTML/CSS</span>
               <span class="stack__item">PDF.js</span>
-            </div>
-          </div>
-          <div class="stack__layer">
-            <div class="stack__layer-label">Ops &amp; Observability</div>
-            <div class="stack__layer-items">
-              <span class="stack__item">Docker</span>
-              <span class="stack__item">Prometheus</span>
-              <span class="stack__item">Grafana</span>
-              <span class="stack__item">Logging</span>
-              <span class="stack__item">Metrics</span>
             </div>
           </div>
           <div class="stack__layer">
             <div class="stack__layer-label">Core Languages</div>
             <div class="stack__layer-items">
               <span class="stack__item">Python</span>
-              <span class="stack__item">Java</span>
+              <span class="stack__item">TypeScript</span>
               <span class="stack__item">JavaScript</span>
+              <span class="stack__item">Java</span>
               <span class="stack__item">C / C++</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <section class="timeline" id="timeline">
       <div class="container">
         <div class="section-head reveal">
