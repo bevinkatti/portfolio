@@ -4,14 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Abhishek Bevinkatti — AI/ML Engineer</title>
+  <title>Abhishek Bevinkatti - AI/ML Engineer</title>
   <meta name="description"
-    content="Final-year AI/ML undergrad building retrieval systems, multi-agent orchestration, and the evaluation harnesses that keep them honest." />
+    content="Final-year CSE(AI/ML) undergrad building retrieval systems, multi-agent orchestration, and the evaluation harnesses that keep them honest." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Kaushan+Script&display=swap" />
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -174,11 +173,11 @@
       height: 44px;
       align-items: center;
       justify-content: center;
-      border: 1px solid var(--rule2);
+      border: 1px solid rgba(240, 237, 230, .18);
       border-radius: 999px;
-      background: rgba(4, 7, 15, .48);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px)
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      box-shadow: inset 0 1px 0 rgba(240, 237, 230, .09)
     }
 
     .nav-mobile-toggle span,
@@ -215,9 +214,9 @@
     .nav-mobile {
       display: none;
       flex-direction: column;
-      background: rgba(2, 4, 10, .94);
-      -webkit-backdrop-filter: blur(22px);
-      backdrop-filter: blur(22px);
+      background: rgba(4, 7, 15, .82);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
       padding: 12px clamp(20px, 5vw, 60px) calc(28px + env(safe-area-inset-bottom, 0px));
       border-bottom: 1px solid var(--rule)
     }
@@ -281,20 +280,19 @@
     }
 
     .hero-name {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: clamp(2.25rem, 4.5vw, 3.9rem);
+      font-family: 'Kaushan Script', cursive;
+      font-size: clamp(2.7rem, 5.6vw, 4.7rem);
       font-weight: 400;
-      letter-spacing: .005em;
-      line-height: .98;
+      letter-spacing: 0;
+      line-height: 1.1;
       color: var(--bone);
       margin-bottom: 14px;
       paint-order: stroke fill;
-      -webkit-text-stroke: 3px rgba(4, 7, 15, .92);
-      text-shadow: 0 0 1px rgba(240, 237, 230, .55), 0 4px 20px rgba(0, 0, 0, .85);
+      -webkit-text-stroke: 2.5px rgba(2, 4, 10, .88);
     }
 
     .hero-name em {
-      font-style: italic;
+      font-style: normal;
       color: #ebd8b7;
     }
 
@@ -305,13 +303,14 @@
       font-weight: 400;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: rgba(240, 237, 230, .78);
-      border: 1px solid rgba(240, 237, 230, .22);
+      color: rgba(240, 237, 230, .82);
+      border: 1px solid rgba(240, 237, 230, .18);
       border-radius: 4px;
       padding: 7px 14px;
-      background: rgba(4, 7, 15, .52);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
+      background: linear-gradient(135deg, rgba(240, 237, 230, .06) 0%, rgba(8, 12, 24, .24) 100%);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      box-shadow: inset 0 1px 0 rgba(240, 237, 230, .09);
       margin-bottom: 16px;
     }
 
@@ -324,39 +323,40 @@
       margin-bottom: 18px;
       color: var(--bone);
       paint-order: stroke fill;
-      -webkit-text-stroke: 3.5px rgba(4, 7, 15, .92);
-      text-shadow: 0 0 1px rgba(240, 237, 230, .55), 0 4px 20px rgba(0, 0, 0, .85);
+      -webkit-text-stroke: 1.5px rgba(2, 4, 10, .88);
     }
 
     .hero-sub {
       font-size: clamp(.9rem, 1.4vw, 1.05rem);
       font-weight: 300;
       line-height: 1.7;
-      color: rgba(240, 237, 230, .72);
+      color: rgba(240, 237, 230, .76);
       max-width: min(500px, 100%);
       margin-bottom: 22px;
-      border: 1px solid rgba(240, 237, 230, .16);
-      border-left: 2px solid rgba(240, 237, 230, .38);
+      border: 1px solid rgba(240, 237, 230, .15);
+      border-left: 2px solid rgba(240, 237, 230, .36);
       border-radius: 4px;
       padding: 14px 18px;
-      background: rgba(4, 7, 15, .46);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
+      background: linear-gradient(135deg, rgba(240, 237, 230, .055) 0%, rgba(8, 12, 24, .22) 100%);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      box-shadow: inset 0 1px 0 rgba(240, 237, 230, .08);
       paint-order: stroke fill;
-      -webkit-text-stroke: 1.5px rgba(4, 7, 15, .85);
+      -webkit-text-stroke: .8px rgba(2, 4, 10, .82);
     }
 
     .hero-cta-bar {
       display: flex;
       align-items: center;
       gap: 0;
-      border: 1px solid var(--rule2);
+      border: 1px solid rgba(240, 237, 230, .16);
       border-radius: 4px;
       max-width: min(500px, 100%);
       overflow: hidden;
-      background: rgba(4, 7, 15, .46);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
+      background: linear-gradient(135deg, rgba(240, 237, 230, .055) 0%, rgba(8, 12, 24, .22) 100%);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      box-shadow: inset 0 1px 0 rgba(240, 237, 230, .08);
     }
 
     .hero-cta-bar input {
@@ -365,7 +365,7 @@
       background: transparent;
       border: none;
       outline: none;
-      color: var(--muted);
+      color: rgba(240, 237, 230, .62);
       font: inherit;
       font-size: 13px;
       padding: 16px 20px;
@@ -398,10 +398,10 @@
     .ticker {
       position: relative;
       z-index: 2;
-      border-top: 1px solid var(--rule);
-      background: rgba(3, 5, 12, .74);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(240, 237, 230, .11);
+      background: linear-gradient(180deg, rgba(240, 237, 230, .035) 0%, rgba(4, 7, 15, .36) 100%);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
       overflow: hidden;
     }
 
@@ -410,9 +410,13 @@
         min-height: 560px
       }
 
+      .hero-content {
+        padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px))
+      }
+
       .hero-name {
-        font-size: clamp(2rem, 8.5vw, 2.6rem);
-        margin-bottom: 10px
+        font-size: clamp(2.4rem, 9.6vw, 3.15rem);
+        margin-bottom: 14px
       }
 
       .hero-eyebrow {
@@ -463,7 +467,7 @@
       font-size: 11px;
       font-weight: 400;
       letter-spacing: .08em;
-      color: var(--muted);
+      color: rgba(240, 237, 230, .54);
       padding: 14px 0;
       white-space: nowrap;
     }
@@ -752,20 +756,22 @@
     .stat-block {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1px;
+      gap: 0;
       width: 100%;
       min-width: 0;
       max-width: none;
-      background: var(--rule);
-      border: 1px solid var(--rule);
+      background: linear-gradient(135deg, rgba(240, 237, 230, .05) 0%, rgba(8, 12, 24, .26) 100%);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(240, 237, 230, .14);
+      box-shadow: inset 0 1px 0 rgba(240, 237, 230, .08);
       border-radius: 4px;
       overflow: hidden;
     }
 
     .stat-block>div {
-      background: rgba(4, 7, 15, .84);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
+      background: transparent;
+      box-shadow: 1px 1px 0 0 var(--rule);
       padding: 18px 20px;
     }
 
@@ -782,7 +788,6 @@
     .stat-unit {
       font-size: .62em;
       font-weight: 400;
-      color: var(--muted)
     }
 
     .stat-label {
@@ -790,13 +795,12 @@
       font-weight: 400;
       letter-spacing: .06em;
       text-transform: uppercase;
-      color: var(--muted)
     }
 
     .stat-block .stat-note {
       grid-column: 1/-1;
       font-size: 11px;
-      color: var(--muted);
+      color: rgba(240, 237, 230, .52);
       line-height: 1.5;
       padding: 12px 20px;
     }
@@ -832,15 +836,20 @@
     .oss-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--rule);
+      gap: 0;
+      background: linear-gradient(135deg, rgba(240, 237, 230, .05) 0%, rgba(8, 12, 24, .26) 100%);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(240, 237, 230, .14);
+      box-shadow: inset 0 1px 0 rgba(240, 237, 230, .08);
+      border-radius: 4px;
+      overflow: hidden;
       margin-top: 56px
     }
 
     .oss-card {
-      background: rgba(4, 7, 15, .78);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
+      background: transparent;
+      box-shadow: 1px 1px 0 0 var(--rule);
       padding: 40px 36px
     }
 
@@ -848,7 +857,7 @@
       font-size: 11px;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: rgba(240, 237, 230, .52);
       margin-bottom: 20px
     }
 
@@ -1027,12 +1036,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid var(--rule2);
+      border: 1px solid rgba(240, 237, 230, .16);
       border-radius: 999px;
-      color: rgba(240, 237, 230, .55);
-      background: rgba(4, 7, 15, .46);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
+      color: rgba(240, 237, 230, .62);
+      background: linear-gradient(135deg, rgba(240, 237, 230, .06) 0%, rgba(8, 12, 24, .24) 100%);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      box-shadow: inset 0 1px 0 rgba(240, 237, 230, .08);
       transition: color .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease);
     }
 
@@ -1269,8 +1279,8 @@
       <div class="hero-name">Abhishek <em>Bevinkatti</em></div>
       <div class="hero-eyebrow">Final-year B.E. CS (AI&nbsp;&amp;&nbsp;ML) · Jain College of Engineering, Belagavi</div>
       <h1 class="hero-headline">Building systems that are useful &amp; measurable.</h1>
-      <p class="hero-sub">Retrieval pipelines, multi-agent orchestration, and the evaluation harnesses that keep them
-        honest.</p>
+      <p class="hero-sub">Learning through hands-on projects in software engineering, backend systems, AI applications,
+        and developer tools, while contributing to open source.</p>
       <div class="hero-cta-bar">
         <input type="text" value="Open to AI/ML &amp; SWE internships" readonly aria-hidden="true" />
         <a href="#contact" class="hero-cta-btn">Say hello</a>
@@ -1910,7 +1920,7 @@
 
       float aspect = u_res.x / max(u_res.y, 1.0);
       float desktopMix = smoothstep(0.68, 1.15, aspect);
-      vec2 bhCenter = vec2(mix(0.0, 0.11, desktopMix), mix(0.24, 0.03, desktopMix));
+      vec2 bhCenter = vec2(mix(0.0, 0.11, desktopMix), mix(0.41, 0.03, desktopMix));
       float fovTan = mix(1.06, 0.88, desktopMix);
 
       vec2 m = u_mouse * 2.0 - 1.0;
