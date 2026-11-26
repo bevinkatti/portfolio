@@ -3,33 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhishek Bevinkatti — AI/ML Undergrad</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Abhishek Bevinkatti — AI/ML Engineer</title>
   <meta name="description"
     content="Final-year AI/ML undergrad building retrieval systems, multi-agent orchestration, and the evaluation harnesses that keep them honest." />
-
-  <script>
-    (function () {
-      try {
-        var saved = localStorage.getItem("theme");
-        var theme =
-          saved === "light" || saved === "dark"
-            ? saved
-            : window.matchMedia &&
-              window.matchMedia("(prefers-color-scheme: light)").matches
-              ? "light"
-              : "dark";
-        document.documentElement.setAttribute("data-theme", theme);
-      } catch (e) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    })();
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
 
   <!-- Vercel Web Analytics -->
@@ -43,125 +24,52 @@
   <script defer src="/_vercel/insights/script.js"></script>
 
   <style>
-    /* ============ TOKENS ============ */
     :root {
-      --graphite: #0d0e10;
-      --graphite-2: #17191d;
-      --bone: #f5f4ef;
-      --slate: #92969d;
-      --hairline: rgba(245, 244, 239, 0.1);
-      --hairline-strong: rgba(245, 244, 239, 0.2);
-      --signal: #ffb020;
-      --signal-soft: rgba(67, 97, 255, 0.14);
-      --amber: #ffb020;
-      --amber-soft: rgba(255, 176, 32, 0.14);
-      --on-accent: #f6f4ee;
-      --nav-bg: rgba(13, 14, 16, 0.72);
-      --dot-pattern: rgba(245, 244, 239, 0.05);
-      --signal-glow-a: rgba(67, 97, 255, 0.45);
-      --signal-glow-b: rgba(67, 97, 255, 0);
-      --amber-glow-a: rgba(255, 176, 32, 0.45);
-      --amber-glow-b: rgba(255, 176, 32, 0);
-      --status-a-text: #b7c2ff;
-      --status-a-border: rgba(67, 97, 255, 0.35);
-      --status-b-text: #ffd489;
-      --status-b-border: rgba(255, 176, 32, 0.35);
-      --status-c-dot: #7fe6a8;
-      --radius-s: 10px;
-      --radius-m: 18px;
-      --radius-l: 28px;
-      --radius-pill: 999px;
-      --ease: cubic-bezier(0.16, 0.84, 0.44, 1);
-      --font-display: "Bricolage Grotesque", system-ui, sans-serif;
-      --font-body: "IBM Plex Sans", system-ui, sans-serif;
-      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-    }
-
-    /* ============ LIGHT THEME — editorial/magazine ============ */
-    html[data-theme="light"] {
-      --graphite: #f5f0e4;
-      --graphite-2: #ece4d2;
-      --bone: #17130e;
-      --slate: #5c5647;
-      --hairline: rgba(23, 19, 14, 0.15);
-      --hairline-strong: rgba(23, 19, 14, 0.32);
-      --signal: #9a2b1e;
-      --signal-soft: rgba(154, 43, 30, 0.1);
-      --amber: #8c6a1a;
-      --amber-soft: rgba(140, 106, 26, 0.14);
-      --on-accent: #f8f4e9;
-      --nav-bg: rgba(245, 240, 228, 0.86);
-      --dot-pattern: rgba(0, 0, 0, 0);
-      --signal-glow-a: rgba(154, 43, 30, 0.4);
-      --signal-glow-b: rgba(154, 43, 30, 0);
-      --amber-glow-a: rgba(140, 106, 26, 0.4);
-      --amber-glow-b: rgba(140, 106, 26, 0);
-      --status-a-text: #7e2216;
-      --status-a-border: rgba(154, 43, 30, 0.4);
-      --status-b-text: #6b5115;
-      --status-b-border: rgba(140, 106, 26, 0.4);
-      --status-c-dot: #2e6b40;
-      --radius-m: 0px;
-      --radius-pill: 3px;
-      --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+      --bg: #02040a;
+      --surface: #0d0d0d;
+      --surface2: #111;
+      --bone: #f0ede6;
+      --muted: #5a5a5a;
+      --muted2: #333;
+      --rule: rgba(240, 237, 230, 0.08);
+      --rule2: rgba(240, 237, 230, 0.14);
+      --font: 'Inter', system-ui, sans-serif;
+      --ease: cubic-bezier(.16, .84, .44, 1);
     }
 
     *,
     *::before,
     *::after {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0
     }
 
     html {
       scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+      overflow-x: clip
     }
 
     body {
-      margin: 0;
-      background: var(--graphite);
+      background: var(--bg);
       color: var(--bone);
-      font-family: var(--font-body);
+      font-family: var(--font);
       -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
       overflow-x: hidden;
-      background-image: radial-gradient(circle at 1px 1px,
-          var(--dot-pattern) 1px,
-          transparent 0);
-      background-size: 28px 28px;
-      transition:
-        background-color 0.5s var(--ease),
-        color 0.4s var(--ease);
-    }
-
-    *,
-    *::before,
-    *::after {
-      transition-property: background-color, border-color, color;
-      transition-duration: 0.4s;
-      transition-timing-function: var(--ease);
-    }
-
-    img,
-    svg {
-      display: block;
-      max-width: 100%;
+      overflow-x: clip;
     }
 
     a {
       color: inherit;
-      text-decoration: none;
+      text-decoration: none
     }
 
     ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0;
+      list-style: none
     }
 
     button {
@@ -169,707 +77,1015 @@
       background: none;
       border: none;
       color: inherit;
-      cursor: pointer;
+      cursor: pointer
+    }
+
+    img,
+    svg,
+    canvas {
+      display: block
     }
 
     ::selection {
-      background: var(--signal);
-      color: var(--on-accent);
+      background: #fff;
+      color: #000
     }
 
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 5vw, 56px);
-    }
-
-    .mono {
-      font-family: var(--font-mono);
-    }
-
-    .eyebrow {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--slate);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 16px;
-      height: 1px;
-      background: var(--hairline-strong);
-      display: inline-block;
-    }
-
-    /* ============ STATUS PILLS ============ */
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 6px 12px 6px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--hairline-strong);
-      color: var(--slate);
-      white-space: nowrap;
-    }
-
-    .status__dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--slate);
-      flex-shrink: 0;
-    }
-
-    .status--production {
-      border-color: var(--status-a-border);
-      color: var(--status-a-text);
-    }
-
-    .status--production .status__dot {
-      background: var(--signal);
-      box-shadow: 0 0 0 0 var(--signal-glow-a);
-      animation: pulseBlue 2.2s infinite;
-    }
-
-    .status--dev {
-      border-color: var(--status-b-border);
-      color: var(--status-b-text);
-      border-style: dashed;
-    }
-
-    .status--dev .status__dot {
-      background: var(--amber);
-      box-shadow: 0 0 0 0 var(--amber-glow-a);
-      animation: pulseAmber 1.6s infinite;
-    }
-
-    .status--oss {
-      border-color: var(--hairline-strong);
-      color: var(--bone);
-    }
-
-    .status--oss .status__dot {
-      background: var(--bone);
-    }
-
-    .status--complete {
-      border-color: var(--hairline-strong);
-      color: var(--bone);
-    }
-
-    .status--complete .status__dot {
-      background: var(--status-c-dot);
-    }
-
-    @keyframes pulseBlue {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 var(--signal-glow-a);
-      }
-
-      50% {
-        box-shadow: 0 0 0 5px var(--signal-glow-b);
-      }
-    }
-
-    @keyframes pulseAmber {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 var(--amber-glow-a);
-      }
-
-      50% {
-        box-shadow: 0 0 0 5px var(--amber-glow-b);
-      }
-    }
-
-    /* ============ NAV ============ */
+    /* NAV */
     .nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 100;
-      background: var(--nav-bg);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.4s var(--ease);
+      z-index: 200;
+      padding: env(safe-area-inset-top, 0) 0 0;
     }
 
-    .nav.is-scrolled {
-      border-bottom-color: var(--hairline);
+    .nav::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      bottom: -26px;
+      z-index: -1;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(2, 4, 10, .88) 0%, rgba(2, 4, 10, .62) 55%, rgba(2, 4, 10, 0) 100%);
+      -webkit-backdrop-filter: blur(20px) saturate(150%);
+      backdrop-filter: blur(20px) saturate(150%);
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%);
+      opacity: .35;
+      transition: opacity .3s var(--ease);
     }
 
-    .nav__inner {
+    .nav.scrolled::before,
+    .nav.menu-open::before {
+      opacity: 1
+    }
+
+    .nav-inner {
+      position: relative;
+      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 18px;
-      padding-bottom: 18px;
+      padding: 22px clamp(20px, 5vw, 60px);
     }
 
-    .nav__mark {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 19px;
-      letter-spacing: -0.01em;
-    }
-
-    .nav__mark span {
-      color: var(--signal);
-    }
-
-    .nav__links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .nav__links a {
-      font-size: 14px;
-      color: var(--slate);
-      transition: color 0.25s var(--ease);
-      position: relative;
-    }
-
-    .nav__links a:hover {
+    .nav-mark {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -.01em;
       color: var(--bone);
     }
 
-    .nav__right {
+    .nav-links {
       display: flex;
-      align-items: center;
-      gap: 22px;
+      gap: 36px;
     }
 
-    .nav__cta {
+    .nav-links a {
       font-size: 13px;
-      font-family: var(--font-mono);
-      color: var(--bone);
-      border: 1px solid var(--hairline-strong);
-      padding: 9px 16px;
-      border-radius: var(--radius-pill);
-      transition:
-        background 0.25s var(--ease),
-        border-color 0.25s var(--ease);
+      font-weight: 400;
+      color: rgba(240, 237, 230, .58);
+      transition: color .2s var(--ease);
     }
 
-    .nav__cta:hover {
-      background: var(--signal);
-      border-color: var(--signal);
-      color: var(--on-accent);
+    .nav-links a:hover {
+      color: var(--bone)
     }
 
-    @media (max-width: 760px) {
-      .nav__cta {
-        display: none;
-      }
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid var(--rule2);
+      padding: 9px 20px;
+      border-radius: 999px;
+      transition: border-color .2s, background .2s;
     }
 
-    .nav__toggle {
+    .nav-cta:hover {
+      border-color: var(--bone);
+      background: rgba(240, 237, 230, .06)
+    }
+
+    .nav-mobile-toggle {
       display: none;
-      position: relative;
-      width: 34px;
-      height: 34px;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--rule2);
+      border-radius: 999px;
+      background: rgba(4, 7, 15, .48);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px)
     }
 
-    .nav__toggle span,
-    .nav__toggle::before,
-    .nav__toggle::after {
-      content: "";
+    .nav-mobile-toggle span,
+    .nav-mobile-toggle::before,
+    .nav-mobile-toggle::after {
+      content: '';
       position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 18px;
-      height: 1.5px;
+      width: 16px;
+      height: 1px;
       background: var(--bone);
-      transform: translate(-50%, -50%);
-      transition:
-        transform 0.3s var(--ease),
-        opacity 0.3s var(--ease);
+      transition: transform .3s var(--ease), opacity .3s;
     }
 
-    .nav__toggle::before {
-      transform: translate(-50%, calc(-50% - 6px));
+    .nav-mobile-toggle::before {
+      transform: translateY(-5px)
     }
 
-    .nav__toggle::after {
-      transform: translate(-50%, calc(-50% + 6px));
+    .nav-mobile-toggle::after {
+      transform: translateY(5px)
     }
 
-    .nav__toggle.is-open span {
-      opacity: 0;
+    .nav-mobile-toggle.open span {
+      opacity: 0
     }
 
-    .nav__toggle.is-open::before {
-      transform: translate(-50%, -50%) rotate(45deg);
+    .nav-mobile-toggle.open::before {
+      transform: rotate(45deg)
     }
 
-    .nav__toggle.is-open::after {
-      transform: translate(-50%, -50%) rotate(-45deg);
+    .nav-mobile-toggle.open::after {
+      transform: rotate(-45deg)
     }
 
-    .nav__mobile {
+    .nav-mobile {
       display: none;
       flex-direction: column;
-      gap: 2px;
-      padding: 8px clamp(20px, 5vw, 56px) 22px;
-      border-bottom: 1px solid var(--hairline);
+      background: rgba(2, 4, 10, .94);
+      -webkit-backdrop-filter: blur(22px);
+      backdrop-filter: blur(22px);
+      padding: 12px clamp(20px, 5vw, 60px) calc(28px + env(safe-area-inset-bottom, 0px));
+      border-bottom: 1px solid var(--rule)
     }
 
-    .nav__mobile a {
+    .nav-mobile a {
       padding: 14px 0;
-      font-size: 15px;
-      color: var(--bone);
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    .nav.is-mobile-open .nav__mobile {
+      min-height: 48px;
       display: flex;
+      align-items: center;
+      font-size: 17px;
+      border-bottom: 1px solid var(--rule)
     }
 
-    @media (max-width: 760px) {
-      .nav__links {
-        display: none;
+    .nav-mobile a:last-child {
+      border-bottom: none
+    }
+
+    @media(max-width:760px) {
+      .nav-inner {
+        padding: 16px clamp(18px, 5vw, 60px)
       }
 
-      .nav__toggle {
+      .nav-links,
+      .nav-cta {
+        display: none
+      }
+
+      .nav-mobile-toggle {
         display: flex;
+        position: relative
       }
     }
 
-    /* ============ HERO ============ */
+    /* HERO */
     .hero {
       position: relative;
-      padding: 168px 0 0;
+      z-index: 2;
+      width: 100%;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       overflow: hidden;
     }
 
-    .hero__inner {
+    #gl-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
       position: relative;
       z-index: 2;
-      padding-bottom: 96px;
+      padding: 0 clamp(20px, 5vw, 60px) clamp(28px, 4.2vh, 52px);
+      padding-bottom: calc(clamp(28px, 4.2vh, 52px) + env(safe-area-inset-bottom, 0px));
     }
 
-    .hero__badge {
-      margin-bottom: 28px;
+    .hero-name {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.25rem, 4.5vw, 3.9rem);
+      font-weight: 400;
+      letter-spacing: .005em;
+      line-height: .98;
+      color: var(--bone);
+      margin-bottom: 14px;
+      paint-order: stroke fill;
+      -webkit-text-stroke: 3px rgba(4, 7, 15, .92);
+      text-shadow: 0 0 1px rgba(240, 237, 230, .55), 0 4px 20px rgba(0, 0, 0, .85);
     }
 
-    .hero__eyebrow {
+    .hero-name em {
+      font-style: italic;
+      color: #ebd8b7;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      max-width: 100%;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(240, 237, 230, .78);
+      border: 1px solid rgba(240, 237, 230, .22);
+      border-radius: 4px;
+      padding: 7px 14px;
+      background: rgba(4, 7, 15, .52);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      margin-bottom: 16px;
+    }
+
+    .hero-headline {
+      font-size: clamp(1.9rem, 5.1vw, 3.85rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -.025em;
+      max-width: 14ch;
+      margin-bottom: 18px;
+      color: var(--bone);
+      paint-order: stroke fill;
+      -webkit-text-stroke: 3.5px rgba(4, 7, 15, .92);
+      text-shadow: 0 0 1px rgba(240, 237, 230, .55), 0 4px 20px rgba(0, 0, 0, .85);
+    }
+
+    .hero-sub {
+      font-size: clamp(.9rem, 1.4vw, 1.05rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(240, 237, 230, .72);
+      max-width: min(500px, 100%);
       margin-bottom: 22px;
+      border: 1px solid rgba(240, 237, 230, .16);
+      border-left: 2px solid rgba(240, 237, 230, .38);
+      border-radius: 4px;
+      padding: 14px 18px;
+      background: rgba(4, 7, 15, .46);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      paint-order: stroke fill;
+      -webkit-text-stroke: 1.5px rgba(4, 7, 15, .85);
     }
 
-    .hero__headline {
-      font-family: var(--font-display);
-      font-weight: 650;
-      font-size: clamp(2.5rem, 7vw, 5.4rem);
-      line-height: 1.02;
-      letter-spacing: -0.02em;
-      max-width: 16ch;
-    }
-
-    .hero__headline em {
-      font-style: normal;
-      color: var(--signal);
-    }
-
-    .hero__sub {
-      margin-top: 28px;
-      max-width: 52ch;
-      font-size: clamp(1rem, 1.6vw, 1.15rem);
-      line-height: 1.65;
-      color: var(--slate);
-    }
-
-    .hero__ctas {
+    .hero-cta-bar {
       display: flex;
       align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 44px;
+      gap: 0;
+      border: 1px solid var(--rule2);
+      border-radius: 4px;
+      max-width: min(500px, 100%);
+      overflow: hidden;
+      background: rgba(4, 7, 15, .46);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 15px 26px;
-      border-radius: var(--radius-pill);
-      font-size: 14.5px;
-      font-weight: 500;
-      transition:
-        transform 0.3s var(--ease),
-        background 0.3s var(--ease),
-        border-color 0.3s var(--ease);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn--solid {
-      background: var(--bone);
-      color: var(--graphite);
-    }
-
-    .btn--solid:hover {
-      background: var(--signal);
-      color: var(--on-accent);
-    }
-
-    .btn--ghost {
-      border: 1px solid var(--hairline-strong);
-      color: var(--bone);
-    }
-
-    .btn--ghost:hover {
-      border-color: var(--bone);
-    }
-
-    .hero__sparkline {
-      position: absolute;
-      right: -40px;
-      top: 120px;
-      width: min(46vw, 620px);
-      opacity: 0.5;
-      z-index: 1;
+    .hero-cta-bar input {
+      flex: 1;
+      min-width: 0;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      padding: 16px 20px;
       pointer-events: none;
     }
 
-    @media (max-width: 900px) {
-      .hero__sparkline {
-        display: none;
-      }
+    .hero-cta-btn {
+      flex-shrink: 0;
+      background: var(--bone);
+      color: #000;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: 14px 22px;
+      border-left: 1px solid var(--rule2);
+      transition: background .2s, color .2s;
+      white-space: nowrap;
     }
 
-    .hero__sparkline path.line {
-      fill: none;
-      stroke: url(#sparkGrad);
-      stroke-width: 2;
-      stroke-dasharray: 900;
-      stroke-dashoffset: 900;
-      animation: drawLine 2.4s var(--ease) 0.3s forwards;
-    }
-
-    @keyframes drawLine {
-      to {
-        stroke-dashoffset: 0;
-      }
+    .hero-cta-btn:hover {
+      background: #fff
     }
 
     /* ticker */
     .ticker {
-      border-top: 1px solid var(--hairline);
-      border-bottom: 1px solid var(--hairline);
-      background: var(--graphite-2);
-      overflow: hidden;
       position: relative;
       z-index: 2;
+      border-top: 1px solid var(--rule);
+      background: rgba(3, 5, 12, .74);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
     }
 
-    .ticker__track {
+    @media(max-width:640px) {
+      .hero {
+        min-height: 560px
+      }
+
+      .hero-name {
+        font-size: clamp(2rem, 8.5vw, 2.6rem);
+        margin-bottom: 10px
+      }
+
+      .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: .09em;
+        line-height: 1.45;
+        padding: 6px 11px;
+        margin-bottom: 12px
+      }
+
+      .hero-headline {
+        font-size: clamp(1.75rem, 7.8vw, 2.35rem);
+        margin-bottom: 14px
+      }
+
+      .hero-sub {
+        padding: 11px 14px;
+        font-size: .88rem;
+        line-height: 1.6;
+        margin-bottom: 16px
+      }
+
+      .hero-cta-bar input {
+        font-size: 12px;
+        padding: 13px 12px
+      }
+
+      .hero-cta-btn {
+        padding: 13px 16px;
+        font-size: 11px
+      }
+    }
+
+    .ticker-track {
       display: flex;
       width: max-content;
-      animation: marquee 32s linear infinite;
+      animation: marquee 36s linear infinite
     }
 
-    .ticker:hover .ticker__track {
-      animation-play-state: paused;
+    .ticker:hover .ticker-track {
+      animation-play-state: paused
     }
 
-    .ticker__item {
+    .ticker-item {
       display: flex;
       align-items: center;
       gap: 14px;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      letter-spacing: 0.04em;
-      color: var(--bone);
-      padding: 16px 0;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      color: var(--muted);
+      padding: 14px 0;
       white-space: nowrap;
     }
 
-    .ticker__item strong {
-      color: var(--amber);
-      font-weight: 600;
+    .ticker-item b {
+      color: var(--bone);
+      font-weight: 500
     }
 
-    .ticker__sep {
-      margin: 0 32px;
-      color: var(--hairline-strong);
+    .ticker-sep {
+      margin: 0 28px;
+      color: var(--rule2)
     }
 
     @keyframes marquee {
       from {
-        transform: translateX(0);
+        transform: translateX(0)
       }
 
       to {
-        transform: translateX(-50%);
+        transform: translateX(-50%)
       }
     }
 
-    @media (max-width: 760px) {
-      .hero {
-        padding-top: 132px;
+    /* PAGE-WIDE COSMOS LAYER */
+    #cosmos-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .space-drift {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .space-obj {
+      position: absolute;
+      will-change: transform;
+      color: var(--bone);
+      transition: opacity .4s var(--ease);
+    }
+
+    .space-craft {
+      top: 22vh;
+      right: clamp(16px, 5vw, 76px);
+      width: clamp(150px, 18vw, 240px);
+      opacity: .11;
+      animation: driftFloat 18s ease-in-out infinite;
+    }
+
+    .space-astronaut {
+      top: 58vh;
+      right: clamp(20px, 8vw, 120px);
+      width: clamp(105px, 12vw, 165px);
+      opacity: .095;
+      animation: driftAstro 22s ease-in-out infinite;
+    }
+
+    @keyframes driftFloat {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) rotate(-8deg)
       }
 
-      .hero__inner {
-        padding-bottom: 64px;
+      50% {
+        transform: translate3d(-10px, -14px, 0) rotate(-4deg)
       }
     }
 
-    /* ============ SECTION HEADS (shared) ============ */
+    @keyframes driftAstro {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) rotate(6deg)
+      }
+
+      50% {
+        transform: translate3d(8px, -16px, 0) rotate(11deg)
+      }
+    }
+
+    @media(max-width:860px) {
+      .space-craft {
+        opacity: .06;
+        right: -24px;
+        top: 18vh
+      }
+
+      .space-astronaut {
+        opacity: .055;
+        right: -14px;
+        top: 64vh
+      }
+    }
+
+    main,
+    .footer {
+      position: relative;
+      z-index: 2
+    }
+
+    /* SHARED SECTION */
     section {
-      scroll-margin-top: 88px;
+      scroll-margin-top: 80px
     }
 
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 60px;
+    .section {
+      padding: 100px clamp(20px, 5vw, 60px)
+    }
+
+    .section+.section {
+      border-top: 1px solid var(--rule)
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 48px;
     }
 
     .section-title {
-      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 600;
-      font-size: clamp(1.7rem, 3.2vw, 2.5rem);
-      letter-spacing: -0.01em;
-      margin-top: 14px;
-      max-width: 22ch;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      margin-bottom: 0;
     }
 
-    .section-note {
-      font-family: var(--font-mono);
-      font-size: 12.5px;
-      color: var(--slate);
-      max-width: 30ch;
-      text-align: right;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 700px) {
-      .section-note {
-        text-align: left;
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition:
-        opacity 0.8s var(--ease),
-        transform 0.8s var(--ease);
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ============ ABOUT ============ */
-    .about {
-      padding: 150px 0 40px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .about__grid {
+    /* ABOUT */
+    .about-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 52px;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 60px;
       margin-top: 56px;
     }
 
-    .about__body p {
-      color: var(--slate);
-      line-height: 1.85;
-      font-size: 1.05rem;
-      max-width: 64ch;
+    .about-body p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(240, 237, 230, .55);
+      max-width: 62ch;
     }
 
-    .about__body p:not(:last-child) {
-      margin-bottom: 22px;
+    .about-body p:not(:last-child) {
+      margin-bottom: 20px
     }
 
-    .about__body em {
+    .about-body em {
       font-style: normal;
       color: var(--bone);
-      font-weight: 500;
+      font-weight: 400
     }
 
-    .about__facts {
-      background: var(--graphite-2);
-      border: 1px solid var(--hairline);
-      border-radius: var(--radius-m);
-      padding: 30px 28px;
-      height: fit-content;
+    .about-facts {
+      border-top: 1px solid var(--rule)
     }
 
-    .about__facts-label {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 16px;
+    .about-fact {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(240, 237, 230, .5);
+      line-height: 1.6;
     }
 
-    .about__facts li {
-      font-size: 13.5px;
-      color: var(--bone);
-      line-height: 1.5;
-      padding: 13px 0;
-      border-top: 1px solid var(--hairline);
-    }
-
-    .about__facts li:first-child {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    @media (max-width: 860px) {
-      .about__grid {
+    @media(max-width:860px) {
+      .about-grid {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 36px
       }
     }
 
-    /* ============ WORK ============ */
-    .work {
-      padding: 70px 0 90px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .project-card {
-      border-top: 1px solid var(--hairline);
-      padding: 52px 0;
+    /* WORK — project rows */
+    .project-row {
+      border-top: 1px solid var(--rule);
+      padding: 56px 0;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 52px;
-      transition: background 0.4s var(--ease);
-    }
-
-    .project-card:last-child {
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    .project-card--featured {
-      display: block;
-      padding-top: 8px;
-    }
-
-    .project-card--featured .project-card__body {
-      max-width: 68ch;
-      margin-bottom: 44px;
-    }
-
-    .project-card--featured .project-card__title {
-      font-size: clamp(1.9rem, 3.6vw, 3rem);
-    }
-
-    .project-card--featured .stat-panel {
-      grid-template-columns: repeat(4, 1fr);
-      width: 100%;
-    }
-
-    .project-card__head {
-      display: flex;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: clamp(28px, 4vw, 60px);
       align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
+    }
+
+    .project-row:last-of-type {
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .project-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: .06em;
+      color: var(--muted);
       margin-bottom: 20px;
     }
 
-    .project-card__title {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: clamp(1.35rem, 2.4vw, 1.9rem);
-      letter-spacing: -0.01em;
-      margin-bottom: 16px;
+    .status-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--muted);
+      flex-shrink: 0;
     }
 
-    .project-card__hook {
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--bone);
+    .status-dot.live {
+      background: #fff;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, .2)
+    }
+
+    .status-dot.oss {
+      background: #3ecf8e
+    }
+
+    .status-dot.done {
+      background: #666
+    }
+
+    .project-title {
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      font-weight: 600;
+      letter-spacing: -.02em;
       margin-bottom: 14px;
     }
 
-    .project-card__desc {
-      color: var(--slate);
-      line-height: 1.75;
-      max-width: 62ch;
-      margin-bottom: 24px;
+    .project-hook {
+      font-size: .95rem;
+      font-weight: 300;
+      color: rgba(240, 237, 230, .5);
+      line-height: 1.7;
+      max-width: 58ch;
+      margin-bottom: 16px;
     }
 
     .tech-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 7px;
+      margin-bottom: 24px
+    }
+
+    .tech {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: .04em;
+      padding: 5px 11px;
+      border: 1px solid var(--rule2);
+      border-radius: 3px;
+      color: var(--muted);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap
+    }
+
+    .project-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(240, 237, 230, .4);
+      border-bottom: 1px solid var(--rule2);
+      padding-bottom: 2px;
+      transition: color .2s, border-color .2s;
+    }
+
+    .project-links a:hover {
+      color: var(--bone);
+      border-color: var(--rule2)
+    }
+
+    /* stat block */
+    .stat-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .stat-block>div {
+      background: rgba(4, 7, 15, .84);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      padding: 18px 20px;
+    }
+
+    .stat-val {
+      font-size: clamp(1.1rem, 1.45vw, 1.35rem);
+      font-weight: 600;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      color: var(--bone);
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 7px;
+    }
+
+    .stat-unit {
+      font-size: .62em;
+      font-weight: 400;
+      color: var(--muted)
+    }
+
+    .stat-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .stat-block .stat-note {
+      grid-column: 1/-1;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+      padding: 12px 20px;
+    }
+
+    @media(max-width:860px) {
+      .section {
+        padding: 72px clamp(20px, 5vw, 60px)
+      }
+
+      .project-row {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        align-items: start;
+        padding: 44px 0
+      }
+
+      .stat-block {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:420px) {
+      .stat-block>div {
+        padding: 14px 14px
+      }
+
+      .stat-block .stat-note {
+        padding: 10px 14px
+      }
+    }
+
+    /* OPEN SOURCE */
+    .oss-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      margin-top: 56px
+    }
+
+    .oss-card {
+      background: rgba(4, 7, 15, .78);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      padding: 40px 36px
+    }
+
+    .oss-card-label {
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px
+    }
+
+    .oss-card-num {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: -.03em;
+      margin-bottom: 8px
+    }
+
+    .oss-card-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(240, 237, 230, .5);
+      line-height: 1.7;
+      max-width: 30ch
+    }
+
+    @media(max-width:620px) {
+      .oss-cards {
+        grid-template-columns: 1fr
+      }
+
+      .oss-card {
+        padding: 28px 24px
+      }
+    }
+
+    /* STACK */
+    .stack-table {
+      margin-top: 56px;
+      border-top: 1px solid var(--rule)
+    }
+
+    .stack-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: baseline;
+    }
+
+    .stack-category {
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .stack-items {
+      display: flex;
+      flex-wrap: wrap
+    }
+
+    .stack-item {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(240, 237, 230, .7)
+    }
+
+    .stack-item:not(:last-child)::after {
+      content: '/';
+      margin: 0 12px;
+      color: var(--rule2)
+    }
+
+    @media(max-width:620px) {
+      .stack-row {
+        grid-template-columns: 1fr;
+        gap: 10px
+      }
+    }
+
+    /* TIMELINE */
+    .tl-group {
+      margin-top: 56px
+    }
+
+    .tl-group-label {
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0;
+      border-top: 1px solid var(--rule);
+      padding-top: 28px
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: center;
+    }
+
+    .tl-role {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 500;
+      letter-spacing: -.01em;
+      margin-bottom: 6px
+    }
+
+    .tl-org {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted)
+    }
+
+    .tl-date {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      white-space: nowrap;
+      text-align: right
+    }
+
+    @media(max-width:620px) {
+      .tl-item {
+        grid-template-columns: 1fr;
+        gap: 6px
+      }
+
+      .tl-date {
+        text-align: left
+      }
+    }
+
+    /* CONTACT */
+    .contact-title {
+      font-size: clamp(2.2rem, 6vw, 5rem);
+      font-weight: 600;
+      letter-spacing: -.03em;
+      line-height: 1.02;
+      max-width: 14ch;
+      margin-top: 20px;
       margin-bottom: 28px;
     }
 
-    .tech-chip {
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      padding: 7px 13px;
-      border: 1px solid var(--hairline);
-      border-radius: var(--radius-pill);
-      color: var(--slate);
+    .contact-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 48ch;
+      margin-bottom: 72px
     }
 
-    .project-card__links {
+    .contact-links {
+      border-top: 1px solid var(--rule)
+    }
+
+    .contact-link {
       display: flex;
-      gap: 26px;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+      font-weight: 400;
+      transition: padding-left .3s var(--ease), color .2s;
     }
 
-    .project-card__links a {
-      font-size: 14px;
-      font-weight: 500;
+    .contact-link:hover {
+      padding-left: 16px;
+      color: var(--bone)
+    }
+
+    .contact-link-icon {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding-bottom: 3px;
-      border-bottom: 1px solid var(--hairline-strong);
-      transition:
-        color 0.25s var(--ease),
-        border-color 0.25s var(--ease);
+      justify-content: center;
+      border: 1px solid var(--rule2);
+      border-radius: 999px;
+      color: rgba(240, 237, 230, .55);
+      background: rgba(4, 7, 15, .46);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      transition: color .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease);
     }
 
-    .project-card__links a:hover {
-      color: var(--signal);
-      border-color: var(--signal);
+    .contact-link-icon svg {
+      width: 17px;
+      height: 17px
     }
 
-    .project-card__links a .arrow {
-      transition: transform 0.25s var(--ease);
+    .contact-link:hover .contact-link-icon {
+      color: var(--bone);
+      border-color: rgba(240, 237, 230, .35);
+      background: rgba(240, 237, 230, .06);
+      transform: translateX(2px);
     }
 
-    .project-card__links a:hover .arrow {
-      transform: translateX(3px);
+    @media(max-width:620px) {
+      .contact-sub {
+        margin-bottom: 44px
+      }
+
+      .contact-link {
+        padding: 22px 0;
+        gap: 12px
+      }
+
+      .project-links a {
+        padding: 6px 0
+      }
     }
 
-    /* ============ MORE PROJECTS TOGGLE ============ */
+    /* FOOTER */
+    .footer {
+      padding: 28px clamp(20px, 5vw, 60px) calc(28px + env(safe-area-inset-bottom, 0px));
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
+    .footer-copy,
+    .footer a {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted)
+    }
+
+    .footer a:hover {
+      color: var(--bone)
+    }
+
+    /* MORE PROJECTS */
     .projects-more {
       max-height: 0;
       overflow: hidden;
@@ -880,1759 +1096,1358 @@
         opacity 0.45s var(--ease);
     }
 
-    .projects-more.is-open {
+    .projects-more.open {
       max-height: 10000px;
       opacity: 1;
     }
 
-    /* iOS-safe instant collapse state */
     .projects-more.is-collapsing {
       transition: none !important;
     }
 
-    .projects-toggle-wrap {
-      display: flex;
-      justify-content: center;
-      padding: 34px 0 10px;
+    .toggle-wrap {
+      padding: 36px 0 10px;
     }
 
-    .projects-toggle {
+    .toggle-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-family: var(--font-mono);
+      min-height: 44px;
       font-size: 12px;
-      letter-spacing: 0.05em;
-      color: var(--slate);
-      padding: 12px 18px;
-      border: 1px solid var(--hairline-strong);
-      border-radius: var(--radius-pill);
-      transition:
-        color 0.25s var(--ease),
-        border-color 0.25s var(--ease),
-        background 0.25s var(--ease);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--rule2);
+      padding: 12px 20px;
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s;
     }
 
-    .projects-toggle:hover {
+    .toggle-btn:hover {
       color: var(--bone);
-      border-color: var(--bone);
-      background: var(--graphite-2);
+      border-color: rgba(240, 237, 230, 0.25);
     }
 
-    .projects-toggle__arrow {
+    .toggle-arrow {
       transition: transform 0.35s var(--ease);
     }
 
-    .projects-toggle.is-open .projects-toggle__arrow {
+    .toggle-btn.open .toggle-arrow {
       transform: rotate(180deg);
     }
 
-    @media (max-width: 700px) {
-      .projects-toggle-wrap {
-        padding-top: 28px;
-      }
-
-      .projects-toggle {
-        min-height: 44px;
-        padding: 12px 18px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .projects-more {
-        transition: none;
-      }
-
-      .projects-toggle__arrow {
-        transition: none;
-      }
-    }
-
-    .stat-panel {
-      background: var(--graphite-2);
-      border: 1px solid var(--hairline);
-      border-radius: var(--radius-m);
-      padding: 30px 28px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px 20px;
-      align-content: start;
-      height: fit-content;
-      transition: border-color 0.4s var(--ease);
-    }
-
-    .project-card:hover .stat-panel {
-      border-color: var(--signal-glow-a);
-    }
-
-    .stat__value {
-      font-family: var(--font-mono);
-      font-size: clamp(1.3rem, 2vw, 1.7rem);
-      font-weight: 600;
-      color: var(--bone);
-      line-height: 1;
-    }
-
-    .stat__value .unit {
-      font-size: 0.6em;
-      color: var(--slate);
-      margin-left: 2px;
-      font-weight: 500;
-    }
-
-    .stat__label {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--slate);
-      margin-top: 9px;
-      line-height: 1.4;
-    }
-
-    .stat__note {
-      grid-column: 1/-1;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--slate);
-      border-top: 1px solid var(--hairline);
-      padding-top: 14px;
-      margin-top: 2px;
-    }
-
-    .dev-note {
-      background: var(--graphite-2);
-      border: 1px dashed var(--hairline-strong);
-      border-radius: var(--radius-m);
-      padding: 26px 28px;
-      height: fit-content;
-    }
-
-    .dev-note__label {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 10px;
-    }
-
-    .dev-note p {
-      color: var(--slate);
-      font-size: 13.5px;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 860px) {
-      .project-card {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .project-card--featured .stat-panel {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* ============ OPEN SOURCE ============ */
-    .opensource {
-      padding: 40px 0 120px;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* ============ SYSTEM / STACK ============ */
-    .stack {
-      padding: 70px 0 130px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .stack__layers {
-      margin-top: 56px;
-      border-top: 1px solid var(--hairline);
-    }
-
-    .stack__layer {
-      display: grid;
-      grid-template-columns: 230px 1fr;
-      gap: 28px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--hairline);
-      align-items: baseline;
-    }
-
-    .stack__layer-label {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--amber);
-    }
-
-    .stack__layer-items {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .stack__item {
-      font-size: 15.5px;
-      color: var(--bone);
-    }
-
-    .stack__item:not(:last-child)::after {
-      content: "/";
-      margin: 0 14px;
-      color: var(--hairline-strong);
-    }
-
-    @media (max-width: 700px) {
-      .stack__layer {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-    }
-
-    /* ============ TIMELINE ============ */
-    .timeline {
-      padding: 0 0 130px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .timeline__group {
-      margin-top: 56px;
-    }
-
-    .timeline__group-label {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 18px;
-    }
-
-    .timeline__list {
-      margin-top: 0;
-    }
-
-    .timeline__item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: baseline;
-      gap: 28px;
-      padding: 30px 0;
-      border-top: 1px solid var(--hairline);
-    }
-
-    .timeline__item:last-child {
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    .timeline__date {
-      font-family: var(--font-mono);
-      font-size: 12.5px;
-      color: var(--slate);
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-      text-align: right;
-    }
-
-    .timeline__role {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
-      margin-bottom: 8px;
-    }
-
-    .timeline__org {
-      color: var(--slate);
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-      .timeline__item {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .timeline__date {
-        text-align: left;
-        order: -1;
-      }
-    }
-
-    /* ============ CONTACT ============ */
-    .contact {
-      padding: 110px 0 80px;
-      border-top: 1px solid var(--hairline);
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact__title {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: clamp(2rem, 5.4vw, 3.6rem);
-      letter-spacing: -0.02em;
-      max-width: 17ch;
-      margin-top: 18px;
-    }
-
-    .contact__sub {
-      color: var(--slate);
-      max-width: 56ch;
-      margin-top: 22px;
-      font-size: 1.05rem;
-      line-height: 1.75;
-    }
-
-    .contact__sub .mono {
-      color: var(--amber);
-      font-size: 0.92em;
-    }
-
-    .contact__links {
-      margin-top: 54px;
-      border-top: 1px solid var(--hairline);
-    }
-
-    .contact__link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 28px 4px;
-      border-bottom: 1px solid var(--hairline);
-      font-family: var(--font-display);
-      font-weight: 500;
-      font-size: clamp(1.1rem, 2.6vw, 1.6rem);
-      transition:
-        padding-left 0.35s var(--ease),
-        color 0.3s var(--ease);
-    }
-
-    .contact__link:hover {
-      padding-left: 16px;
-      color: var(--signal);
-    }
-
-    .contact__link .arrow {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--slate);
-      transition: color 0.3s var(--ease);
-    }
-
-    .contact__link:hover .arrow {
-      color: var(--signal);
-    }
-
-    /* ============ FOOTER ============ */
-    .footer {
-      padding: 34px 0 54px;
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      color: var(--slate);
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer__inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer a {
-      color: var(--slate);
-      border-bottom: 1px solid transparent;
-      transition:
-        color 0.25s,
-        border-color 0.25s;
-    }
-
-    .footer a:hover {
-      color: var(--bone);
-      border-color: var(--hairline-strong);
-    }
-
-    /* ============ THEME TOGGLE ============ */
-    .theme-toggle {
-      position: relative;
-      width: 38px;
-      height: 38px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--hairline-strong);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--bone);
-      flex-shrink: 0;
-      transition:
-        border-color 0.3s var(--ease),
-        background 0.3s var(--ease);
-    }
-
-    .theme-toggle:hover {
-      background: var(--graphite-2);
-    }
-
-    .theme-toggle svg {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      transition:
-        opacity 0.35s var(--ease),
-        transform 0.5s var(--ease);
-    }
-
-    .theme-toggle .icon-sun {
+    /* UTILS */
+    .reveal {
       opacity: 0;
-      transform: rotate(-80deg) scale(0.4);
+      transform: translateY(20px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease)
     }
 
-    .theme-toggle .icon-moon {
+    .reveal.visible {
       opacity: 1;
-      transform: rotate(0) scale(1);
+      transform: none
     }
 
-    html[data-theme="light"] .theme-toggle .icon-sun {
-      opacity: 1;
-      transform: rotate(0) scale(1);
-    }
-
-    html[data-theme="light"] .theme-toggle .icon-moon {
-      opacity: 0;
-      transform: rotate(80deg) scale(0.4);
-    }
-
-    /* ============ LIGHT THEME FLOURISHES (editorial) ============ */
-    html[data-theme="light"] .nav {
-      border-bottom: 5px double var(--bone);
-    }
-
-    html[data-theme="light"] .nav__mark {
-      letter-spacing: 0.01em;
-    }
-
-    html[data-theme="light"] .project-card__hook {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 500;
-      font-size: 1.15rem;
-    }
-
-    html[data-theme="light"] .hero__headline em {
-      font-style: italic;
-    }
-
-    html[data-theme="light"] .about__body em {
-      font-style: italic;
-    }
-
-    html[data-theme="light"] .stat-panel,
-    html[data-theme="light"] .dev-note {
-      border-width: 1px 0;
-      border-radius: 0;
-    }
-
-    html[data-theme="light"] .tech-chip {
-      text-transform: uppercase;
-      font-size: 10.5px;
-      letter-spacing: 0.06em;
-    }
-
-    html[data-theme="light"] .hero__sparkline {
-      opacity: 0.35;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .hero__sparkline path.line {
-        animation: none;
-        stroke-dashoffset: 0;
-      }
-
-      .ticker__track {
-        animation: none;
-      }
-
-      .status--production .status__dot,
-      .status--dev .status__dot {
-        animation: none;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
+    @media(prefers-reduced-motion:reduce) {
 
       *,
       *::before,
       *::after {
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    /* ============ BOOT ANIMATION ============ */
-    #boot-overlay {
-      position: fixed;
-      inset: 0;
-      background: var(--graphite);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-mono);
-      overflow: hidden;
-      transition: opacity 0.6s var(--ease);
-    }
-
-    #boot-overlay.boot-done {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .boot-dot-grid {
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle at 1px 1px,
-          var(--dot-pattern) 1px,
-          transparent 0);
-      background-size: 28px 28px;
-    }
-
-    .boot-inner {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: min(480px, 88vw);
-    }
-
-    .boot-mark {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2.8rem, 8vw, 4.2rem);
-      letter-spacing: -0.02em;
-      color: var(--bone);
-      line-height: 1;
-      margin-bottom: 32px;
-      opacity: 0;
-    }
-
-    .boot-dot {
-      color: var(--amber);
-    }
-
-    .boot-mark.boot-visible {
-      animation: bootFadeUp 0.5s var(--ease) forwards;
-    }
-
-    @keyframes bootFadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important
       }
 
-      to {
+      .reveal {
         opacity: 1;
-        transform: translateY(0);
+        transform: none
       }
-    }
 
-    .boot-lines {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 28px;
-      min-height: 82px;
-    }
-
-    .boot-line {
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--slate);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      opacity: 0;
-      transform: translateX(-8px);
-      transition:
-        opacity 0.3s var(--ease),
-        transform 0.3s var(--ease);
-    }
-
-    .boot-line.boot-show {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .boot-line .boot-prefix {
-      color: var(--amber);
-    }
-
-    .boot-line.boot-ok .boot-prefix {
-      color: var(--status-c-dot);
-    }
-
-    .boot-bar-track {
-      width: 100%;
-      height: 1px;
-      background: var(--hairline);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .boot-bar-fill {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: var(--amber);
-      width: 0%;
-      transition: width 0.4s var(--ease);
-    }
-
-    .boot-percent {
-      font-size: 11px;
-      color: var(--slate);
-      margin-top: 10px;
-      letter-spacing: 0.06em;
-    }
-
-    .boot-percent span {
-      color: var(--amber);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      #boot-overlay {
-        display: none !important;
+      .ticker-track {
+        animation: none
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- ============ BOOT OVERLAY ============ -->
-  <div id="boot-overlay" aria-hidden="true">
-    <div class="boot-dot-grid"></div>
-    <div class="boot-inner">
-      <div class="boot-mark" id="boot-mark">
-        AB<span class="boot-dot">.</span>
-      </div>
-      <div class="boot-lines" id="boot-lines"></div>
-      <div class="boot-bar-track">
-        <div class="boot-bar-fill" id="boot-bar"></div>
-      </div>
-      <div class="boot-percent" id="boot-pct"><span>0</span>%</div>
-    </div>
+  <canvas id="cosmos-canvas" aria-hidden="true"></canvas>
+  <div class="space-drift" id="space-drift" aria-hidden="true">
+    <!-- Faded orbital endurance/probe craft -->
+    <svg class="space-obj space-craft" id="space-craft" viewBox="0 0 240 160" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <g stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Outer centrifuge ring -->
+        <ellipse cx="120" cy="80" rx="76" ry="32" transform="rotate(-14 120 80)" stroke-opacity=".65" />
+        <ellipse cx="120" cy="80" rx="64" ry="26" transform="rotate(-14 120 80)" stroke-opacity=".35"
+          stroke-dasharray="4 5" />
+        <!-- Radial module pods around ring -->
+        <rect x="44" y="88" width="14" height="8" rx="1.5" transform="rotate(-14 51 92)" fill="currentColor"
+          fill-opacity=".14" />
+        <rect x="182" y="64" width="14" height="8" rx="1.5" transform="rotate(-14 189 68)" fill="currentColor"
+          fill-opacity=".14" />
+        <rect x="108" y="47" width="16" height="8" rx="1.5" transform="rotate(-14 116 51)" fill="currentColor"
+          fill-opacity=".14" />
+        <rect x="116" y="105" width="16" height="8" rx="1.5" transform="rotate(-14 124 109)" fill="currentColor"
+          fill-opacity=".14" />
+        <!-- Central docking spindle & forward ranger craft -->
+        <line x1="56" y1="96" x2="184" y2="64" stroke-opacity=".4" />
+        <line x1="114" y1="52" x2="126" y2="108" stroke-opacity=".4" />
+        <circle cx="120" cy="80" r="11" fill="currentColor" fill-opacity=".12" stroke-opacity=".75" />
+        <circle cx="120" cy="80" r="4.5" stroke-opacity=".5" />
+        <!-- Sleek nose probe & thruster wake -->
+        <path d="M128 78 L166 61 L155 75 Z" fill="currentColor" fill-opacity=".16" stroke-opacity=".7" />
+        <path d="M98 85 L34 102" stroke-opacity=".35" stroke-dasharray="2 4" />
+        <circle cx="166" cy="61" r="1.8" fill="currentColor" fill-opacity=".7" />
+      </g>
+    </svg>
+    <!-- Faded zero-g astronaut silhouette -->
+    <svg class="space-obj space-astronaut" id="space-astronaut" viewBox="0 0 180 220" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <g stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Subtle tether line trailing off -->
+        <path d="M52 108 C22 126, 12 162, 6 210" stroke-opacity=".3" stroke-dasharray="3 5" />
+        <!-- PLSS backpack -->
+        <rect x="55" y="72" width="26" height="44" rx="5" transform="rotate(-14 68 94)" fill="currentColor"
+          fill-opacity=".1" stroke-opacity=".55" />
+        <!-- Helmet & reflective visor -->
+        <circle cx="96" cy="52" r="20" fill="currentColor" fill-opacity=".12" stroke-opacity=".78" />
+        <path d="M86 44 C95 39, 108 42, 111 52 C112 60, 101 65, 90 61 C84 58, 82 48, 86 44 Z" fill="currentColor"
+          fill-opacity=".22" stroke-opacity=".65" />
+        <path d="M92 46 C96 44, 102 46, 104 49" stroke-opacity=".8" />
+        <!-- Torso suit -->
+        <path d="M77 73 C88 68, 106 70, 112 82 L106 122 C96 127, 81 124, 74 114 Z" fill="currentColor"
+          fill-opacity=".11" stroke-opacity=".72" />
+        <rect x="85" y="84" width="16" height="12" rx="2" transform="rotate(-8 93 90)" stroke-opacity=".5" />
+        <!-- Floating arms -->
+        <path d="M110 81 C124 79, 136 70, 144 58 C147 54, 152 57, 149 62 C140 77, 127 87, 109 90" fill="currentColor"
+          fill-opacity=".09" stroke-opacity=".7" />
+        <path d="M76 81 C61 88, 52 99, 44 109 C41 113, 46 118, 51 114 C60 105, 67 96, 77 92" fill="currentColor"
+          fill-opacity=".09" stroke-opacity=".65" />
+        <!-- Floating legs -->
+        <path d="M99 122 C107 143, 119 158, 129 175 C132 180, 124 184, 120 179 C109 162, 97 146, 89 124"
+          fill="currentColor" fill-opacity=".09" stroke-opacity=".7" />
+        <path d="M80 120 C75 142, 74 164, 66 184 C64 190, 56 187, 58 180 C65 161, 66 141, 71 117" fill="currentColor"
+          fill-opacity=".09" stroke-opacity=".65" />
+      </g>
+    </svg>
   </div>
 
+  <!-- NAV -->
   <nav class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="#top" class="nav__mark">AB<span>.</span></a>
-      <div class="nav__links">
+    <div class="nav-inner">
+      <a href="#top" class="nav-mark">AB.</a>
+      <div class="nav-links">
         <a href="#about">About</a>
         <a href="#work">Work</a>
-        <a href="#opensource">Open Source</a>
+        <a href="#opensource">Open source</a>
         <a href="#system">Stack</a>
         <a href="#timeline">Timeline</a>
         <a href="#contact">Contact</a>
       </div>
-      <div class="nav__right">
-        <a href="#contact" class="nav__cta">Get in touch</a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-            stroke-linecap="round">
-            <circle cx="12" cy="12" r="4.2" />
-            <path
-              d="M12 2.5v2.4M12 19.1v2.4M4.5 12H2.1M21.9 12h-2.4M5.9 5.9l1.7 1.7M16.4 16.4l1.7 1.7M18.1 5.9l-1.7 1.7M7.6 16.4l-1.7 1.7" />
-          </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 14.2A8.5 8.5 0 1 1 9.8 4a6.8 6.8 0 0 0 10.2 10.2Z" />
-          </svg>
-        </button>
-        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
-          <span></span>
-        </button>
-      </div>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"
+        aria-controls="nav-mobile" style="position:relative">
+        <span></span>
+      </button>
     </div>
-    <div class="nav__mobile" id="nav-mobile">
+    <div class="nav-mobile" id="nav-mobile" style="display:none">
       <a href="#about">About</a>
       <a href="#work">Work</a>
-      <a href="#opensource">Open Source</a>
+      <a href="#opensource">Open source</a>
       <a href="#system">Stack</a>
       <a href="#timeline">Timeline</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
+  <!-- HERO -->
   <header class="hero" id="top">
-    <svg class="hero__sparkline" viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="sparkGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" style="stop-color: var(--signal)" stop-opacity="0" />
-          <stop offset="35%" style="stop-color: var(--signal)" />
-          <stop offset="100%" style="stop-color: var(--amber)" />
-        </linearGradient>
-      </defs>
-      <path class="line" d="M10,40 C 90,60 120,150 180,140 S 280,60 340,80 S 440,190 500,210 S 540,230 550,225" />
-    </svg>
-
-    <div class="container hero__inner">
-      <span class="status status--production hero__badge">
-        <span class="status__dot"></span> Open to AI/ML &amp; SWE internships
-      </span>
-      <h1 class="hero__headline"><em>Abhishek Bevinkatti</em></h1>
-      <div class="hero__eyebrow">
-        <br />FINAL-YEAR B.E. CS (AI &amp; ML) · JAIN COLLEGE OF ENGINEERING,
-        BELAGAVI
-      </div>
-
-      <h2 class="hero__headline">
-        Building systems that are useful &amp; measurable.
-      </h2>
-
-      <p class="hero__sub">
-        Retrieval pipelines, multi-agent orchestration, and the evaluation
-        harnesses that keep them honest. A few of the systems I've shipped —
-        from a 0.927&nbsp;RAGAS research assistant to a browser-native PDF
-        editor that never touches a server.
-      </p>
-
-      <div class="hero__ctas">
-        <a href="#work" class="btn btn--solid">View work</a>
-        <a href="#contact" class="btn btn--ghost">Say hello →</a>
+    <canvas id="gl-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-name">Abhishek <em>Bevinkatti</em></div>
+      <div class="hero-eyebrow">Final-year B.E. CS (AI&nbsp;&amp;&nbsp;ML) · Jain College of Engineering, Belagavi</div>
+      <h1 class="hero-headline">Building systems that are useful &amp; measurable.</h1>
+      <p class="hero-sub">Retrieval pipelines, multi-agent orchestration, and the evaluation harnesses that keep them
+        honest.</p>
+      <div class="hero-cta-bar">
+        <input type="text" value="Open to AI/ML &amp; SWE internships" readonly aria-hidden="true" />
+        <a href="#contact" class="hero-cta-btn">Say hello</a>
       </div>
     </div>
-
     <div class="ticker">
-      <div class="ticker__track" id="ticker-track">
-        <div class="ticker__item">
-          <span><strong>0.927</strong> RAGAS SCORE</span><span class="ticker__sep">·</span>
-          <span><strong>38%</strong> LATENCY REDUCTION</span><span class="ticker__sep">·</span>
-          <span><strong>&lt;15ms</strong> P99 RETRIEVAL</span><span class="ticker__sep">·</span>
-          <span><strong>90%+</strong> FRAUD DETECTION ACCURACY</span><span class="ticker__sep">·</span>
-          <span><strong>12</strong> PDF TOOLS, ZERO SERVERS</span><span class="ticker__sep">·</span>
-        </div>
-        <div class="ticker__item" aria-hidden="true">
-          <span><strong>0.927</strong> RAGAS SCORE</span><span class="ticker__sep">·</span>
-          <span><strong>38%</strong> LATENCY REDUCTION</span><span class="ticker__sep">·</span>
-          <span><strong>&lt;15ms</strong> P99 RETRIEVAL</span><span class="ticker__sep">·</span>
-          <span><strong>90%+</strong> FRAUD DETECTION ACCURACY</span><span class="ticker__sep">·</span>
-          <span><strong>12</strong> PDF TOOLS, ZERO SERVERS</span><span class="ticker__sep">·</span>
-        </div>
+      <div class="ticker-track" id="ticker-track">
+        <div class="ticker-item"><b>0.927</b> RAGAS score<span class="ticker-sep">·</span><b>38%</b> latency
+          reduction<span class="ticker-sep">·</span><b>&lt;15ms</b> P99 retrieval<span
+            class="ticker-sep">·</span><b>90%+</b> fraud detection accuracy<span class="ticker-sep">·</span><b>12</b>
+          PDF tools, zero servers<span class="ticker-sep">·</span><b>11,000+</b> PyPI downloads<span
+            class="ticker-sep">·</span></div>
+        <div class="ticker-item" aria-hidden="true"><b>0.927</b> RAGAS score<span class="ticker-sep">·</span><b>38%</b>
+          latency reduction<span class="ticker-sep">·</span><b>&lt;15ms</b> P99 retrieval<span
+            class="ticker-sep">·</span><b>90%+</b> fraud detection accuracy<span class="ticker-sep">·</span><b>12</b>
+          PDF tools, zero servers<span class="ticker-sep">·</span><b>11,000+</b> PyPI downloads<span
+            class="ticker-sep">·</span></div>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="about" id="about">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">About</div>
-            <h2 class="section-title">
-              Somewhere between a CS degree and a habit of building things.
-            </h2>
-          </div>
-          <p class="section-note">The non-resume version.</p>
+
+    <!-- ABOUT -->
+    <section class="section reveal" id="about">
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-title">Somewhere between a CS degree<br>and a habit of building things.</h2>
+      <div class="about-grid">
+        <div class="about-body">
+          <p>I'm a final-year CS (AI/ML) student who somehow ended up running a handful of real, deployed systems off
+            free-tier infrastructure and pure stubbornness. It started as "something concrete for the resume" and turned
+            into an actual habit - I'm more likely to spend a weekend building an <em>open-source project</em> than
+            studying for an exam.</p>
+          <p>Most of what I build starts as a half-baked idea that eats my weekdays and evolves into a solid project. I
+            lean hard on measuring things - RAGAS scores, latency numbers, false-positive rates - because quality should
+            be something you can show, not just claim.</p>
+          <p>Outside of that: way too many side-project ideas lying around in my notes.</p>
         </div>
-
-        <div class="about__grid reveal">
-          <div class="about__body">
-            <p>
-              I'm a final-year CS (AI/ML) student who somehow ended up running
-              a handful of real, deployed systems off free-tier
-              infrastructure and pure stubbornness. It started as "something
-              concrete for the resume" and turned into an actual habit —
-              I'm more likely to spend a weekend building an
-              <em>open-source project</em> than studying for an exam.
-            </p>
-            <p>
-              Most of what I build starts as a half-baked idea that eats my
-              weekdays and evolves into a solid project. I lean hard on
-              measuring things — RAGAS scores, latency numbers,
-              false-positive rates — because quality should be something you
-              can show, not just claim.
-            </p>
-            <p>
-              Outside of that: way too many side-project ideas lying around in
-              my notes.
-            </p>
+        <div class="about-facts">
+          <div class="about-fact">Based in Belagavi, Karnataka, India</div>
+          <div class="about-fact">Finding ways to make things work within tight constraints, especially budget ones
           </div>
-
-          <div class="about__facts">
-            <div class="about__facts-label">Off the clock</div>
-            <ul>
-              <li>Based in Belagavi, Karnataka, India</li>
-              <li>
-                Finding ways to make things work within tight constraints,
-                especially budget ones
-              </li>
-              <li>Strong, unsolicited opinions about font embedding</li>
-              <li>Will not ship a number I haven't measured myself</li>
-              <li>
-                Prefers music in the background while building and coding
-              </li>
-              <li>
-                Stuck choosing which to start next: <strong>Elden Ring or The Last of Us.</strong>
-              </li>
-            </ul>
-          </div>
+          <div class="about-fact">Strong, unsolicited opinions about font embedding</div>
+          <div class="about-fact">Will not ship a number I haven't measured myself</div>
+          <div class="about-fact">Stuck choosing: <strong>Elden Ring or The Last of Us</strong></div>
         </div>
       </div>
     </section>
 
-    <section class="work" id="work">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Selected Work</div>
-            <h2 class="section-title">
-              The Solid recent ones, all held to the same standard —<br />does
-              it work, and can you prove it ?
-            </h2>
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="section-eyebrow reveal">Selected work</div>
+      <h2 class="section-title reveal">Every project ships with<br>the numbers attached.</h2>
+
+      <!-- Featured -->
+      <div class="project-row reveal">
+        <div>
+          <div class="project-status"><span class="status-dot live"></span>Live · Multi-agent</div>
+          <h3 class="project-title">Multi-Agent AI Research Assistant</h3>
+          <p class="project-hook">A RAG platform that scores its own answers before giving them to you. LangGraph
+            orchestrates parallel research agents across a FAISS retrieval layer, with self-correcting evaluation loops
+            and per-response RAGAS scoring built in — not bolted on.</p>
+          <div class="tech-row"><span class="tech">LangGraph</span><span class="tech">Groq</span><span
+              class="tech">FAISS</span><span class="tech">FastAPI</span><span class="tech">Docker</span></div>
+          <div class="project-links">
+            <a href="https://huggingface.co/spaces/bevinkatti/research-assistant" target="_blank" rel="noopener">Open
+              live →</a>
+            <a href="https://github.com/bevinkatti/multi-agent-research-assistant" target="_blank" rel="noopener">GitHub
+              →</a>
           </div>
-          <p class="section-note">
-            Every project ships with the numbers attached.<br />Nothing here
-            is a demo you can't measure.
-          </p>
         </div>
-
-        <!-- FEATURED -->
-        <article class="project-card project-card--featured reveal">
-          <div class="project-card__body">
-            <div class="project-card__head">
-              <span class="status status--production"><span class="status__dot"></span>Multi-Agent</span>
-            </div>
-            <h3 class="project-card__title">
-              Multi-Agent AI Research Assistant
-            </h3>
-            <p class="project-card__hook">
-              A RAG platform that scores its own answers before it gives them
-              to you.
-            </p>
-            <p class="project-card__desc">
-              LangGraph orchestrates parallel research agents across a FAISS
-              retrieval layer, with self-correcting evaluation loops and
-              per-response RAGAS scoring built in — not bolted on. Real-time
-              SSE streaming and structured latency, quality, and error
-              tracking, deployed live on Hugging Face Spaces.
-            </p>
-            <div class="tech-row">
-              <span class="tech-chip">LangGraph</span><span class="tech-chip">Groq · openai/gpt-oss-120b</span><span
-                class="tech-chip">FAISS</span><span class="tech-chip">FastAPI</span><span
-                class="tech-chip">Docker</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://huggingface.co/spaces/bevinkatti/research-assistant" target="_blank" rel="noopener">Open
-                <span class="arrow">→</span></a>
-              <a href="https://github.com/bevinkatti/multi-agent-research-assistant" target="_blank"
-                rel="noopener">GitHub <span class="arrow">→</span></a>
-            </div>
-          </div>
-
-          <div class="stat-panel">
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="count" data-count data-target="0.927" data-decimals="3">0</span>
-              </div>
-              <div class="stat__label">RAGAS Score</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="count" data-count data-target="0.984" data-decimals="3">0</span>
-              </div>
-              <div class="stat__label">Faithfulness</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="count" data-count data-target="38" data-decimals="0">0</span><span class="unit">% ↓</span>
-              </div>
-              <div class="stat__label">Latency (6.5s → 4.0s)</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="unit">&lt;</span><span class="count" data-count data-target="15"
-                  data-decimals="0">0</span><span class="unit">ms</span>
-              </div>
-              <div class="stat__label">P99 Retrieval</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- PDFZERO -->
-        <article class="project-card reveal">
+        <div class="stat-block">
           <div>
-            <div class="project-card__head">
-              <span class="status status--oss"><span class="status__dot"></span>Open Source</span>
-            </div>
-            <h3 class="project-card__title">PDFZero</h3>
-            <p class="project-card__hook">
-              A 12+ tools PDF editor that never sends your file to a server.
-            </p>
-            <p class="project-card__desc">
-              Text editing, merge, split, compress, redact, unlock, OCR and
-              more — 100% client-side. A font-classification engine maps 40+
-              font families for pixel-accurate text edits, with offline OCR
-              via Tesseract.js and a code-split bundle under 42KB on first
-              load.
-            </p>
-            <div class="tech-row">
-              <span class="tech-chip">React</span><span class="tech-chip">Vite</span><span
-                class="tech-chip">PDF.js</span><span class="tech-chip">pdf-lib</span><span
-                class="tech-chip">Tesseract.js</span><span class="tech-chip">Zustand</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://pdfzero-editor.vercel.app/" target="_blank" rel="noopener">Open <span
-                  class="arrow">→</span></a>
-              <a href="https://github.com/bevinkatti/pdfzero" target="_blank" rel="noopener">GitHub <span
-                  class="arrow">→</span></a>
-            </div>
+            <div class="stat-val"><span class="count" data-target="0.927" data-dec="3">0</span></div>
+            <div class="stat-label">RAGAS score</div>
           </div>
-
-          <div class="stat-panel">
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="count" data-count data-target="12" data-decimals="0">0</span>
-              </div>
-              <div class="stat__label">PDF Tools</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="count" data-count data-target="100" data-decimals="0">0</span><span class="unit">%</span>
-              </div>
-              <div class="stat__label">Client-side</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="count" data-count data-target="40" data-decimals="0">0</span><span class="unit">+</span>
-              </div>
-              <div class="stat__label">Fonts Mapped</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="unit">&lt;</span><span class="count" data-count data-target="42"
-                  data-decimals="0">0</span><span class="unit">KB</span>
-              </div>
-              <div class="stat__label">Initial Payload</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- DEVPULSE -->
-        <article class="project-card reveal">
           <div>
-            <div class="project-card__head">
-              <span class="status status--complete"><span class="status__dot"></span>Core Complete</span>
-            </div>
-            <h3 class="project-card__title">DevPulse</h3>
-            <p class="project-card__hook">
-              Webhook delivery that survives crashes, 5xx errors, and duplicate sends.
-            </p>
-            <p class="project-card__desc">
-              A self-hosted reliable webhook delivery system. Events are committed to
-              PostgreSQL with a transactional outbox, published through Redpanda,
-              and delivered by a worker as HMAC-signed requests, with durable retries,
-              idempotent ingestion, tenant isolation, and SSRF-safe destination
-              validation. Verified locally with a deterministic receiver that
-              fails once, then recovers.
-            </p>
-            <div class="tech-row">
-              <span class="tech-chip">NestJS</span><span class="tech-chip">PostgreSQL</span><span
-                class="tech-chip">Redpanda</span><span class="tech-chip">Next.js</span><span
-                class="tech-chip">GraphQL</span><span class="tech-chip">TypeScript</span><span
-                class="tech-chip">Docker</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://github.com/bevinkatti/devpulse" target="_blank" rel="noopener">GitHub <span
-                  class="arrow">→</span></a>
-              <a href="https://github.com/bevinkatti/devpulse/blob/main/docs/ARCHITECTURE.md" target="_blank"
-                rel="noopener">Architecture <span class="arrow">→</span></a>
-            </div>
+            <div class="stat-val"><span class="count" data-target="0.984" data-dec="3">0</span></div>
+            <div class="stat-label">Faithfulness</div>
           </div>
-
-          <div class="stat-panel">
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="count" data-count data-target="22" data-decimals="0">0</span>
-              </div>
-              <div class="stat__label">Tests Passing</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">503→204</div>
-              <div class="stat__label">Retry Path Verified E2E</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">HMAC</div>
-              <div class="stat__label">SHA-256 Signed Deliveries</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">
-                <span class="count" data-count data-target="1" data-decimals="0">0</span><span class="unit">txn</span>
-              </div>
-              <div class="stat__label">Event + Outbox Write</div>
-            </div>
-            <div class="stat__note">
-              <strong style="color: var(--bone)">At-least-once</strong> delivery.
-              Receivers dedupe via Idempotency-Key.
-            </div>
+          <div>
+            <div class="stat-val"><span class="count" data-target="38" data-dec="0">0</span><span class="stat-unit">%
+                ↓</span></div>
+            <div class="stat-label">Latency</div>
           </div>
-        </article>
+          <div>
+            <div class="stat-val">&lt;<span class="count" data-target="15" data-dec="0">0</span><span
+                class="stat-unit">ms</span></div>
+            <div class="stat-label">P99 retrieval</div>
+          </div>
+        </div>
+      </div>
 
-        <!-- Project Wrapper -->
-        <div class="projects-more" id="projects-more">
-          <!-- LOOP WATCHDOG -->
-          <article class="project-card reveal">
+      <!-- PDFZero -->
+      <div class="project-row reveal">
+        <div>
+          <div class="project-status"><span class="status-dot oss"></span>Open source</div>
+          <h3 class="project-title">PDFZero</h3>
+          <p class="project-hook">A 12+ tools PDF editor that never sends your file to a server. Text editing, merge,
+            split, compress, redact, unlock, OCR and more — 100% client-side. A font-classification engine maps 40+ font
+            families for pixel-accurate text edits.</p>
+          <div class="tech-row"><span class="tech">React</span><span class="tech">Vite</span><span
+              class="tech">PDF.js</span><span class="tech">pdf-lib</span><span class="tech">Tesseract.js</span><span
+              class="tech">Zustand</span></div>
+          <div class="project-links">
+            <a href="https://pdfzero-editor.vercel.app/" target="_blank" rel="noopener">Open →</a>
+            <a href="https://github.com/bevinkatti/pdfzero" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+        <div class="stat-block">
+          <div>
+            <div class="stat-val"><span class="count" data-target="12" data-dec="0">0</span></div>
+            <div class="stat-label">PDF tools</div>
+          </div>
+          <div>
+            <div class="stat-val"><span class="count" data-target="100" data-dec="0">0</span><span
+                class="stat-unit">%</span></div>
+            <div class="stat-label">Client-side</div>
+          </div>
+          <div>
+            <div class="stat-val"><span class="count" data-target="40" data-dec="0">0</span><span
+                class="stat-unit">+</span></div>
+            <div class="stat-label">Fonts mapped</div>
+          </div>
+          <div>
+            <div class="stat-val">&lt;<span class="count" data-target="42" data-dec="0">0</span><span
+                class="stat-unit">KB</span></div>
+            <div class="stat-label">Initial payload</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DevPulse -->
+      <div class="project-row reveal">
+        <div>
+          <div class="project-status"><span class="status-dot done"></span>Core complete</div>
+          <h3 class="project-title">DevPulse</h3>
+          <p class="project-hook">Webhook delivery that survives crashes, 5xx errors, and duplicate sends. Events
+            committed to PostgreSQL with a transactional outbox, published through Redpanda, and delivered as
+            HMAC-signed requests with durable retries and tenant isolation.</p>
+          <div class="tech-row"><span class="tech">NestJS</span><span class="tech">PostgreSQL</span><span
+              class="tech">Redpanda</span><span class="tech">Next.js</span><span class="tech">GraphQL</span><span
+              class="tech">TypeScript</span><span class="tech">Docker</span></div>
+          <div class="project-links">
+            <a href="https://github.com/bevinkatti/devpulse" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/bevinkatti/devpulse/blob/main/docs/ARCHITECTURE.md" target="_blank"
+              rel="noopener">Architecture →</a>
+          </div>
+        </div>
+        <div class="stat-block">
+          <div>
+            <div class="stat-val"><span class="count" data-target="22" data-dec="0">0</span></div>
+            <div class="stat-label">Tests passing</div>
+          </div>
+          <div>
+            <div class="stat-val">503→204</div>
+            <div class="stat-label">Retry path E2E</div>
+          </div>
+          <div>
+            <div class="stat-val">HMAC</div>
+            <div class="stat-label">SHA-256 signed</div>
+          </div>
+          <div>
+            <div class="stat-val"><span class="count" data-target="1" data-dec="0">0</span><span
+                class="stat-unit">txn</span></div>
+            <div class="stat-label">Event + outbox</div>
+          </div>
+          <div class="stat-note">At-least-once delivery. Receivers dedupe via Idempotency-Key.</div>
+        </div>
+      </div>
+
+      <!-- More -->
+      <div class="projects-more" id="projects-more">
+        <div class="project-row">
+          <div>
+            <div class="project-status"><span class="status-dot oss"></span>Open source</div>
+            <h3 class="project-title">Loop Watchdog</h3>
+            <p class="project-hook">A kill switch for AI agents that won't stop retrying. A local-first FastAPI proxy
+              scoring traffic across five signals — retries, file churn, error signatures, edit-oscillation, request
+              growth — blocking runaway loops before tokens burn.</p>
+            <div class="tech-row"><span class="tech">Python</span><span class="tech">FastAPI</span><span
+                class="tech">TypeScript</span><span class="tech">Cloudflare Workers</span><span class="tech">D1</span>
+            </div>
+            <div class="project-links"><a href="https://github.com/bevinkatti/loop-watchdog" target="_blank"
+                rel="noopener">GitHub →</a></div>
+          </div>
+          <div class="stat-block">
             <div>
-              <div class="project-card__head">
-                <span class="status status--oss"><span class="status__dot"></span>Open Source</span>
-              </div>
-              <h3 class="project-card__title">Loop Watchdog</h3>
-              <p class="project-card__hook">
-                A kill switch for AI agents that won't stop retrying.
-              </p>
-              <p class="project-card__desc">
-                A local-first FastAPI proxy sitting in front of
-                OpenAI-compatible coding agents, scoring traffic across five
-                signals — retries, file churn, error signatures,
-                edit-oscillation, request growth — and blocking runaway loops
-                before tokens burn. A Cloudflare Worker control plane pushes
-                HMAC-signed alerts to Slack and email.
-              </p>
-              <div class="tech-row">
-                <span class="tech-chip">Python</span><span class="tech-chip">FastAPI</span><span
-                  class="tech-chip">TypeScript</span><span class="tech-chip">Cloudflare Workers</span><span
-                  class="tech-chip">D1</span><span class="tech-chip">pytest</span>
-              </div>
-              <div class="project-card__links">
-                <a href="https://github.com/bevinkatti/loop-watchdog" target="_blank" rel="noopener">GitHub <span
-                    class="arrow">→</span></a>
-              </div>
+              <div class="stat-val"><span class="count" data-target="5" data-dec="0">0</span></div>
+              <div class="stat-label">Detection signals</div>
             </div>
-
-            <div class="stat-panel">
-              <div class="stat">
-                <div class="stat__value mono">
-                  <span class="count" data-count data-target="5" data-decimals="0">0</span>
-                </div>
-                <div class="stat__label">Detection Signals</div>
-              </div>
-              <div class="stat">
-                <div class="stat__value mono">
-                  <span class="count" data-count data-target="9" data-decimals="0">0</span><span class="unit">+</span>
-                </div>
-                <div class="stat__label">REST Endpoints</div>
-              </div>
-              <div class="stat__note">
-                Blocks on
-                <strong style="color: var(--bone)">HTTP 409</strong> before
-                the next retry fires.
-              </div>
-            </div>
-          </article>
-
-          <!-- RAG EVAL HARNESS -->
-          <article class="project-card reveal">
             <div>
-              <div class="project-card__head">
-                <span class="status status--oss"><span class="status__dot"></span>Open Source</span>
-              </div>
-              <h3 class="project-card__title">RAG Evaluation CLI</h3>
-              <p class="project-card__hook">
-                Benchmark any RAG system without hitting an external API.
-              </p>
-              <p class="project-card__desc">
-                A framework-agnostic CLI for deterministic RAG evaluation —
-                schema auto-detection for JSON/JSONL/CSV, RAGAS-style metrics,
-                and multi-system comparison for faster iteration.
-              </p>
-              <div class="tech-row">
-                <span class="tech-chip">Python</span><span class="tech-chip">CLI</span><span
-                  class="tech-chip">RAGAS</span>
-              </div>
-              <div class="project-card__links">
-                <a href="https://github.com/bevinkatti/rag-harness" target="_blank" rel="noopener">GitHub <span
-                    class="arrow">→</span></a>
-              </div>
+              <div class="stat-val"><span class="count" data-target="9" data-dec="0">0</span><span
+                  class="stat-unit">+</span></div>
+              <div class="stat-label">REST endpoints</div>
             </div>
-
-            <div class="stat-panel">
-              <div class="stat">
-                <div class="stat__value mono">
-                  <span class="count" data-count data-target="3.2" data-decimals="1">0</span><span class="unit">k+</span>
-                </div>
-                <div class="stat__label">PyPI Downloads</div>
-              </div>
-
-              <div class="stat">
-                <div class="stat__value mono">
-                  <span class="count" data-count data-target="4" data-decimals="0">0</span>
-                </div>
-                <div class="stat__label">Evaluation Metrics</div>
-              </div>
-            </div>
-          </article>
-
-          <!-- STYLESYNC ELITE -->
-          <article class="project-card reveal">
+            <div class="stat-note">Blocks on HTTP 409 before the next retry fires.</div>
+          </div>
+        </div>
+        <div class="project-row">
+          <div>
+            <div class="project-status"><span class="status-dot oss"></span>Open source</div>
+            <h3 class="project-title">RAG Evaluation CLI</h3>
+            <p class="project-hook">Benchmark any RAG system without hitting an external API. Framework-agnostic CLI for
+              deterministic RAG evaluation — schema auto-detection for JSON/JSONL/CSV, RAGAS-style metrics, and
+              multi-system comparison.</p>
+            <div class="tech-row"><span class="tech">Python</span><span class="tech">CLI</span><span
+                class="tech">RAGAS</span></div>
+            <div class="project-links"><a href="https://github.com/bevinkatti/rag-harness" target="_blank"
+                rel="noopener">GitHub →</a></div>
+          </div>
+          <div class="stat-block">
             <div>
-              <div class="project-card__head">
-                <span class="status status--complete"><span class="status__dot"></span>Complete</span>
-              </div>
-              <h3 class="project-card__title">StyleSync Elite</h3>
-              <p class="project-card__hook">
-                Fashion generation tuned to run on a GPU you can actually
-                afford.
-              </p>
-              <p class="project-card__desc">
-                Stable Diffusion XL Turbo optimized for low-latency inference
-                on consumer-grade hardware, with a FastAPI backend and a
-                prompt-controlled generation pipeline for real-time fashion
-                outputs.
-              </p>
-              <div class="tech-row">
-                <span class="tech-chip">Stable Diffusion XL</span><span class="tech-chip">PyTorch</span><span
-                  class="tech-chip">FastAPI</span>
-              </div>
-              <div class="project-card__links">
-                <a href="https://github.com/bevinkatti/stylesync" target="_blank" rel="noopener">GitHub <span
-                    class="arrow">→</span></a>
-              </div>
+              <div class="stat-val"><span class="count" data-target="3.2" data-dec="1">0</span><span
+                  class="stat-unit">k+</span></div>
+              <div class="stat-label">PyPI downloads</div>
             </div>
-
-            <div class="stat-panel">
-              <div class="stat">
-                <div class="stat__value mono">5–7s</div>
-                <div class="stat__label">Inference Time</div>
-              </div>
-              <div class="stat">
-                <div class="stat__value mono">
-                  <span class="count" data-count data-target="8" data-decimals="0">0</span><span class="unit">GB</span>
-                </div>
-                <div class="stat__label">VRAM Required</div>
-              </div>
-            </div>
-          </article>
-
-          <!-- FAKE JOB DETECTOR -->
-          <article class="project-card reveal">
             <div>
-              <div class="project-card__head">
-                <span class="status status--complete"><span class="status__dot"></span>Complete</span>
-              </div>
-              <h3 class="project-card__title">Fake Job Postings Detector</h3>
-              <p class="project-card__hook">
-                Flags a scam listing before you waste an application on it.
-              </p>
-              <p class="project-card__desc">
-                TF-IDF feature extraction and ML classification identify
-                suspicious postings with explainable, confidence-scored risk
-                insights — wrapped in a Streamlit interface built for fast,
-                real-time checks.
-              </p>
-              <div class="tech-row">
-                <span class="tech-chip">Scikit-learn</span><span class="tech-chip">NLP</span><span
-                  class="tech-chip">Streamlit</span>
-              </div>
-              <div class="project-card__links">
-                <a href="https://github.com/bevinkatti/fake-job-detector" target="_blank" rel="noopener">GitHub <span
-                    class="arrow">→</span></a>
-              </div>
+              <div class="stat-val"><span class="count" data-target="4" data-dec="0">0</span></div>
+              <div class="stat-label">Eval metrics</div>
             </div>
-
-            <div class="stat-panel">
-              <div class="stat">
-                <div class="stat__value mono">
-                  <span class="unit">~</span><span class="count" data-count data-target="90"
-                    data-decimals="0">0</span><span class="unit">%+</span>
-                </div>
-                <div class="stat__label">Detection Accuracy</div>
-              </div>
-              <div class="stat">
-                <div class="stat__value mono">
-                  <span class="count" data-count data-target="32" data-decimals="0">0</span><span class="unit">%
-                    ↓</span>
-                </div>
-                <div class="stat__label">False Positives</div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="projects-toggle-wrap">
-          <button class="projects-toggle" id="projects-toggle" type="button" aria-expanded="false"
-            aria-controls="projects-more">
-            <span class="projects-toggle__label">+ View More</span>
-            <span class="projects-toggle__arrow">↓</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Achievements and Open Source Contributions -->
-    <section class="opensource" id="opensource">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Open Source &amp; Recognition</div>
-            <h2 class="section-title">
-              Shipping useful tools — and contributing work worth reusing.
-            </h2>
-          </div>
-
-          <p class="section-note">
-            Publishing developer tools, contributing upstream,<br />
-            and having practical work recognized by the community.
-          </p>
-        </div>
-
-        <article class="project-card reveal">
-          <div>
-            <div class="project-card__head">
-              <span class="status status--oss">
-                <span class="status__dot"></span>
-                Community
-              </span>
-            </div>
-
-            <h3 class="project-card__title">Open Source & Community</h3>
-
-            <p class="project-card__hook">
-              Building tools developers actually use.
-            </p>
-
-            <p class="project-card__desc">
-              <strong>rag-harness</strong> is a framework-agnostic RAG
-              evaluation toolkit published on PyPI with
-              <strong>3.4k+ downloads</strong>, built around deterministic
-              evaluation and reproducible benchmarking. Alongside it, I've
-              published multiple Python packages reaching
-              <strong>11,000+ cumulative PyPI downloads</strong>, focused on
-              developer tooling and practical AI infrastructure.
-            </p>
-
-            <p class="project-card__desc">
-              I actively contribute to open-source AI tooling through merged
-              pull requests, publish libraries, and enjoy improving existing
-              developer tools just as much as building new ones.
-            </p>
-          </div>
-
-          <div class="stat-panel">
-            <div class="stat">
-              <div class="stat__value mono">11,000+</div>
-              <div class="stat__label">Total PyPI Downloads</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">3.4K+</div>
-              <div class="stat__label">rag-harness Downloads</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">4</div>
-              <div class="stat__label">Published Python Packages</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">Active</div>
-              <div class="stat__label">Open Source Contributor</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- XERJ CORPUS HUB RECOGNITION -->
-        <article class="project-card reveal">
-          <div>
-            <div class="project-card__head">
-              <span class="status status--oss">
-                <span class="status__dot"></span>
-                Selected · XERJ Corpus Hub
-              </span>
-            </div>
-
-            <h3 class="project-card__title">Multi-page PDF Layout Studio</h3>
-
-            <p class="project-card__hook">
-              A PdfZero contribution selected as a reference implementation
-              for the XERJ Corpus Hub.
-            </p>
-
-            <p class="project-card__desc">
-              My work on <strong>PdfZero</strong>, an open-source,
-              browser-based PDF editor, was selected for the XERJ Corpus Hub.
-              The selected commit adds a multi-page PDF Layout Studio across
-              eight files and 761 lines of JavaScript. The repository is
-              indexed at a pinned commit so AI coding agents can retrieve
-              source-grounded implementation examples.
-            </p>
-
-            <div class="tech-row">
-              <span class="tech-chip">JavaScript</span>
-              <span class="tech-chip">Open Source</span>
-              <span class="tech-chip">PDF tooling</span>
-            </div>
-
-            <div class="project-card__links">
-              <a href="https://hub.xerj.org/contributors/bevinkatti" target="_blank" rel="noopener">
-                XERJ Recognition <span class="arrow">→</span>
-              </a>
-              <a href="https://hub.xerj.org/corpus/bevinkatti--pdfzero" target="_blank" rel="noopener">
-                Indexed Corpus <span class="arrow">→</span>
-              </a>
-              <a href="https://github.com/bevinkatti/PdfZero/commit/7455b5790ec6848611818ee894fcd234f3c16f77" target="_blank" rel="noopener">
-                Selected Commit <span class="arrow">→</span>
-              </a>
-              <a href="https://github.com/bevinkatti/PdfZero" target="_blank" rel="noopener">
-                PdfZero on GitHub <span class="arrow">→</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="stat-panel">
-            <div class="stat">
-              <div class="stat__value mono">8</div>
-              <div class="stat__label">Files Changed</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">761</div>
-              <div class="stat__label">Lines of JavaScript</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">14 OCT</div>
-              <div class="stat__label">Corpus Selection Date · 2026</div>
-            </div>
-            <div class="stat">
-              <div class="stat__value mono">MIT</div>
-              <div class="stat__label">Repository Licence</div>
-            </div>
-            <div class="stat__note">
-              Selected commit:
-              <strong style="color: var(--bone)">7455b5790e</strong>
-              · <a href="https://hub.xerj.org/corpus/bevinkatti--pdfzero" target="_blank" rel="noopener">View live corpus →</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="stack" id="system">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">The System</div>
-            <h2 class="section-title">
-              Stack — the layers things actually run on.
-            </h2>
           </div>
         </div>
-        <div class="stack__layers reveal">
-          <div class="stack__layer">
-            <div class="stack__layer-label">Agents &amp; Retrieval</div>
-            <div class="stack__layer-items">
-              <span class="stack__item">LangGraph</span>
-              <span class="stack__item">LangChain</span>
-              <span class="stack__item">Multi-agent systems</span>
-              <span class="stack__item">FAISS</span>
-              <span class="stack__item">RAGAS</span>
-              <span class="stack__item">Sentence-Transformers</span>
+        <div class="project-row">
+          <div>
+            <div class="project-status"><span class="status-dot done"></span>Complete</div>
+            <h3 class="project-title">StyleSync Elite</h3>
+            <p class="project-hook">Fashion generation tuned to run on a GPU you can actually afford. Stable Diffusion
+              XL Turbo optimized for low-latency inference on consumer-grade hardware, 5–7s end-to-end.</p>
+            <div class="tech-row"><span class="tech">Stable Diffusion XL</span><span class="tech">PyTorch</span><span
+                class="tech">FastAPI</span></div>
+            <div class="project-links"><a href="https://github.com/bevinkatti/stylesync" target="_blank"
+                rel="noopener">GitHub →</a></div>
+          </div>
+          <div class="stat-block">
+            <div>
+              <div class="stat-val">5–7s</div>
+              <div class="stat-label">Inference time</div>
+            </div>
+            <div>
+              <div class="stat-val"><span class="count" data-target="8" data-dec="0">0</span><span
+                  class="stat-unit">GB</span></div>
+              <div class="stat-label">VRAM required</div>
             </div>
           </div>
-          <div class="stack__layer">
-            <div class="stack__layer-label">Backend &amp; Infra</div>
-            <div class="stack__layer-items">
-              <span class="stack__item">FastAPI</span>
-              <span class="stack__item">NestJS</span>
-              <span class="stack__item">REST APIs</span>
-              <span class="stack__item">GraphQL</span>
-              <span class="stack__item">SSE streaming</span>
-              <span class="stack__item">Docker</span>
-            </div>
+        </div>
+        <div class="project-row">
+          <div>
+            <div class="project-status"><span class="status-dot done"></span>Complete</div>
+            <h3 class="project-title">Fake Job Postings Detector</h3>
+            <p class="project-hook">Flags a scam listing before you waste an application on it. TF-IDF feature
+              extraction and ML classification with explainable, confidence-scored risk insights wrapped in a Streamlit
+              interface.</p>
+            <div class="tech-row"><span class="tech">Scikit-learn</span><span class="tech">NLP</span><span
+                class="tech">Streamlit</span></div>
+            <div class="project-links"><a href="https://github.com/bevinkatti/fake-job-detector" target="_blank"
+                rel="noopener">GitHub →</a></div>
           </div>
-          <div class="stack__layer">
-            <div class="stack__layer-label">Data &amp; Messaging</div>
-            <div class="stack__layer-items">
-              <span class="stack__item">PostgreSQL</span>
-              <span class="stack__item">Kafka / Redpanda</span>
+          <div class="stat-block">
+            <div>
+              <div class="stat-val">~<span class="count" data-target="90" data-dec="0">0</span><span
+                  class="stat-unit">%+</span></div>
+              <div class="stat-label">Detection accuracy</div>
             </div>
-          </div>
-          <div class="stack__layer">
-            <div class="stack__layer-label">Frontend</div>
-            <div class="stack__layer-items">
-              <span class="stack__item">React</span>
-              <span class="stack__item">Next.js</span>
-              <span class="stack__item">Vite</span>
-              <span class="stack__item">PDF.js</span>
-            </div>
-          </div>
-          <div class="stack__layer">
-            <div class="stack__layer-label">Core Languages</div>
-            <div class="stack__layer-items">
-              <span class="stack__item">Python</span>
-              <span class="stack__item">TypeScript</span>
-              <span class="stack__item">JavaScript</span>
-              <span class="stack__item">Java</span>
-              <span class="stack__item">C / C++</span>
+            <div>
+              <div class="stat-val"><span class="count" data-target="32" data-dec="0">0</span><span class="stat-unit">%
+                  ↓</span></div>
+              <div class="stat-label">False positives</div>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="toggle-wrap reveal">
+        <button class="toggle-btn" id="projects-toggle" aria-expanded="false" aria-controls="projects-more">
+          <span id="toggle-label">View more</span>
+          <span class="toggle-arrow">↓</span>
+        </button>
+      </div>
     </section>
-    <section class="timeline" id="timeline">
-      <div class="container">
-        <div class="section-head reveal">
+
+    <!-- OPEN SOURCE -->
+    <section class="section" id="opensource">
+      <div class="section-eyebrow reveal">Open source &amp; recognition</div>
+      <h2 class="section-title reveal">Shipping useful tools — and contributing<br>work worth reusing.</h2>
+      <div class="oss-cards reveal">
+        <div class="oss-card">
+          <div class="oss-card-label">Total PyPI downloads</div>
+          <div class="oss-card-num">11,000+</div>
+          <div class="oss-card-desc">Multiple Python packages focused on developer tooling and practical AI
+            infrastructure.</div>
+        </div>
+        <div class="oss-card">
+          <div class="oss-card-label">rag-harness downloads</div>
+          <div class="oss-card-num">3.4K+</div>
+          <div class="oss-card-desc">Framework-agnostic RAG evaluation toolkit built for deterministic benchmarking.
+          </div>
+        </div>
+        <div class="oss-card">
+          <div class="oss-card-label">Published packages</div>
+          <div class="oss-card-num">4</div>
+          <div class="oss-card-desc">Python packages on PyPI, actively maintained and production-used.</div>
+        </div>
+        <div class="oss-card">
+          <div class="oss-card-label">XERJ Corpus Hub</div>
+          <div class="oss-card-num">Selected</div>
+          <div class="oss-card-desc">PdfZero's multi-page Layout Studio (761 lines, 8 files) selected as a reference
+            implementation. Indexed at a pinned commit for AI coding agents.</div>
+        </div>
+      </div>
+      <div class="project-row reveal" style="margin-top:0;border-top:none">
+        <div>
+          <div class="project-status" style="margin-bottom:16px"><span class="status-dot oss"></span>Selected · XERJ
+            Corpus Hub</div>
+          <h3 class="project-title">Multi-page PDF Layout Studio</h3>
+          <p class="project-hook">My work on PdfZero was selected for the XERJ Corpus Hub — a pinned commit adding a
+            multi-page PDF Layout Studio across 8 files and 761 lines of JavaScript. The repository is indexed so AI
+            coding agents can retrieve source-grounded implementation examples.</p>
+          <div class="tech-row"><span class="tech">JavaScript</span><span class="tech">Open source</span><span
+              class="tech">PDF tooling</span></div>
+          <div class="project-links">
+            <a href="https://hub.xerj.org/contributors/bevinkatti" target="_blank" rel="noopener">XERJ recognition →</a>
+            <a href="https://github.com/bevinkatti/PdfZero/commit/7455b5790ec6848611818ee894fcd234f3c16f77"
+              target="_blank" rel="noopener">Selected commit →</a>
+          </div>
+        </div>
+        <div class="stat-block">
           <div>
-            <div class="eyebrow">Timeline</div>
-            <h2 class="section-title">
-              Recent internships, then the degree behind them.
-            </h2>
+            <div class="stat-val">8</div>
+            <div class="stat-label">Files changed</div>
           </div>
-        </div>
-
-        <div class="timeline__group reveal">
-          <div class="timeline__group-label">Experience</div>
-          <div class="timeline__list">
-            <div class="timeline__item">
-              <div>
-                <div class="timeline__role">AI &amp; ML Intern</div>
-                <div class="timeline__org">
-                  Edunet Foundation × IBM SkillsBuild — Remote
-                </div>
-              </div>
-              <div class="timeline__date">DEC 2025 — JAN 2026</div>
-            </div>
-            <div class="timeline__item">
-              <div>
-                <div class="timeline__role">
-                  Cybersecurity with GenAI Intern
-                </div>
-                <div class="timeline__org">
-                  Vodafone VOIS × Edunet Foundation — Remote
-                </div>
-              </div>
-              <div class="timeline__date">DEC 2025</div>
-            </div>
+          <div>
+            <div class="stat-val">761</div>
+            <div class="stat-label">Lines of JS</div>
           </div>
-        </div>
-
-        <div class="timeline__group reveal">
-          <div class="timeline__group-label">Education</div>
-          <div class="timeline__list">
-            <div class="timeline__item">
-              <div>
-                <div class="timeline__role">
-                  B.E. Computer Science (AI &amp; ML)
-                </div>
-                <div class="timeline__org">
-                  Jain College of Engineering, Belagavi
-                </div>
-              </div>
-              <div class="timeline__date">EXPECTED JUN 2027</div>
-            </div>
+          <div>
+            <div class="stat-val">14 OCT</div>
+            <div class="stat-label">Selected · 2026</div>
           </div>
+          <div>
+            <div class="stat-val">MIT</div>
+            <div class="stat-label">Licence</div>
+          </div>
+          <div class="stat-note">Commit: <strong style="color:var(--bone)">7455b579</strong> — <a
+              href="https://hub.xerj.org/corpus/bevinkatti--pdfzero" target="_blank" rel="noopener"
+              style="color:var(--muted);border-bottom:1px solid var(--rule2)">View corpus →</a></div>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="reveal">
-          <div class="eyebrow">Get in Touch</div>
-          <h2 class="contact__title">Seeking AI/ML &amp; SWE roles.</h2>
-          <p class="contact__sub">
-            If something here caught your attention, I'd love to hear from
-            you.<span class="mono">
-              Whether it's AI, software engineering, open source, or just a
-              quick chat.</span>
-          </p>
+    <!-- STACK -->
+    <section class="section" id="system">
+      <div class="section-eyebrow reveal">The system</div>
+      <h2 class="section-title reveal">Stack — the layers things actually run on.</h2>
+      <div class="stack-table reveal">
+        <div class="stack-row">
+          <div class="stack-category">Agents &amp; retrieval</div>
+          <div class="stack-items"><span class="stack-item">LangGraph</span><span
+              class="stack-item">LangChain</span><span class="stack-item">Multi-agent systems</span><span
+              class="stack-item">FAISS</span><span class="stack-item">RAGAS</span><span
+              class="stack-item">Sentence-Transformers</span></div>
         </div>
+        <div class="stack-row">
+          <div class="stack-category">Backend &amp; infra</div>
+          <div class="stack-items"><span class="stack-item">FastAPI</span><span class="stack-item">NestJS</span><span
+              class="stack-item">REST APIs</span><span class="stack-item">GraphQL</span><span class="stack-item">SSE
+              streaming</span><span class="stack-item">Docker</span></div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-category">Data &amp; messaging</div>
+          <div class="stack-items"><span class="stack-item">PostgreSQL</span><span class="stack-item">Kafka /
+              Redpanda</span></div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-category">Frontend</div>
+          <div class="stack-items"><span class="stack-item">React</span><span class="stack-item">Next.js</span><span
+              class="stack-item">Vite</span><span class="stack-item">PDF.js</span></div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-category">Languages</div>
+          <div class="stack-items"><span class="stack-item">Python</span><span class="stack-item">TypeScript</span><span
+              class="stack-item">JavaScript</span><span class="stack-item">Java</span><span class="stack-item">C /
+              C++</span></div>
+        </div>
+      </div>
+    </section>
 
-        <div class="contact__links reveal">
-          <a class="contact__link" href="mailto:bevinkatti07@gmail.com">Reach-out <span class="arrow">EMAIL →</span></a>
-          <a class="contact__link" href="https://github.com/bevinkatti" target="_blank" rel="noopener">projects<span
-              class="arrow">GITHUB →</span></a>
-          <a class="contact__link" href="https://linkedin.com/in/abhishekbevinkatti" target="_blank"
-            rel="noopener">Connect <span class="arrow">LINKEDIN →</span></a>
+    <!-- TIMELINE -->
+    <section class="section" id="timeline">
+      <div class="section-eyebrow reveal">Timeline</div>
+      <h2 class="section-title reveal">Recent internships, then the degree behind them.</h2>
+      <div class="tl-group reveal">
+        <div class="tl-group-label">Experience</div>
+        <div class="tl-item">
+          <div>
+            <div class="tl-role">AI &amp; ML Intern</div>
+            <div class="tl-org">Edunet Foundation × IBM SkillsBuild — Remote</div>
+          </div>
+          <div class="tl-date">Dec 2025 — Jan 2026</div>
         </div>
+        <div class="tl-item">
+          <div>
+            <div class="tl-role">Cybersecurity with GenAI Intern</div>
+            <div class="tl-org">Vodafone VOIS × Edunet Foundation — Remote</div>
+          </div>
+          <div class="tl-date">Dec 2025</div>
+        </div>
+      </div>
+      <div class="tl-group reveal">
+        <div class="tl-group-label">Education</div>
+        <div class="tl-item">
+          <div>
+            <div class="tl-role">B.E. Computer Science (AI &amp; ML)</div>
+            <div class="tl-org">Jain College of Engineering, Belagavi</div>
+          </div>
+          <div class="tl-date">Expected Jun 2027</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-eyebrow reveal">Get in touch</div>
+      <h2 class="contact-title reveal">Seeking AI/ML &amp; SWE roles.</h2>
+      <p class="contact-sub reveal">If something here caught your attention, I'd love to hear from you — whether it's
+        AI, software engineering, open source, or just a quick chat.</p>
+      <div class="contact-links reveal">
+        <a class="contact-link" href="mailto:bevinkatti07@gmail.com" aria-label="Email">
+          <span>Email</span>
+          <span class="contact-link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </span>
+        </a>
+        <a class="contact-link" href="https://github.com/bevinkatti" target="_blank" rel="noopener" aria-label="GitHub">
+          <span>GitHub</span>
+          <span class="contact-link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12c0 4.64 3.01 8.58 7.18 9.97.52.1.72-.22.72-.5v-1.76c-2.92.64-3.54-1.41-3.54-1.41-.48-1.22-1.17-1.54-1.17-1.54-.95-.65.07-.64.07-.64 1.06.07 1.61 1.08 1.61 1.08.94 1.6 2.46 1.14 3.06.87.09-.68.37-1.14.67-1.4-2.33-.27-4.78-1.17-4.78-5.19 0-1.15.41-2.08 1.08-2.82-.11-.27-.47-1.33.1-2.78 0 0 .88-.28 2.89 1.08a10.02 10.02 0 0 1 5.26 0c2.01-1.36 2.89-1.08 2.89-1.08.57 1.45.21 2.51.1 2.78.67.74 1.08 1.67 1.08 2.82 0 4.03-2.46 4.92-4.8 5.18.38.33.72.97.72 1.95v2.9c0 .28.19.61.73.5A10.51 10.51 0 0 0 22.5 12c0-5.8-4.7-10.5-10.5-10.5Z" />
+            </svg>
+          </span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/abhishekbevinkatti" target="_blank" rel="noopener"
+          aria-label="LinkedIn">
+          <span>LinkedIn</span>
+          <span class="contact-link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z" />
+            </svg>
+          </span>
+        </a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <span>© 2026 Abhishek Bevinkatti.</span>
-      <a href="https://github.com/bevinkatti/portfolio" target="_blank" rel="noopener">Source →</a>
-    </div>
+    <span class="footer-copy">© 2026 Abhishek Bevinkatti.</span>
   </footer>
 
   <script>
+    /* ============ WEBGL BLACK HOLE ============ */
     (function () {
-      var reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const canvas = document.getElementById('gl-canvas');
+      const hero = document.querySelector('.hero');
+      const gl = canvas.getContext('webgl', { antialias: true, alpha: true, powerPreference: 'high-performance' });
+      if (!gl) { canvas.style.display = 'none'; return; }
 
-      // --- Nav scroll state ---
-      var nav = document.getElementById("nav");
-      var onScroll = function () {
-        if (window.scrollY > 12) nav.classList.add("is-scrolled");
-        else nav.classList.remove("is-scrolled");
-      };
-      document.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
+      let W = 0, H = 0, mouse = { x: .5, y: .4 }, targetMouse = { x: .5, y: .4 }, t = 2.5, rafId = 0, lastTs = 0, isVisible = true;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-      // --- Theme toggle ---
-      var themeBtn = document.getElementById("theme-toggle");
-      themeBtn.addEventListener("click", function () {
-        var current =
-          document.documentElement.getAttribute("data-theme") === "light"
-            ? "light"
-            : "dark";
-        var next = current === "light" ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", next);
-        try {
-          localStorage.setItem("theme", next);
-        } catch (e) { }
-      });
+      const vert = `
+    attribute vec2 a_pos;
+    void main(){ gl_Position = vec4(a_pos,0.0,1.0); }
+  `;
 
-      // --- Mobile menu toggle ---
-      var toggle = document.getElementById("nav-toggle");
-      toggle.addEventListener("click", function () {
-        nav.classList.toggle("is-mobile-open");
-        toggle.classList.toggle("is-open");
-      });
-      document.querySelectorAll("#nav-mobile a").forEach(function (a) {
-        a.addEventListener("click", function () {
-          nav.classList.remove("is-mobile-open");
-          toggle.classList.remove("is-open");
-        });
-      });
+      const frag = `
+    precision highp float;
+    uniform vec2 u_res;
+    uniform float u_time;
+    uniform vec2 u_mouse;
 
-      // --- Scroll reveal ---
-      var revealEls = document.querySelectorAll(".reveal");
-      if ("IntersectionObserver" in window && !reduceMotion) {
-        var io = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                io.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
-        );
-        revealEls.forEach(function (el) {
-          io.observe(el);
-        });
+    #define PI     3.14159265359
+    #define TAU    6.28318530718
+    #define RS     1.0
+    #define B_CRIT 2.59807621
+    #define R_IN   1.98
+    #define R_OUT  16.0
+    #define CAM_D  25.5
+
+    float hash21(vec2 p){
+      return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+    }
+
+    vec2 hash22(vec2 p){
+      vec2 q = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
+      return fract(sin(q) * 43758.5453);
+    }
+
+    float vnoise(vec2 p){
+      vec2 i = floor(p);
+      vec2 f = fract(p);
+      vec2 u = f * f * (3.0 - 2.0 * f);
+      float a = hash21(i);
+      float b = hash21(i + vec2(1.0, 0.0));
+      float c = hash21(i + vec2(0.0, 1.0));
+      float d = hash21(i + vec2(1.0, 1.0));
+      return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+    }
+
+    float fbm(vec2 p){
+      float v = 0.0;
+      float a = 0.5;
+      for(int i = 0; i < 5; i++){
+        v += a * vnoise(p);
+        p = p * 2.03 + vec2(1.7, 9.2);
+        a *= 0.5;
+      }
+      return v;
+    }
+
+    /* Evaluate thin equatorial accretion disk with concentric plasma lanes & Doppler shift. */
+    vec4 sampleDisk(vec3 hitPos, vec3 rayVel){
+      float r = length(hitPos.xz);
+      if(r <= R_IN || r >= R_OUT) return vec4(0.0);
+
+      float radial = clamp((r - R_IN) / (R_OUT - R_IN), 0.0, 1.0);
+      float innerFade = smoothstep(R_IN, R_IN + 0.36, r);
+      float outerFade = 1.0 - smoothstep(R_OUT * 0.36, R_OUT, r);
+      float invRad = max(1.0 - radial, 0.0001);
+      float emissivity = pow(invRad, 2.35) * 0.72 + pow(invRad, 1.25) * 0.28;
+      float env = innerFade * outerFade * emissivity;
+
+      float phi = atan(hitPos.z, hitPos.x);
+
+      /* Concentric multi-scale plasma bands with subtle azimuthal warp */
+      float warpAngle = phi - u_time * 0.16;
+      float warp = (vnoise(vec2(cos(warpAngle) * 1.4 + r * 0.65, sin(warpAngle) * 1.4)) - 0.5) * 0.38;
+      float ring1 = vnoise(vec2(r * 2.2, 0.7));
+      float ring2 = vnoise(vec2(r * 5.2, 3.1));
+      float ringW = vnoise(vec2((r + warp) * 4.0, 9.2));
+      float ring3 = vnoise(vec2((r + warp * 0.5) * 9.5, 6.4));
+      float ring3Mix = 0.12 * (1.0 - smoothstep(4.5, 10.5, r));
+      float rings = 0.34 + 0.66 * smoothstep(0.24, 0.78, ring1 * 0.40 + ring2 * 0.28 + ringW * 0.20 + ring3 * ring3Mix);
+
+      /* Seamless 3-speed Keplerian turbulence (zero angular seam, zero infinite windup) */
+      float aFast = phi - u_time * 0.42;
+      float aMid  = phi - u_time * 0.24;
+      float aSlow = phi - u_time * 0.12;
+
+      float wFast = 1.0 - smoothstep(R_IN, 6.2, r);
+      float wSlow = smoothstep(5.0, R_OUT * 0.85, r);
+
+      float nMid  = fbm(vec2(cos(aMid) * 1.45 + r * 2.6, sin(aMid) * 1.45 - r * 2.1));
+      float nFast = fbm(vec2(cos(aFast) * 2.10 + r * 3.8, sin(aFast) * 2.10 + r * 3.1));
+      float nSlow = fbm(vec2(cos(aSlow) * 1.15 + r * 1.6, sin(aSlow) * 1.15 - r * 1.4));
+      float turb = mix(mix(nMid, nFast, wFast * 0.6), nSlow, wSlow * 0.55);
+      float filaments = 0.44 + 0.92 * smoothstep(0.26, 0.76, turb);
+
+      /* Physical 3D relativistic Doppler beaming along local orbital tangent */
+      vec2 tang = vec2(-hitPos.z, hitPos.x) / max(r, 0.0001);
+      vec3 toObs = -normalize(rayVel);
+      float mu = dot(tang, toObs.xz);
+      float beta = 0.21 * sqrt(R_IN / max(r, R_IN));
+      float dopplerFactor = 1.0 / max(1.0 - beta * mu, 0.56);
+      float doppler = clamp(pow(dopplerFactor, 1.85), 0.66, 1.66);
+
+      /* Blackbody-inspired warm bone/gold/amber palette */
+      float heat = clamp(pow(invRad, 1.35) * (0.74 + 0.28 * dopplerFactor), 0.0, 1.15);
+      vec3 colOuter = vec3(0.34, 0.18, 0.09);
+      vec3 colMid   = vec3(0.94, 0.65, 0.36);
+      vec3 colHot   = vec3(1.00, 0.91, 0.77);
+      vec3 baseCol  = heat < 0.52
+        ? mix(colOuter, colMid, heat / 0.52)
+        : mix(colMid, colHot, clamp((heat - 0.52) / 0.55, 0.0, 1.0));
+
+      float rimDist = (r - (R_IN + 0.35)) / 0.28;
+      float innerRim = exp(-rimDist * rimDist);
+      float intensity = env * rings * filaments * doppler * 1.92 + innerRim * innerFade * doppler * 0.62;
+
+      float alpha = clamp(innerFade * (1.0 - smoothstep(R_OUT * 0.64, R_OUT, r)) * 1.25, 0.0, 0.995);
+      return vec4(baseCol * intensity, alpha);
+    }
+
+    /* Distortion-free cubemap starfield sampled along lensed escape direction. */
+    vec3 sampleStars(vec3 dir){
+      vec3 ad = abs(dir);
+      vec2 fuv;
+      float seed;
+      if(ad.x >= ad.y && ad.x >= ad.z){
+        fuv = dir.yz / ad.x;
+        seed = 13.7 + (dir.x > 0.0 ? 50.0 : 0.0);
+      } else if(ad.y >= ad.x && ad.y >= ad.z){
+        fuv = dir.xz / ad.y;
+        seed = 29.3 + (dir.y > 0.0 ? 50.0 : 0.0);
       } else {
-        revealEls.forEach(function (el) {
-          el.classList.add("is-visible");
-        });
+        fuv = dir.xy / ad.z;
+        seed = 47.1 + (dir.z > 0.0 ? 50.0 : 0.0);
       }
 
-      // --- Count-up stats ---
-      var counters = document.querySelectorAll("[data-count]");
-      function animateCount(el) {
-        var target = parseFloat(el.getAttribute("data-target"));
-        var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
-        if (reduceMotion || isNaN(target)) {
-          el.textContent = target.toFixed(decimals);
-          return;
+      vec3 stars = vec3(0.0);
+      for(int i = 0; i < 3; i++){
+        float fi = float(i);
+        float sc = 54.0 + fi * 44.0;
+        vec2 g = fuv * sc + vec2(seed + fi * 19.3, seed * 1.7 + fi * 37.1);
+        vec2 id = floor(g);
+        vec2 f = fract(g);
+        vec2 jitter = 0.22 + hash22(id) * 0.56;
+        float dist = length(f - jitter);
+        float h = hash21(id + vec2(11.3, 7.1));
+        if(h > 0.865){
+          float mag = (h - 0.865) / 0.135;
+          float sz = 0.016 + mag * 0.020;
+          float twinkle = 0.75 + 0.25 * sin(u_time * (0.4 + h * 0.8) + h * TAU);
+          float dNorm = dist / sz;
+          float b = exp(-dNorm * dNorm) * (0.08 + 0.34 * pow(max(mag, 0.0001), 1.8)) * twinkle;
+          float tint = hash21(id + vec2(3.7, 19.1));
+          stars += b * mix(vec3(0.86, 0.92, 1.06), vec3(1.04, 0.97, 0.84), tint);
         }
-        var duration = 1400;
-        var start = null;
+      }
+      return stars;
+    }
+
+    vec3 tonemapACES(vec3 x){
+      x = max(x, 0.0);
+      vec3 mapped = (x * (2.51 * x + 0.03)) / (x * (2.43 * x + 0.59) + 0.14);
+      return pow(clamp(mapped, 0.0001, 1.0), vec3(1.0 / 2.2));
+    }
+
+    void main(){
+      float minDim = min(u_res.x, u_res.y);
+      vec2 uv = (gl_FragCoord.xy - u_res * 0.5) / minDim;
+
+      float aspect = u_res.x / max(u_res.y, 1.0);
+      float desktopMix = smoothstep(0.68, 1.15, aspect);
+      vec2 bhCenter = vec2(mix(0.0, 0.11, desktopMix), mix(0.24, 0.03, desktopMix));
+      float fovTan = mix(1.06, 0.88, desktopMix);
+
+      vec2 m = u_mouse * 2.0 - 1.0;
+      vec2 localUv = uv - bhCenter + m * vec2(0.015, 0.008);
+
+      /* Camera slightly above disk plane & rolled left (adjust degrees below: + = tilt left, - = tilt right). */
+      float inc = 0.168 + (m.y + 0.2) * 0.032;
+      float az = m.x * 0.09;
+      float roll = 15.0 * (PI / 180.0);
+      float cr = cos(roll);
+      float sr = sin(roll);
+      vec3 camPos = vec3(sin(az) * cos(inc), sin(inc), cos(az) * cos(inc)) * CAM_D;
+      vec3 fwd = normalize(-camPos);
+      vec3 right0 = normalize(cross(fwd, vec3(0.0, 1.0, 0.0)));
+      vec3 up0 = cross(right0, fwd);
+      vec3 right = right0 * cr - up0 * sr;
+      vec3 up = right0 * sr + up0 * cr;
+
+      vec3 pos = camPos;
+      vec3 vel = normalize(fwd + (localUv.x * right + localUv.y * up) * fovTan);
+
+      vec3 hVec = cross(pos, vel);
+      float h2 = dot(hVec, hVec);
+      float hVal = sqrt(h2);
+
+      vec3 col = vec3(0.0);
+      float trans = 1.0;
+      bool captured = false;
+
+      if(hVal > 21.8){
+        /* Weak-field analytical deflection fast-path for outer space rays */
+        float bend = 2.0 * RS / hVal + (15.0 * PI / 16.0) * (RS * RS) / h2;
+        vec3 perp = normalize(cross(hVec, vel));
+        vel = normalize(vel - perp * bend);
+      } else {
+        float r2 = dot(pos, pos);
+        float r = sqrt(r2);
+        float invR = inversesqrt(r2);
+        float invR5 = invR * invR * invR * invR * invR;
+        vec3 acc = pos * (-1.5 * RS * h2 * invR5);
+
+        /* Schwarzschild null geodesic Velocity Verlet integration */
+        for(int i = 0; i < 120; i++){
+          float vl = length(vel);
+          float ds = clamp(0.095 * r, 0.030, 2.2);
+          if(r < 4.5 && abs(pos.y) < 0.8){
+            ds = min(ds, max(0.032, abs(pos.y) * 0.45 + 0.025));
+          }
+          float dt = ds / max(vl, 1.0);
+
+          vec3 oldPos = pos;
+          pos += vel * dt + 0.5 * acc * dt * dt;
+
+          r2 = dot(pos, pos);
+          r = sqrt(r2);
+
+          if((oldPos.y > 0.0 && pos.y <= 0.0) || (oldPos.y < 0.0 && pos.y >= 0.0)){
+            float denom = abs(oldPos.y) + abs(pos.y) + 0.00001;
+            float frac = abs(oldPos.y) / denom;
+            vec3 hitPos = mix(oldPos, pos, frac);
+            vec4 diskSample = sampleDisk(hitPos, vel);
+            if(diskSample.a > 0.0){
+              col += trans * diskSample.rgb * diskSample.a;
+              trans *= (1.0 - diskSample.a);
+            }
+          }
+
+          if(r <= RS * 1.02){
+            captured = true;
+            break;
+          }
+          if(r > 28.0 && dot(pos, vel) > 0.0){
+            break;
+          }
+
+          invR = inversesqrt(r2);
+          invR5 = invR * invR * invR * invR * invR;
+          vec3 acc1 = pos * (-1.5 * RS * h2 * invR5);
+          vel += 0.5 * (acc + acc1) * dt;
+          acc = acc1;
+        }
+      }
+
+      /* Smooth anti-aliased shadow boundary at exact critical impact parameter */
+      float shadowEscape = (captured || hVal < B_CRIT)
+        ? smoothstep(B_CRIT - 0.015, B_CRIT + 0.045, hVal)
+        : 1.0;
+
+      /* Crisp photon ring hugging shadow rim (occluded naturally by foreground disk via trans) */
+      float dh = max(hVal - B_CRIT, 0.0);
+      float pCoreDist = (hVal - (B_CRIT + 0.015)) / 0.052;
+      float photonCore = exp(-pCoreDist * pCoreDist) * smoothstep(B_CRIT - 0.025, B_CRIT + 0.015, hVal);
+      float pHaloDist = dh / 0.28;
+      float photonHalo = exp(-pHaloDist * pHaloDist) * smoothstep(B_CRIT - 0.015, B_CRIT + 0.06, hVal);
+      float localR = max(length(localUv), 0.0001);
+      float diskUvX = localUv.x * cr + localUv.y * sr;
+      float sideBias = 0.68 + 0.48 * clamp(0.5 + 0.5 * (diskUvX / localR), 0.0, 1.0);
+      float ringEnergy = (photonCore * 1.30 + photonHalo * 0.26) * sideBias * trans;
+      col += vec3(1.00, 0.87, 0.67) * ringEnergy;
+
+      /* Restrained volumetric scatter around the shadow */
+      float cDist = dh / 2.2;
+      float corona = exp(-cDist * cDist) * 0.045 * shadowEscape * trans;
+      col += vec3(0.95, 0.72, 0.48) * corona;
+
+      /* Gravitationally lensed deep-space starfield */
+      if(shadowEscape > 0.01){
+        vec3 escapeDir = normalize(vel);
+        col += sampleStars(escapeDir) * shadowEscape * trans;
+      }
+
+      /* ---- VIGNETTE ---- */
+      float vig = 1.0 - smoothstep(0.45, 1.22, length(localUv));
+      col *= vig * 0.90 + 0.10;
+
+      col = tonemapACES(col);
+
+      /* Restored cool-indigo cosmic hero gradient & faded Milky Way continuity (excluded from inner rim & shadow) */
+      float skyMask = smoothstep(B_CRIT + 0.45, B_CRIT + 1.8, hVal) * trans * (captured ? 0.0 : 1.0);
+      vec2 gUv = vec2(uv.x * 0.75, uv.y * 1.05);
+      float broadGlow = exp(-dot(gUv, gUv) * 1.45);
+      float centerGlow = exp(-dot(uv, uv) * 3.8);
+      float mwBand = exp(-abs(uv.y * 1.25 - uv.x * 0.35 + 0.04) * 2.6);
+      float screenY = gl_FragCoord.y / max(u_res.y, 1.0);
+      float bottomBlend = smoothstep(0.0, 0.24, screenY);
+
+      vec3 skyCol = (
+        vec3(0.045, 0.062, 0.115) * broadGlow +
+        vec3(0.055, 0.072, 0.135) * centerGlow +
+        vec3(0.025, 0.034, 0.062) * mwBand
+      ) * mix(0.28, 1.0, bottomBlend);
+
+      /* Deep space floor matching #02040a page background outside shadow */
+      vec3 spaceFloor = vec3(0.008, 0.016, 0.039);
+      col = mix(col, max(col + skyCol, spaceFloor), skyMask);
+
+      gl_FragColor = vec4(col, 1.0);
+    }
+  `;
+
+      function compile(type, src) {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, src);
+        gl.compileShader(s);
+        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+          gl.deleteShader(s);
+          return null;
+        }
+        return s;
+      }
+
+      const vs = compile(gl.VERTEX_SHADER, vert);
+      const fs = compile(gl.FRAGMENT_SHADER, frag);
+      if (!vs || !fs) { canvas.style.display = 'none'; return; }
+
+      const prog = gl.createProgram();
+      gl.attachShader(prog, vs);
+      gl.attachShader(prog, fs);
+      gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+        canvas.style.display = 'none';
+        return;
+      }
+      gl.useProgram(prog);
+
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+      const loc = gl.getAttribLocation(prog, 'a_pos');
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+      const uRes = gl.getUniformLocation(prog, 'u_res');
+      const uTime = gl.getUniformLocation(prog, 'u_time');
+      const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+      function drawFrame() {
+        if (W <= 0 || H <= 0) return;
+        gl.uniform2f(uRes, W, H);
+        gl.uniform1f(uTime, t);
+        gl.uniform2f(uMouse, mouse.x, mouse.y);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      }
+
+      function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth <= 760 ? 1.5 : 2);
+        W = Math.floor(canvas.clientWidth * dpr);
+        H = Math.floor(canvas.clientHeight * dpr);
+        if (W <= 0 || H <= 0) return;
+        canvas.width = W; canvas.height = H;
+        gl.viewport(0, 0, W, H);
+        if (reducedMotion) drawFrame();
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+
+      /* mouse / touch tracking — only on hero */
+      document.addEventListener('mousemove', e => {
+        const r = hero.getBoundingClientRect();
+        if (e.clientY < r.bottom + 60) {
+          targetMouse.x = e.clientX / window.innerWidth;
+          targetMouse.y = 1 - e.clientY / window.innerHeight;
+        }
+      });
+      document.addEventListener('touchmove', e => {
+        if (!isVisible) return;
+        const touch = e.touches[0];
+        if (!touch) return;
+        const r = hero.getBoundingClientRect();
+        if (touch.clientY < r.bottom + 60) {
+          targetMouse.x = touch.clientX / window.innerWidth;
+          targetMouse.y = 1 - touch.clientY / window.innerHeight;
+        }
+      }, { passive: true });
+
+      function frame(ts) {
+        rafId = 0;
+        if (!isVisible || document.hidden) return;
+        if (lastTs) t += Math.min((ts - lastTs) * 0.001, 0.05);
+        lastTs = ts;
+
+        /* smooth mouse */
+        mouse.x += (targetMouse.x - mouse.x) * 0.04;
+        mouse.y += (targetMouse.y - mouse.y) * 0.04;
+
+        drawFrame();
+        rafId = requestAnimationFrame(frame);
+      }
+
+      function startLoop() {
+        if (reducedMotion) { drawFrame(); return; }
+        if (!rafId && isVisible && !document.hidden) {
+          lastTs = 0;
+          rafId = requestAnimationFrame(frame);
+        }
+      }
+
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+          isVisible = entries[0].isIntersecting;
+          if (isVisible) startLoop();
+        }, { threshold: 0.01 });
+        io.observe(hero);
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) startLoop();
+      });
+
+      startLoop();
+    })();
+
+    /* ============ PAGE-WIDE COSMOS & PARALLAX ============ */
+    (function () {
+      const canvas = document.getElementById('cosmos-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const craft = document.getElementById('space-craft');
+      const astro = document.getElementById('space-astronaut');
+      const reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+      let W = 0, H = 0, dpr = 1;
+      let mwLayer = null;
+      const stars = [];
+
+      /* Deterministic PRNG so star layout stays consistent on resize */
+      function mulberry32(seed) {
+        let a = seed;
+        return function () {
+          let t = a += 0x6D2B79F5;
+          t = Math.imul(t ^ t >>> 15, t | 1);
+          t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+          return ((t ^ t >>> 14) >>> 0) / 4294967296;
+        };
+      }
+
+      function buildMilkyWay() {
+        mwLayer = document.createElement('canvas');
+        mwLayer.width = W;
+        mwLayer.height = H;
+        const mctx = mwLayer.getContext('2d');
+
+        /* Deep space ambient base gradient */
+        const bg = mctx.createLinearGradient(0, 0, W * 0.85, H);
+        bg.addColorStop(0, '#02040a');
+        bg.addColorStop(0.45, '#050915');
+        bg.addColorStop(1, '#020308');
+        mctx.fillStyle = bg;
+        mctx.fillRect(0, 0, W, H);
+
+        /* Faded diagonal Milky Way galactic core band */
+        mctx.save();
+        mctx.translate(W * 0.52, H * 0.5);
+        mctx.rotate(-0.46);
+        const bandW = Math.max(W, H) * 1.45;
+        const bandH = Math.min(W, H) * 0.58;
+
+        mctx.save();
+        mctx.scale(1, 0.44);
+        const mwGrad = mctx.createRadialGradient(0, 0, bandH * 0.08, 0, 0, bandW * 0.56);
+        mwGrad.addColorStop(0, 'rgba(130, 155, 215, 0.085)');
+        mwGrad.addColorStop(0.28, 'rgba(92, 118, 178, 0.055)');
+        mwGrad.addColorStop(0.58, 'rgba(218, 184, 138, 0.025)');
+        mwGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        mctx.fillStyle = mwGrad;
+        mctx.fillRect(-bandW, -bandW, bandW * 2, bandW * 2);
+        mctx.restore();
+
+        /* Subtle cloudy dust puffs along the galactic plane */
+        const rng = mulberry32(4219);
+        for (let i = 0; i < 42; i++) {
+          const x = (rng() - 0.5) * bandW * 0.85;
+          const y = (rng() - 0.5) * bandH * 0.42;
+          const rad = (0.08 + rng() * 0.18) * Math.min(W, H);
+          const warm = rng() > 0.62;
+          const g = mctx.createRadialGradient(x, y, 0, x, y, rad);
+          g.addColorStop(0, warm ? 'rgba(235, 200, 155, 0.028)' : 'rgba(125, 155, 220, 0.032)');
+          g.addColorStop(1, 'rgba(0, 0, 0, 0)');
+          mctx.fillStyle = g;
+          mctx.beginPath();
+          mctx.arc(x, y, rad, 0, Math.PI * 2);
+          mctx.fill();
+        }
+
+        /* Fine dense faint micro-stars embedded in the Milky Way band */
+        for (let i = 0; i < 240; i++) {
+          const x = (rng() - 0.5) * bandW * 0.92;
+          const y = (rng() - 0.5) * bandH * 0.58 * (0.4 + rng() * 0.6);
+          const sz = (0.45 + rng() * 0.95) * dpr;
+          const al = 0.05 + rng() * 0.16;
+          mctx.fillStyle = rng() > 0.75 ? `rgba(245, 228, 200, ${al})` : `rgba(205, 220, 250, ${al})`;
+          mctx.beginPath();
+          mctx.arc(x, y, sz, 0, Math.PI * 2);
+          mctx.fill();
+        }
+        mctx.restore();
+      }
+
+      function buildStars() {
+        stars.length = 0;
+        const rng = mulberry32(9081);
+        const count = Math.min(130, Math.max(60, Math.floor((W * H) / (dpr * dpr * 18000))));
+        for (let i = 0; i < count; i++) {
+          stars.push({
+            x: rng(),
+            y: rng(),
+            r: (0.5 + rng() * 1.1) * dpr,
+            alpha: 0.14 + rng() * 0.42,
+            depth: 0.06 + rng() * 0.22,
+            warm: rng() > 0.68
+          });
+        }
+      }
+
+      function renderCosmos() {
+        if (!mwLayer) return;
+        const sy = window.scrollY || 0;
+        const docH = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+        const p = Math.min(Math.max(sy / docH, 0), 1);
+
+        ctx.clearRect(0, 0, W, H);
+        ctx.drawImage(mwLayer, 0, 0);
+
+        for (let i = 0; i < stars.length; i++) {
+          const s = stars[i];
+          const px = s.x * W;
+          const py = ((s.y * H - sy * s.depth * dpr) % H + H) % H;
+          ctx.fillStyle = s.warm
+            ? `rgba(245, 228, 204, ${s.alpha})`
+            : `rgba(210, 225, 255, ${s.alpha})`;
+          ctx.beginPath();
+          ctx.arc(px, py, s.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        /* Fade floating spacecraft & astronaut cleanly only below the hero section */
+        const mobileScale = window.innerWidth <= 860 ? 0.55 : 1.0;
+        if (craft) {
+          const craftVis = Math.max(0, Math.min(1, (p - 0.08) * 5.0)) * (1 - Math.max(0, Math.min(1, (p - 0.55) * 2.5)));
+          craft.style.opacity = (craftVis * 0.115 * mobileScale).toFixed(3);
+          if (!reduced) craft.style.marginTop = `${(-sy * 0.05).toFixed(1)}px`;
+        }
+        if (astro) {
+          const astroVis = Math.max(0, Math.min(1, (p - 0.36) * 4.0));
+          astro.style.opacity = (astroVis * 0.10 * mobileScale).toFixed(3);
+          if (!reduced) astro.style.marginTop = `${(-sy * 0.035 + 16).toFixed(1)}px`;
+        }
+      }
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth <= 760 ? 1.5 : 2);
+        const nextW = Math.floor(window.innerWidth * dpr);
+        const nextH = Math.floor(window.innerHeight * dpr);
+        if (nextW <= 0 || nextH <= 0) return;
+        const significant = !mwLayer || Math.abs(nextW - W) > 2 || Math.abs(nextH - H) > 100 * dpr;
+        W = nextW;
+        H = nextH;
+        if (significant) {
+          canvas.width = W;
+          canvas.height = H;
+          buildMilkyWay();
+          buildStars();
+        }
+        renderCosmos();
+      }
+
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(() => { renderCosmos(); ticking = false; });
+        }
+      }, { passive: true });
+      window.addEventListener('resize', resize);
+      resize();
+    })();
+
+    /* ============ NAV ============ */
+    (function () {
+      const nav = document.getElementById('nav');
+      const toggle = document.getElementById('nav-toggle');
+      const mobile = document.getElementById('nav-mobile');
+      let open = false;
+      function syncNav() {
+        if (nav) nav.classList.toggle('scrolled', window.scrollY > 12);
+      }
+      function setMenu(state) {
+        open = state;
+        mobile.style.display = open ? 'flex' : 'none';
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (nav) nav.classList.toggle('menu-open', open);
+      }
+      window.addEventListener('scroll', syncNav, { passive: true });
+      window.addEventListener('resize', () => { if (open && window.innerWidth > 760) setMenu(false); });
+      document.addEventListener('keydown', e => { if (open && e.key === 'Escape') setMenu(false); });
+      syncNav();
+      toggle.addEventListener('click', () => setMenu(!open));
+      mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    })();
+
+    /* ============ REVEAL ============ */
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    })();
+
+    /* ============ COUNT UP ============ */
+    (function () {
+      const reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      function animate(el) {
+        const target = parseFloat(el.dataset.target);
+        const dec = parseInt(el.dataset.dec || '0');
+        if (reduced) { el.textContent = target.toFixed(dec); return; }
+        const dur = 1200; let start = null;
         function step(ts) {
-          if (start === null) start = ts;
-          var progress = Math.min((ts - start) / duration, 1);
-          var eased = 1 - Math.pow(1 - progress, 3);
-          var value = target * eased;
-          el.textContent = value.toFixed(decimals);
-          if (progress < 1) requestAnimationFrame(step);
-          else el.textContent = target.toFixed(decimals);
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(dec);
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = target.toFixed(dec);
         }
         requestAnimationFrame(step);
       }
-      if ("IntersectionObserver" in window) {
-        var counterIo = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                animateCount(entry.target);
-                counterIo.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.5 },
-        );
-        counters.forEach(function (el) {
-          counterIo.observe(el);
-        });
-      } else {
-        counters.forEach(animateCount);
-      }
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); } });
+      }, { threshold: .5 });
+      document.querySelectorAll('.count').forEach(el => io.observe(el));
+    })();
 
-      // --- More projects toggle ---
-      var projectsMore = document.getElementById("projects-more");
-      var projectsToggle = document.getElementById("projects-toggle");
+    /* ============ PROJECTS TOGGLE ============ */
+    (function () {
+      const btn = document.getElementById('projects-toggle');
+      const more = document.getElementById('projects-more');
+      const label = document.getElementById('toggle-label');
+      if (!btn || !more) return;
 
-      if (projectsMore && projectsToggle) {
-        var projectsLabel = projectsToggle.querySelector(
-          ".projects-toggle__label",
-        );
+      const isStacked = window.matchMedia('(max-width: 860px)');
 
-        var isMobile = window.matchMedia("(max-width: 700px)");
+      btn.addEventListener('click', () => {
+        const isOpen = more.classList.contains('open');
 
-        projectsToggle.addEventListener("click", function () {
-          var isOpen = projectsMore.classList.contains("is-open");
-
-          // =========================
-          // OPEN
-          // =========================
-          if (!isOpen) {
-            projectsMore.classList.add("is-open");
-            projectsToggle.classList.add("is-open");
-            projectsToggle.setAttribute("aria-expanded", "true");
-
-            if (projectsLabel) {
-              projectsLabel.textContent = "View Less";
-            }
-
-            return;
-          }
-
-          // =========================
-          // CLOSE — DESKTOP
-          // =========================
-          if (!isMobile.matches) {
-            projectsMore.classList.remove("is-open");
-            projectsToggle.classList.remove("is-open");
-            projectsToggle.setAttribute("aria-expanded", "false");
-
-            if (projectsLabel) {
-              projectsLabel.textContent = "View More";
-            }
-
-            return;
-          }
-
-          // =========================
-          // CLOSE — MOBILE / iOS
-          // =========================
-
-          // Remember exactly where the toggle is on screen.
-          var beforeTop = projectsToggle.getBoundingClientRect().top;
-
-          // Remember current scroll position.
-          var beforeScrollY = window.scrollY;
-
-          // Disable smooth scrolling temporarily.
-          var html = document.documentElement;
-          var previousScrollBehavior = html.style.scrollBehavior;
-
-          html.style.scrollBehavior = "auto";
-
-          // Disable the max-height animation.
-          projectsMore.classList.add("is-collapsing");
-
-          // Collapse immediately.
-          projectsMore.classList.remove("is-open");
-
-          // Force Safari to apply the new layout NOW.
-          void projectsMore.offsetHeight;
-
-          // Measure where the button moved after the collapse.
-          var afterTop = projectsToggle.getBoundingClientRect().top;
-
-          // If the button moved upward because the projects
-          // disappeared, move the viewport by exactly the
-          // same amount in the opposite direction.
-          var correction = afterTop - beforeTop;
-
-          if (Math.abs(correction) > 0.5) {
-            window.scrollTo(0, beforeScrollY + correction);
-          }
-
-          projectsToggle.classList.remove("is-open");
-          projectsToggle.setAttribute("aria-expanded", "false");
-
-          if (projectsLabel) {
-            projectsLabel.textContent = "View More";
-          }
-
-          // Restore normal behavior after Safari has
-          // finished processing the synchronous layout change.
-          requestAnimationFrame(function () {
-            projectsMore.classList.remove("is-collapsing");
-            html.style.scrollBehavior = previousScrollBehavior;
-          });
-        });
-      }
-
-      // ============ BOOT ANIMATION ============
-      (function () {
-        const STEPS = [
-          { text: "Initialising...", delay: 0 },
-          { text: "Spinning...", delay: 380 },
-          { text: "Mounting....", delay: 700 },
-          { text: "Connecting..", delay: 1050 },
-          { text: "Loading....", delay: 1380 },
-          { text: "All systems nominal", delay: 1680, ok: true },
-        ];
-        const PERCENTS = [0, 18, 35, 55, 72, 88, 100];
-        const overlay = document.getElementById("boot-overlay");
-        const mark = document.getElementById("boot-mark");
-        const linesEl = document.getElementById("boot-lines");
-        const bar = document.getElementById("boot-bar");
-        const pct = document.getElementById("boot-pct");
-
-        function setBar(v) {
-          bar.style.width = v + "%";
-          pct.innerHTML = "<span>" + v + "</span>%";
+        // OPEN
+        if (!isOpen) {
+          more.classList.add('open');
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          if (label) label.textContent = 'View less';
+          return;
         }
 
-        setTimeout(() => {
-          mark.classList.add("boot-visible");
-          setBar(0);
-        }, 200);
+        // CLOSE — DESKTOP (2-column layout)
+        if (!isStacked.matches) {
+          more.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          if (label) label.textContent = 'View more';
+          return;
+        }
 
-        STEPS.forEach((step, i) => {
-          setTimeout(() => {
-            const line = document.createElement("div");
-            line.className = "boot-line" + (step.ok ? " boot-ok" : "");
-            line.innerHTML =
-              '<span class="boot-prefix">' +
-              (step.ok ? "✓" : "›") +
-              "</span>" +
-              "<span>" +
-              step.text +
-              (step.ok ? "" : "...") +
-              "</span>";
-            linesEl.appendChild(line);
-            requestAnimationFrame(() =>
-              requestAnimationFrame(() => line.classList.add("boot-show")),
-            );
-            setBar(PERCENTS[i + 1]);
-          }, step.delay + 600);
+        // CLOSE — MOBILE / iOS SAFARI / TABLET PORTRAIT (1-column stacked layout)
+        const beforeTop = btn.getBoundingClientRect().top;
+        const beforeScrollY = window.scrollY;
+        const html = document.documentElement;
+        const prevScrollBehavior = html.style.scrollBehavior;
+
+        html.style.scrollBehavior = 'auto';
+        more.classList.add('is-collapsing');
+        more.classList.remove('open');
+        void more.offsetHeight; // force synchronous Safari/Blink reflow
+
+        const correction = btn.getBoundingClientRect().top - beforeTop;
+        if (Math.abs(correction) > 0.5) {
+          window.scrollTo(0, beforeScrollY + correction);
+        }
+
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        if (label) label.textContent = 'View more';
+
+        requestAnimationFrame(() => {
+          more.classList.remove('is-collapsing');
+          html.style.scrollBehavior = prevScrollBehavior;
         });
-
-        const total = STEPS[STEPS.length - 1].delay + 1120;
-        setTimeout(() => {
-          overlay.classList.add("boot-done");
-          setTimeout(() => {
-            overlay.style.display = "none";
-          }, 650);
-        }, total);
-      })();
+      });
     })();
   </script>
 </body>
