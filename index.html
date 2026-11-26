@@ -288,7 +288,7 @@
       color: var(--bone);
       margin-bottom: 14px;
       paint-order: stroke fill;
-      -webkit-text-stroke: 2.5px rgba(2, 4, 10, .88);
+      -webkit-text-stroke: 1.8px rgba(2, 4, 10, .88);
     }
 
     .hero-name em {
@@ -1856,14 +1856,14 @@
       float heat = clamp(pow(invRad, 1.35) * (0.74 + 0.28 * dopplerFactor), 0.0, 1.15);
       vec3 colOuter = vec3(0.34, 0.18, 0.09);
       vec3 colMid   = vec3(0.94, 0.65, 0.36);
-      vec3 colHot   = vec3(1.00, 0.91, 0.77);
+      vec3 colHot   = vec3(1.00, 0.87, 0.68);
       vec3 baseCol  = heat < 0.52
         ? mix(colOuter, colMid, heat / 0.52)
         : mix(colMid, colHot, clamp((heat - 0.52) / 0.55, 0.0, 1.0));
 
       float rimDist = (r - (R_IN + 0.35)) / 0.28;
       float innerRim = exp(-rimDist * rimDist);
-      float intensity = env * rings * filaments * doppler * 1.92 + innerRim * innerFade * doppler * 0.62;
+      float intensity = env * rings * filaments * doppler * 1.02 + innerRim * innerFade * doppler * 0.24;
 
       float alpha = clamp(innerFade * (1.0 - smoothstep(R_OUT * 0.64, R_OUT, r)) * 1.25, 0.0, 0.995);
       return vec4(baseCol * intensity, alpha);
@@ -2018,13 +2018,13 @@
       float localR = max(length(localUv), 0.0001);
       float diskUvX = localUv.x * cr + localUv.y * sr;
       float sideBias = 0.68 + 0.48 * clamp(0.5 + 0.5 * (diskUvX / localR), 0.0, 1.0);
-      float ringEnergy = (photonCore * 1.30 + photonHalo * 0.26) * sideBias * trans;
+      float ringEnergy = (photonCore * 0.68 + photonHalo * 0.13) * sideBias * trans;
       col += vec3(1.00, 0.87, 0.67) * ringEnergy;
 
       /* Restrained volumetric scatter around the shadow */
       float cDist = dh / 2.2;
-      float corona = exp(-cDist * cDist) * 0.045 * shadowEscape * trans;
-      col += vec3(0.95, 0.72, 0.48) * corona;
+      float corona = exp(-cDist * cDist) * 0.025 * shadowEscape * trans;
+      col += vec3(0.96, 0.79, 0.61) * corona;
 
       /* Gravitationally lensed deep-space starfield */
       if(shadowEscape > 0.01){
@@ -2036,7 +2036,8 @@
       float vig = 1.0 - smoothstep(0.45, 1.22, length(localUv));
       col *= vig * 0.90 + 0.10;
 
-      col = tonemapACES(col);
+      /* Recess black hole highlights slightly so hero typography reads cleanly */
+      col = tonemapACES(col) * 0.82;
 
       /* Restored cool-indigo cosmic hero gradient & faded Milky Way continuity (excluded from inner rim & shadow) */
       float skyMask = smoothstep(B_CRIT + 0.45, B_CRIT + 1.8, hVal) * trans * (captured ? 0.0 : 1.0);
@@ -2224,9 +2225,9 @@
         mctx.save();
         mctx.scale(1, 0.44);
         const mwGrad = mctx.createRadialGradient(0, 0, bandH * 0.08, 0, 0, bandW * 0.56);
-        mwGrad.addColorStop(0, 'rgba(130, 155, 215, 0.085)');
-        mwGrad.addColorStop(0.28, 'rgba(92, 118, 178, 0.055)');
-        mwGrad.addColorStop(0.58, 'rgba(218, 184, 138, 0.025)');
+        mwGrad.addColorStop(0, 'rgba(136, 162, 222, 0.135)');
+        mwGrad.addColorStop(0.28, 'rgba(98, 125, 186, 0.088)');
+        mwGrad.addColorStop(0.58, 'rgba(222, 188, 144, 0.044)');
         mwGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
         mctx.fillStyle = mwGrad;
         mctx.fillRect(-bandW, -bandW, bandW * 2, bandW * 2);
@@ -2240,7 +2241,7 @@
           const rad = (0.08 + rng() * 0.18) * Math.min(W, H);
           const warm = rng() > 0.62;
           const g = mctx.createRadialGradient(x, y, 0, x, y, rad);
-          g.addColorStop(0, warm ? 'rgba(235, 200, 155, 0.028)' : 'rgba(125, 155, 220, 0.032)');
+          g.addColorStop(0, warm ? 'rgba(235, 200, 155, 0.046)' : 'rgba(130, 162, 226, 0.052)');
           g.addColorStop(1, 'rgba(0, 0, 0, 0)');
           mctx.fillStyle = g;
           mctx.beginPath();
@@ -2248,12 +2249,12 @@
           mctx.fill();
         }
 
-        /* Fine dense faint micro-stars embedded in the Milky Way band */
-        for (let i = 0; i < 240; i++) {
+        /* Fine dense micro-stars embedded in the Milky Way band */
+        for (let i = 0; i < 320; i++) {
           const x = (rng() - 0.5) * bandW * 0.92;
           const y = (rng() - 0.5) * bandH * 0.58 * (0.4 + rng() * 0.6);
-          const sz = (0.45 + rng() * 0.95) * dpr;
-          const al = 0.05 + rng() * 0.16;
+          const sz = (0.42 + rng() * 0.78) * dpr;
+          const al = 0.09 + rng() * 0.24;
           mctx.fillStyle = rng() > 0.75 ? `rgba(245, 228, 200, ${al})` : `rgba(205, 220, 250, ${al})`;
           mctx.beginPath();
           mctx.arc(x, y, sz, 0, Math.PI * 2);
@@ -2265,13 +2266,13 @@
       function buildStars() {
         stars.length = 0;
         const rng = mulberry32(9081);
-        const count = Math.min(130, Math.max(60, Math.floor((W * H) / (dpr * dpr * 18000))));
+        const count = Math.min(165, Math.max(75, Math.floor((W * H) / (dpr * dpr * 14500))));
         for (let i = 0; i < count; i++) {
           stars.push({
             x: rng(),
             y: rng(),
-            r: (0.5 + rng() * 1.1) * dpr,
-            alpha: 0.14 + rng() * 0.42,
+            r: (0.45 + rng() * 0.85) * dpr,
+            alpha: 0.22 + rng() * 0.50,
             depth: 0.06 + rng() * 0.22,
             warm: rng() > 0.68
           });
@@ -2297,6 +2298,14 @@
           ctx.beginPath();
           ctx.arc(px, py, s.r, 0, Math.PI * 2);
           ctx.fill();
+          if (s.alpha > 0.46) {
+            ctx.fillStyle = s.warm
+              ? `rgba(255, 246, 232, ${Math.min(0.92, s.alpha * 1.25)})`
+              : `rgba(238, 245, 255, ${Math.min(0.92, s.alpha * 1.25)})`;
+            ctx.beginPath();
+            ctx.arc(px, py, s.r * 0.48, 0, Math.PI * 2);
+            ctx.fill();
+          }
         }
 
         /* Fade floating spacecraft & astronaut cleanly only below the hero section */
@@ -2319,9 +2328,9 @@
         const nextH = Math.floor(window.innerHeight * dpr);
         if (nextW <= 0 || nextH <= 0) return;
         const significant = !mwLayer || Math.abs(nextW - W) > 2 || Math.abs(nextH - H) > 100 * dpr;
-        W = nextW;
-        H = nextH;
         if (significant) {
+          W = nextW;
+          H = nextH;
           canvas.width = W;
           canvas.height = H;
           buildMilkyWay();
