@@ -2049,9 +2049,9 @@
       float bottomBlend = smoothstep(0.0, 0.24, screenY);
 
       vec3 skyCol = (
-        vec3(0.045, 0.062, 0.115) * broadGlow +
-        vec3(0.055, 0.072, 0.135) * centerGlow +
-        vec3(0.025, 0.034, 0.062) * mwBand
+        vec3(0.027, 0.038, 0.072) * broadGlow +
+        vec3(0.033, 0.044, 0.084) * centerGlow +
+        vec3(0.016, 0.022, 0.042) * mwBand
       ) * mix(0.28, 1.0, bottomBlend);
 
       /* Deep space floor matching #02040a page background outside shadow */
